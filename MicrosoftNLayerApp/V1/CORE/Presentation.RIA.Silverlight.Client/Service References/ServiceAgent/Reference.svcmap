@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5e8f3a3f-789f-4010-823e-85f8d5ba1c39" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="Silverlight.Domain.Core.Entities" />
+      <ReferencedAssembly AssemblyName="Silverlight.Domain.MainModule.Entities" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:88/MainModule.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MainModule1.disco" MetadataType="Disco" ID="cb0b4bdd-e41d-467b-bdc2-c83d43d672c4" SourceId="1" SourceUrl="http://localhost:88/MainModule.svc?disco" />
+    <MetadataFile FileName="MainModule5.xsd" MetadataType="Schema" ID="b919e0de-1694-4c67-8415-e301c7d4c63d" SourceId="1" SourceUrl="http://localhost:88/MainModule.svc?xsd=xsd1" />
+    <MetadataFile FileName="MainModule2.wsdl" MetadataType="Wsdl" ID="15e87653-d15a-4b84-b1b2-427fe4b522ec" SourceId="1" SourceUrl="http://localhost:88/MainModule.svc?wsdl=wsdl1" />
+    <MetadataFile FileName="MainModule21.wsdl" MetadataType="Wsdl" ID="f9e538c0-297e-4692-afec-24f614be858c" SourceId="1" SourceUrl="http://localhost:88/MainModule.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="MainModuleService1.wsdl" MetadataType="Wsdl" ID="5fb89c21-f050-4e61-92af-c5daf5234193" SourceId="1" SourceUrl="http://localhost:88/MainModule.svc?wsdl" />
+    <MetadataFile FileName="MainModule51.xsd" MetadataType="Schema" ID="f4f3340d-96dd-49e3-a26e-d74af3946e28" SourceId="1" SourceUrl="http://localhost:88/MainModule.svc?xsd=xsd0" />
+    <MetadataFile FileName="MainModule52.xsd" MetadataType="Schema" ID="6ae44c5c-6886-492a-b7f9-2e8dc06d1bc0" SourceId="1" SourceUrl="http://localhost:88/MainModule.svc?xsd=xsd3" />
+    <MetadataFile FileName="MainModule53.xsd" MetadataType="Schema" ID="e8e65fa2-6d7e-4844-b5dd-778a31cec59d" SourceId="1" SourceUrl="http://localhost:88/MainModule.svc?xsd=xsd4" />
+    <MetadataFile FileName="MainModule54.xsd" MetadataType="Schema" ID="37c1d3b1-a39b-4c6f-9dd7-425b5ea66dc2" SourceId="1" SourceUrl="http://localhost:88/MainModule.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,7 @@
+﻿
+English
+This assmbly contain the necesary class for suporting Infrastructure implementing o data access and the elements for facilitate unit test and isolated dependencies
+
+Spanish ( Castellano )
+Este ensamblado contiene las clases necesarias para dar soporte a la implementación de la infraestructura de acceso a datos así como 
+elementos necesarios para facilitar el testeo unitario aislado.

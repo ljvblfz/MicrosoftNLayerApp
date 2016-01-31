@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{eb19e968-ae5d-46b9-9458-9ed26670a08b}</ProjectGuid>
+    <ArchitectureToolsVersion>1.0.0.0</ArchitectureToolsVersion>
+    <Name>App Modeling Project</Name>
+    <RootNamespace>App Modeling Project</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
+  <ItemGroup>
+    <Content Include="ModelDefinition\Package10_2010.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_2010.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_2012.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_2010.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_2012.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_2010.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_2012.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package4_2010.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package5_2010.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package6_2010.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package7_2010.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package8_2010.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package9_2010.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2010.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2012.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UML Design\0 - General Diagrams\Generic UMLComponentDiagram.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UML Design\0 - General Diagrams\Generic UMLComponentDiagram.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UML Design\0 - General Diagrams\Generic UMLComponentDiagram.componentdiagram</DependentUpon>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Command Structure Secuence UMLSequenceDiagram1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Command Structure Secuence UMLSequenceDiagram1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UML Design\1 - Presentation Layer Modeling\Command Structure Secuence UMLSequenceDiagram1.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Command Structure UMLClassDiagram1.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Command Structure UMLClassDiagram1.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UML Design\1 - Presentation Layer Modeling\Command Structure UMLClassDiagram1.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Front-Controller Secuence UMLSequenceDiagram.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Front-Controller Secuence UMLSequenceDiagram.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UML Design\1 - Presentation Layer Modeling\Front-Controller Secuence UMLSequenceDiagram.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Presentation Front-Controller pattern Evolution UMLClassDiagram1.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Presentation Front-Controller pattern Evolution UMLClassDiagram1.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UML Design\1 - Presentation Layer Modeling\Presentation Front-Controller pattern Evolution UMLClassDiagram1.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Presentation MVVM WPF Friendly UMLClassDiagram.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Presentation MVVM WPF Friendly UMLClassDiagram.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UML Design\1 - Presentation Layer Modeling\Presentation MVVM WPF Friendly UMLClassDiagram.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Presentation MVVM-Commands WPF Friendly UMLClassDiagram.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Presentation MVVM-Commands WPF Friendly UMLClassDiagram.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UML Design\1 - Presentation Layer Modeling\Presentation MVVM-Commands WPF Friendly UMLClassDiagram.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Presentation Simplistic UMLClassDiagram.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Presentation Simplistic UMLClassDiagram.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UML Design\1 - Presentation Layer Modeling\Presentation Simplistic UMLClassDiagram.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Presentation Simplistic WPF Friendly UMLClassDiagram.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UML Design\1 - Presentation Layer Modeling\Presentation Simplistic WPF Friendly UMLClassDiagram.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UML Design\1 - Presentation Layer Modeling\Presentation Simplistic WPF Friendly UMLClassDiagram.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="UML Design\2 - Distributed Services Layer Modeling\DTOs UMLClassDiagram.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UML Design\2 - Distributed Services Layer Modeling\DTOs UMLClassDiagram.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UML Design\2 - Distributed Services Layer Modeling\DTOs UMLClassDiagram.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="UML Design\3 - Application Layer\BankingManagementService_PerformTansfer.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UML Design\3 - Application Layer\BankingManagementService_PerformTansfer.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UML Design\3 - Application Layer\BankingManagementService_PerformTansfer.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UML Design\4 - Domain Layer\Domain.Core.Entities.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UML Design\4 - Domain Layer\Domain.Core.Entities.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UML Design\4 - Domain Layer\Domain.Core.Entities.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="UML Design\4 - Domain Layer\Dommain.Core.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UML Design\4 - Domain Layer\Dommain.Core.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UML Design\4 - Domain Layer\Dommain.Core.classdiagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\App Modeling Project.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Folder Include="N-Layer Design" />
+    <Folder Include="UML Design" />
+    <Folder Include="UML Design\1 - Presentation Layer Modeling" />
+    <Folder Include="UML Design\0 - General Diagrams" />
+    <Folder Include="UML Design\2 - Distributed Services Layer Modeling" />
+    <Folder Include="UML Design\3 - Application Layer" />
+    <Folder Include="UML Design\4 - Domain Layer" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application.Core\Application.Core.csproj">
+      <Name>Application.Core</Name>
+      <Project>{ca70a316-6f8c-437c-b9dd-85bf4e074157}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Application.MainModule\Application.MainModule.csproj">
+      <Name>Application.MainModule</Name>
+      <Project>{28741256-5ffd-452d-8515-133e179b1e04}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\DistributedServices.Core\DistributedServices.Core.csproj">
+      <Name>DistributedServices.Core</Name>
+      <Project>{19eea883-f3ca-4781-8ec0-e108c74273e6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\DistributedServices.MainModule\DistributedServices.MainModule.csproj">
+      <Name>DistributedServices.MainModule</Name>
+      <Project>{01dc12e9-f233-4f09-ae68-aad20bd3f500}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Core.Entities\Domain.Core.Entities.csproj">
+      <Name>Domain.Core.Entities</Name>
+      <Project>{5a3a2291-4220-4bdc-94c0-f48ab18ed0bd}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
+      <Name>Domain.Core</Name>
+      <Project>{d7e981bb-19e7-4d85-a24b-d4295baf87cd}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModule.Entities\Domain.MainModule.Entities.csproj">
+      <Name>Domain.MainModule.Entities</Name>
+      <Project>{6f82f34c-72f8-4c1f-9b41-2ee88c54ab01}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModule\Domain.MainModule.csproj">
+      <Name>Domain.MainModule</Name>
+      <Project>{d42b62e5-91ee-40f3-b68d-fe2d0afc0aee}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.Data.Core\Infrastructure.Data.Core.csproj">
+      <Name>Infrastructure.Data.Core</Name>
+      <Project>{98150d03-b191-476d-b192-b5b755e26e8e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.Data.MainModule\Infrastructure.Data.MainModule.csproj">
+      <Name>Infrastructure.Data.MainModule</Name>
+      <Project>{f0ca02b9-6921-427d-85cb-a164c4939e82}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Presentation.RIA.Silverlight.Client\Silverlight.Client.csproj">
+      <Name>Silverlight.Client</Name>
+      <Project>{1832d5d5-e2c8-4767-b3e8-ca96f98f4346}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Presentation.RIA.Silverlight.Domain.Core.Entities\Silverlight.Domain.Core.Entities.csproj">
+      <Name>Silverlight.Domain.Core.Entities</Name>
+      <Project>{01565b37-9830-47a8-b29e-25c16407ef0a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Presentation.RIA.Silverlight.Domain.MainModule.Entities\Silverlight.Domain.MainModule.Entities.csproj">
+      <Name>Silverlight.Domain.MainModule.Entities</Name>
+      <Project>{d89521e5-f309-45f8-8923-f518efec8e7c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Presentation.Web.MVC.Client\MVC.Client.csproj">
+      <Name>MVC.Client</Name>
+      <Project>{4b2c775c-6c2e-4208-b619-4b35abc49faa}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Presentation.Windows.WPF.Client\WPF.Client.csproj">
+      <Name>WPF.Client</Name>
+      <Project>{a92aeb5b-aebb-4b32-af5e-de098ed63e84}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Presentation.Windows.WPF.ServiceAgents\WPF.ServiceAgents.csproj">
+      <Name>WPF.ServiceAgents</Name>
+      <Project>{568b1bb3-a0e0-4071-aee8-f420424d7fc8}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="N-Layer Design\NLayerApp V1 Base.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="N-Layer Design\NLayerApp V1 Base.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>N-Layer Design\NLayerApp V1 Base.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="N-Layer Design\NLayerApp V1 Base.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>N-Layer Design\NLayerApp V1 Base.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="N-Layer Design\NLayerApp V1 Demo.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="N-Layer Design\NLayerApp V1 Demo.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>N-Layer Design\NLayerApp V1 Demo.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="N-Layer Design\NLayerApp V1 Demo.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>N-Layer Design\NLayerApp V1 Demo.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="N-Layer Design\NLayerApp V1 Dependencies.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="N-Layer Design\NLayerApp V1 Dependencies.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>N-Layer Design\NLayerApp V1 Dependencies.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="N-Layer Design\NLayerApp V1 Dependencies.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>N-Layer Design\NLayerApp V1 Dependencies.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+</Project>

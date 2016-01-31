@@ -1,0 +1,425 @@
+/* -------------------------------------------  GENERAL   -------------------------------------------  */
+html
+{
+}
+body
+{
+    font-family: "Georgia" , "Times New Roman" , "Times" , "serif";
+    font-style: normal;
+    width: auto;
+    height: auto;
+}
+a
+{
+    text-decoration: none;
+    color: #333;
+}
+a:hover
+{
+    color: #999;
+}
+a:visited
+{
+    color: #333;
+}
+.page
+{
+    background-color: #0f191a;
+    border: none;
+    margin: auto auto 0px auto;
+    width: 960px;
+}
+.header
+{
+    background-color: #bedaf0;
+}
+/* -------------------------------------------  TEXT  -------------------------------------------  */
+.account-locked
+{
+    font-family: "Verdana" , "Geneva" , "sans-serif";
+    color: #900;
+    text-transform: uppercase;
+    font-size: 9px;
+}
+
+.account-unlocked
+{
+    font-family: "Verdana" , "Geneva" , "sans-serif";
+    color: #063;
+    text-transform: uppercase;
+    font-size: 9px;
+}
+
+.account-item
+{
+    font-family: "Georgia" , "Times New Roman" , "times" , "Serif";
+    font-size: 16px;
+}
+/* -------------------------------------------  BUTTON  -------------------------------------------  */
+
+.container-button
+{
+    margin: 10px 10px 10px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+.container-button ul
+{
+    list-style: none;
+    padding-left:0px;
+}
+
+.container-button li
+{
+    list-style: none;
+    display: inline;
+}
+
+.container-button img
+{
+    border-style: none;
+    margin: 0px 20px 0px 0px;
+}
+
+imput[type="submit"]
+{
+    text-align: center;
+}
+.text-button
+{
+    font-size: 14px;
+    color: #000;
+    border: 0px;
+    margin-left: 40px;
+}
+.small-button
+{
+    background: url(../../Content/Images/buttonsmall.png);
+}
+.medium-button
+{
+    background: url(../../Content/Images/buttonmedium.png);
+}
+.big-button
+{
+    background: url(../../Content/Images/buttonbig.png);
+}
+/* -------------------------------------------  SUB-HEADER   -------------------------------------------  */
+.sub-header
+{
+    background-color: #d4e3ea;
+    height: auto;
+    width: auto;
+}
+.sub-header h1
+{
+    font-size: 30px;
+    color: #4c585d;
+}
+.sub-header h2
+{
+    font-size: 16px;
+    color: #9cabb2;
+}
+/* -------------------------------------------  CONTAINER   -------------------------------------------  */
+.principal-content
+{
+    background-color: #FFF;
+    width: 100%;
+}
+/* -------------------------------------------  SEPARATOR   -------------------------------------------  */
+.left-column .separator
+{
+    width: auto;
+    height: 1px;
+    margin-left: 15px;
+    border-bottom: 1px solid #d9d9d9;
+}
+/* -------------------------------------------  LEFT-COLUMN  -------------------------------------------  */
+.left-column
+{
+    background-color: #FFF;
+    float: left;
+    height: 100%;
+    width: 20%; /*padding-bottom: 60px;*/ /*padding-right: 15px;*/
+}
+/* -------------------------------------------  CustomerMenu  -------------------------------------------  */
+.left-column ul
+{
+    font-size: 22px;
+    margin-left: 20px;
+    line-height: 60px;
+    list-style-type: none;
+}
+.left-column ul li span
+{
+    list-style: none;
+}
+.left-column li
+{
+    line-height: 40px;
+    margin-top: 20px;
+    margin-left: -25px;
+}
+.left-column .Title
+{
+    margin: 0px 0px 0px 40px;
+    list-style: none;
+    list-style-type: none;
+}
+.left-column .CustomerMenu
+{
+    color: #4b575c;
+    background-image: url(../../Content/Images/customer.png);
+    background-repeat: no-repeat;
+    text-align: left;
+}
+.left-column .CustomerMenu .CustomerList
+{
+    font-size: 15px;
+    color: #4b575c;
+    list-style-image: url(../../Content/Images/list.png);
+    text-align: left;
+    list-style-position: outside;
+    list-style-type: none;
+}
+.left-column .CustomerMenu .CustomerAddNew
+{
+    font-size: 15px;
+    color: #4b575c;
+    list-style-image: url(../../Content/Images/addnew.png);
+}
+/* -------------------------------------------  BankingMenu  -------------------------------------------  */
+.left-column .BankingMenu
+{
+    color: #4b575c;
+    background-image: url(../../Content/Images/banking.png);
+    background-repeat: no-repeat;
+    text-align: left;
+}
+.left-column .BankingMenu .BankingTransferList
+{
+    font-size: 15px;
+    color: #4b575c;
+    list-style-image: url(../../Content/Images/transferlist.png);
+    text-align: left;
+    list-style-position: outside;
+    list-style-type: none;
+}
+.left-column .BankingMenu .BankingPerformTransfer
+{
+    font-size: 15px;
+    color: #4b575c;
+    list-style-image: url(../../Content/Images/performtransfer.png);
+}
+/* -------------------------------------------  OrdersMenu  -------------------------------------------  */
+.left-column .OrdersMenu
+{
+    color: #4b575c;
+    background-image: url(../../Content/Images/orders.png);
+    background-repeat: no-repeat;
+    text-align: left;
+}
+.left-column .OrdersMenu .OrdersList
+{
+    font-size: 15px;
+    color: #4b575c;
+    list-style-image: url(../../Content/Images/orderlist.png);
+    text-align: left;
+}
+.left-column .OrdersMenu .OrdersPerformOrder
+{
+    font-size: 15px;
+    color: #4b575c;
+    list-style-image: url(../../Content/Images/ordersperform.png);
+}
+/* -------------------------------------------  RIGHT-COLUMN  -------------------------------------------  */
+.right-column
+{
+    background-color: #fff;
+    height: auto;
+    width: 75.83%;
+    float: left;
+    padding: 20px;
+}
+.right-column h1
+{
+    font-size: 24px;
+    color: #bac6cc;
+}
+.right-column h2
+{
+    font-size: 16px;
+    color: #666;
+}
+/* -------------------------------------------  MIDDLE  -------------------------------------------  */
+.middle
+{
+    clear: both;
+}
+/* -------------------------------------------  FOOTER  -------------------------------------------  */
+.footer
+{
+    background-color: #3b5366;
+    height: 54px;
+    width: 100%;
+}
+/* -------------------------------------------  GENERAL-TEXT  -------------------------------------------  */
+.editor-form ul
+{
+    list-style: none;
+}
+.editor-form h1
+{
+    font-size: 24px;
+    color: #bac6cc;
+}
+/* -------------------------------------------  TEXT-BOX  -------------------------------------------  */
+.display-label, .editor-label, .display-field, .editor-field
+{
+    margin: 0.5em 0;
+}
+.text-box
+{
+    width: 30em;
+    font-family: "Verdana" , "Geneva" , "sans-serif";
+    font-size: 12px;
+    color: #666;
+}
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+.tri-state
+{
+    width: 6em;
+}
+/* -------------------------------------------  ERROR  -------------------------------------------  */
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* -------------------------------------------  Customer-Item  -------------------------------------------  */
+
+.customer-brief h1
+{
+    font-size: 30px;
+    color: #4C585D;
+}
+
+.customer-brief h2
+{
+    font-size: 16px;
+    color: #9CABB2;
+}
+
+.customer-brief img
+{
+    width: 174px;
+    height: 174px;
+    margin: 20px 40px 20px 20px;
+}
+
+/* -------------------------------------------  Customer-Item  -------------------------------------------  */
+
+.customer-item h1 a
+{
+    font-size: 30px;
+    color: #4C585D;
+    line-height: 10px;
+}
+
+.customer-item h2
+{
+    font-size: 16px;
+    color: #9CABB2;
+}
+
+.customer-item img
+{
+    width: 87px;
+    height: 87px;
+    margin: 10px 10px 10px 10px;
+}
+
+/* -------------------------------------------  Transfer-Money-Section  -------------------------------------------  */
+
+.transfer-money-section
+{
+    float: left;
+}
+
+/* -------------------------------------------  Account-Section  -------------------------------------------  */
+
+.accounts-section
+{
+    float: right;
+    text-align: right;
+    margin: 10px 20px 0px 0px;
+}
+
+.accounts-section li
+{
+    list-style: none;
+    display: list-item;
+}
+/* -------------------------------------------  Footer-Links  -------------------------------------------  */
+.footer a
+{
+    text-decoration: none;
+    color: #95A0A0;
+}
+.footer a:hover
+{
+    color: #BFC9C9;
+}
+.footer a:visited
+{
+    color: #95A0A0;
+}
+
+.footer ul
+{
+    list-style: none;
+}
+.footer li
+{
+    display: inline;
+    margin: 0px 20px 0px 0px;
+}
+
+.footer table
+{
+    width: 100%;
+}
+
+.footer td
+{
+    width: 50%;
+}
+
+.n-layer-app-link
+{
+    text-align:right;
+    padding: 0px 20px 0px 0px;
+}

@@ -1,0 +1,32 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+	xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+	xmlns:Microsoft_Samples_NLayerApp_Presentation_Silverlight_Client_ViewModels="clr-namespace:Microsoft.Samples.NLayerApp.Presentation.Silverlight.Client.ViewModels"
+	mc:Ignorable="d"
+    
+	x:Class="Microsoft.Samples.NLayerApp.Presentation.Silverlight.Client.PerformOrder"
+	d:DesignWidth="640" d:DesignHeight="480">
+
+	<UserControl.DataContext>
+		<Microsoft_Samples_NLayerApp_Presentation_Silverlight_Client_ViewModels:VMPerformOrder/>
+	</UserControl.DataContext>
+	<Grid x:Name="LayoutRoot">
+		<Button x:Name="button" Content="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,319,101,0" Style="{StaticResource ButtonStyle3}" FontFamily="/Microsoft.Samples.NLayerApp.Presentation.Silverlight.Client;component/Resources/Fonts/HelveticaThn.ttf#Helvetica35-Thin" FontSize="12" Command="{Binding SaveCommand, Mode=OneWay}"/>
+		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Customer" VerticalAlignment="Top" Foreground="White" FontFamily="/Microsoft.Samples.NLayerApp.Presentation.Silverlight.Client;component/Resources/Fonts/HelveticaThn.ttf#Helvetica35-Thin" FontSize="18.667" Margin="16,0,0,0"/>
+		<TextBox TextWrapping="Wrap" VerticalAlignment="Top" Margin="16,25,101,0" Style="{StaticResource TextBoxStyle}" Text="{Binding ContactName, Mode=TwoWay}"/>
+		<TextBlock Foreground="White" FontSize="18.667" FontFamily="/Microsoft.Samples.NLayerApp.Presentation.Silverlight.Client;component/Resources/Fonts/HelveticaThn.ttf#Helvetica35-Thin" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Delivery Date" VerticalAlignment="Top" Margin="16,53,0,0"/>
+		<TextBlock Foreground="White" FontSize="18.667" FontFamily="/Microsoft.Samples.NLayerApp.Presentation.Silverlight.Client;component/Resources/Fonts/HelveticaThn.ttf#Helvetica35-Thin" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Order Date" VerticalAlignment="Top" Margin="16,106,0,0"/>
+		<TextBlock Foreground="White" FontSize="18.667" FontFamily="/Microsoft.Samples.NLayerApp.Presentation.Silverlight.Client;component/Resources/Fonts/HelveticaThn.ttf#Helvetica35-Thin" HorizontalAlignment="Left" TextWrapping="Wrap" Text="City" Margin="16,159,0,0" VerticalAlignment="Top"/>
+		<TextBox Margin="16,184,101,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding ShippingCity, Mode=TwoWay}"/>
+		<TextBlock Foreground="White" FontSize="18.667" FontFamily="/Microsoft.Samples.NLayerApp.Presentation.Silverlight.Client;component/Resources/Fonts/HelveticaThn.ttf#Helvetica35-Thin" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" Margin="16,212,0,0" d:LayoutOverrides="VerticalAlignment"/>
+		<TextBox Margin="16,237,101,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding ShippingAddress, Mode=TwoWay}"/>
+		<TextBlock Foreground="White" FontSize="18.667" FontFamily="/Microsoft.Samples.NLayerApp.Presentation.Silverlight.Client;component/Resources/Fonts/HelveticaThn.ttf#Helvetica35-Thin" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Zip" VerticalAlignment="Top" Margin="16,265,0,0"/>
+		<TextBox Margin="16,290,101,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding ShippingZip, Mode=TwoWay}"/>
+		<controls:DatePicker VerticalAlignment="Top" Margin="16,78,101,0" SelectedDate="{Binding DeliveryDate}"/>
+		<controls:DatePicker Margin="16,131,101,0" VerticalAlignment="Top" SelectedDate="{Binding OrderDate}"/>
+	</Grid>
+</UserControl>

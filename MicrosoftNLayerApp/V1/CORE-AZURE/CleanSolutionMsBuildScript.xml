@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="CleanAll">
+	<Target Name="CleanAll">
+		<CreateItem Include=".\**\debug\**\*;.\**\release\**\*;.\**\sql\**\*;.\TestResults\**\*;.\**\*.*scc;.\**\*.user">
+			<Output ItemName="DbgFiles" TaskParameter="Include"/>
+		</CreateItem>
+
+		<Message Text="Deleting Debug Files" Importance="high" />
+		<Delete Files="%(DbgFiles.Identity)" ContinueOnError="true" TreatErrorsAsWarnings="true">
+			<Output ItemName="DeletedFiles1" TaskParameter="DeletedFiles"/>
+		</Delete>
+		<Message Text="%(DeletedFiles1.Identity)" />
+	</Target>
+</Project>

@@ -1,0 +1,3 @@
+﻿
+ Here we define Logging and Traces contracts (Interfaces). 
+ Implementation could be made using System.Diagnostics (as we're doing) or any other building block like ENTERPRISE LIBRARY or Log4Net

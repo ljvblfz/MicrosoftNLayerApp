@@ -1,0 +1,32 @@
+﻿<?xml version="1.0"?>
+
+<configuration>
+  <system.web>
+    <compilation debug="true" targetFramework="4.0" />
+  </system.web>
+
+
+  <system.diagnostics>
+    <trace>
+      <listeners>
+        <add type="Microsoft.WindowsAzure.Diagnostics.DiagnosticMonitorTraceListener, Microsoft.WindowsAzure.Diagnostics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+          name="AzureDiagnostics">
+          <filter type="" />
+        </add>
+      </listeners>
+    </trace>
+  </system.diagnostics>
+
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="true"/>
+
+    <defaultDocument>
+      <files>
+        <clear/>
+        <add value="Silverlight.Client.Web.html"/>
+      </files>
+    </defaultDocument>
+
+  </system.webServer>
+
+</configuration>

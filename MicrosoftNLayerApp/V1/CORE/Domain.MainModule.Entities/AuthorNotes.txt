@@ -1,0 +1,8 @@
+﻿English
+
+
+
+Spanish
+Este ensamblado contiene la plantilla (TT) de generación de entidades de STE ( Selft Tracking Entities ) así como las clases parciales correspondientes
+a cada uno de los Aggregate Roots extraídos del modelo. La razón principal para sacar este elemento a un nuevo assembly y no contenerlo dentro de MainModule
+viene por el hecho de que este ensamblado será referenciado desde la parte cliente, ganando así toda la implementación de la gestión de cambios ofrecida por STE

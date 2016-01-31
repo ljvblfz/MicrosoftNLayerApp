@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5e8f3a3f-789f-4010-823e-85f8d5ba1c39" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="Silverlight.Domain.Core.Entities" />
+      <ReferencedAssembly AssemblyName="Silverlight.Domain.MainModule.Entities" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8888/MainModule.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MainModuleService1.wsdl" MetadataType="Wsdl" ID="6a52763c-f7fc-4d1c-9547-b120e6023c93" SourceId="1" SourceUrl="http://hpelitebook.europe.corp.microsoft.com:8888/MainModule.svc?wsdl" />
+    <MetadataFile FileName="MainModule5.xsd" MetadataType="Schema" ID="c22c7a6f-bf9e-4951-986d-5de240fb0c48" SourceId="1" SourceUrl="http://hpelitebook.europe.corp.microsoft.com:8888/MainModule.svc?xsd=xsd3" />
+    <MetadataFile FileName="MainModule2.wsdl" MetadataType="Wsdl" ID="6a6cc94c-29ca-46ac-85b4-9d929d0fd6fb" SourceId="1" SourceUrl="http://hpelitebook.europe.corp.microsoft.com:8888/MainModule.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="MainModule51.xsd" MetadataType="Schema" ID="0e46f822-9258-47d9-9dd1-0c46aa4b1040" SourceId="1" SourceUrl="http://hpelitebook.europe.corp.microsoft.com:8888/MainModule.svc?xsd=xsd4" />
+    <MetadataFile FileName="MainModule52.xsd" MetadataType="Schema" ID="032ca401-4dcd-4c06-8d38-474a76f781e2" SourceId="1" SourceUrl="http://hpelitebook.europe.corp.microsoft.com:8888/MainModule.svc?xsd=xsd1" />
+    <MetadataFile FileName="MainModule53.xsd" MetadataType="Schema" ID="e7830378-05cf-4307-b0af-63e6a19ea82c" SourceId="1" SourceUrl="http://hpelitebook.europe.corp.microsoft.com:8888/MainModule.svc?xsd=xsd2" />
+    <MetadataFile FileName="MainModule21.wsdl" MetadataType="Wsdl" ID="e3197a33-e1ed-45fd-9c02-466f0c95f759" SourceId="1" SourceUrl="http://hpelitebook.europe.corp.microsoft.com:8888/MainModule.svc?wsdl=wsdl1" />
+    <MetadataFile FileName="MainModule54.xsd" MetadataType="Schema" ID="36ef55cc-0a5b-4e1a-a4aa-189df53ae5ef" SourceId="1" SourceUrl="http://hpelitebook.europe.corp.microsoft.com:8888/MainModule.svc?xsd=xsd0" />
+    <MetadataFile FileName="MainModule1.disco" MetadataType="Disco" ID="0e200348-9992-4e76-b413-945e4a5bc991" SourceId="1" SourceUrl="http://hpelitebook.europe.corp.microsoft.com:8888/MainModule.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

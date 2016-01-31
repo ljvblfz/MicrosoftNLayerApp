@@ -1,0 +1,6 @@
+﻿English
+
+Spanish
+Proyecto demo de alojamiento de servicios, actualmente este proyecto contiene las referencias a resolver por Unity por 
+simplicidad de despliegue, en realidad estas referencias no deberían estar en el proyecto aunque si los ensamblados a resolver por 
+unity en el private path del mismo 

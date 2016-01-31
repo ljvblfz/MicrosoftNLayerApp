@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B2C775C-6C2E-4208-B619-4B35ABC49FAA}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NLayerApp.Presentation.Web.MVC.Client</RootNamespace>
+    <AssemblyName>NLayerApp.Presentation.Web.MVC.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\BankAccountController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Extensions\BootStrapper\IBootStrapper.cs" />
+    <Compile Include="Extensions\BootStrapper\DefaultBootStrapper.cs" />
+    <Compile Include="Extensions\ControllerFactories\IoCControllerFactory.cs" />
+    <Compile Include="Extensions\CustomModelBinders\CustomerPictureModelBinder.cs" />
+    <Compile Include="Extensions\HtmlHelpers\NLayerAppHtmlHelpers.cs" />
+    <Compile Include="Extensions\CustomModelBinders\SelfTrackingEntityModelBinder.cs" />
+    <Compile Include="Extensions\Utilities\SelfTrackingEntityBase64Converter.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\BankAccountListViewModel.cs" />
+    <Compile Include="ViewModels\CustomerListViewModel.cs" />
+    <Compile Include="ViewModels\IPagedView.cs" />
+    <Compile Include="ViewModels\MenuStateViewModel.cs" />
+    <Compile Include="ViewModels\TransfersListViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Images\addnew.png" />
+    <Content Include="Content\Images\background-textbox.jpg" />
+    <Content Include="Content\Images\banking.png" />
+    <Content Include="Content\Images\buttonbig.png" />
+    <Content Include="Content\Images\buttonmedium.png" />
+    <Content Include="Content\Images\buttonsmall.png" />
+    <Content Include="Content\Images\delete.png" />
+    <Content Include="Content\Images\customer.png" />
+    <Content Include="Content\Images\edit.png" />
+    <Content Include="Content\Images\exit.png" />
+    <Content Include="Content\Images\line.png" />
+    <Content Include="Content\Images\list.png" />
+    <Content Include="Content\Images\microsoft.png" />
+    <Content Include="Content\Images\next.png" />
+    <Content Include="Content\Images\orderlist.png" />
+    <Content Include="Content\Images\orders.png" />
+    <Content Include="Content\Images\ordersperform.png" />
+    <Content Include="Content\Images\performtransfer.png" />
+    <Content Include="Content\Images\previus.png" />
+    <Content Include="Content\Images\transferlist.png" />
+    <Content Include="Content\Images\Unknown.png" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Views\BankAccount\DisplayTemplates\BankAccountItem.ascx" />
+    <Content Include="Views\BankAccount\DisplayTemplates\BankTransferItem.ascx" />
+    <Content Include="Views\BankAccount\Index.aspx" />
+    <Content Include="Views\BankAccount\TransferMoney.aspx" />
+    <Content Include="Views\BankAccount\TransferSearch.ascx" />
+    <Content Include="Views\Customer\Create.aspx" />
+    <Content Include="Views\Customer\Details.aspx" />
+    <Content Include="Views\Customer\DisplayTemplates\Customer.ascx" />
+    <Content Include="Views\Customer\DisplayTemplates\CustomerBrief.ascx" />
+    <Content Include="Views\Customer\Edit.aspx" />
+    <Content Include="Views\Customer\EditorTemplates\AddressInformation.ascx" />
+    <Content Include="Views\Customer\EditorTemplates\Country.ascx" />
+    <Content Include="Views\Customer\EditorTemplates\Customer.ascx" />
+    <Content Include="Views\Customer\EditorTemplates\CustomerPicture.ascx" />
+    <Content Include="Views\Customer\Index.aspx" />
+    <Content Include="Views\Customer\DisplayTemplates\CustomerItem.ascx" />
+    <Content Include="Views\Home\Menu.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\IEnumerable.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\Object.ascx" />
+    <Content Include="Views\Shared\Pager.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <None Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application.MainModule\Application.MainModule.csproj">
+      <Project>{28741256-5FFD-452D-8515-133E179B1E04}</Project>
+      <Name>Application.MainModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Core.Entities\Domain.Core.Entities.csproj">
+      <Project>{5A3A2291-4220-4BDC-94C0-F48AB18ED0BD}</Project>
+      <Name>Domain.Core.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModule.Entities\Domain.MainModule.Entities.csproj">
+      <Project>{6F82F34C-72F8-4C1F-9B41-2EE88C54AB01}</Project>
+      <Name>Domain.MainModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting.IoC\Infrastructure.CrossCutting.IoC.csproj">
+      <Project>{59814C32-5A3B-4AEE-94FA-502EA57CDF70}</Project>
+      <Name>Infrastructure.CrossCutting.IoC</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>39318</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/MVC.Client</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

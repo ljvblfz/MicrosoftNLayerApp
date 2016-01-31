@@ -1,0 +1,21 @@
+﻿[REVISAR EXPLICACION]
+
+English
+
+This assembly contain the necesary code for work with ADO.NET Entity Framework STE. The associated temaplate
+for ObjectChangeTracker and related class or interfaces is extracted from [Model].[Types].tt created with EDM for sharing this assembly with clients without
+any reference to other class in domain scope.
+
+
+This code is property of STE template and Code Analysis is disabled for this reason
+
+
+Spanish (Castellano)
+
+Esta ensamblado contiene el codigo necesario para trabajar con STE, ObjectChangeTracker, IObjectWithChangeTracker y los demás elementos relaciones. Se separan 
+estas características del ensamblado Domain.Core puesto que tiene que ser referenciado por el cliente, liberándolo así de demas elementos relacionados del dominio 
+que no tendría porque conocer.
+
+Este código es parte de la plantilla de STE por lo tanto Code Analysis está desactivado.
+
+

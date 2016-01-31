@@ -1,0 +1,2743 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="556bb672-79e8-4125-ba3d-31d2e0361502"
+  name="App Modeling Project" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="4a0e25d1-c193-4467-9354-8ebd40e445f1">
+      <body>Receptor-&gt;Accion()</body>
+      <annotatedElements>
+        <classMoniker
+          Id="9ea16019-984e-4505-a755-d0d30a331a15"
+          LastKnownName="ComandoConcreto"
+          LastKnownLocation="App Modeling Project.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="310f4ea9-3e9f-4a20-9739-4515f853de3e"
+        name="CustomerList"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="d5beb314-0529-4daa-8ee1-3c7a980b6182"
+            name="Customers"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="21779a90-0fed-46d8-9a6c-093c9a13f130"
+                LastKnownName="List&lt;Customer&gt;"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="55997aec-5d44-479c-bf49-ceef75a75641"
+            name="Views"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="34b58358-2d5f-42f9-aab2-cbbbe0466263"
+                LastKnownName="List&lt;View&gt;"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="bb31f2b6-1145-49d3-9c39-12ea0827f182"
+            name="AddCustomer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="da652fe6-3695-40f2-b913-64856f9e5c3f"
+                  name="cust"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="f9ff2ea5-d07c-4be3-865b-0fe6afb857bb"
+                      LastKnownName="Customer"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9f80e3ea-6606-4151-a2da-c5eb3e9244b9"
+            name="AttachView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d8297e9c-3fe2-47b8-b83c-5b87ef25925d"
+                  name="v"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="97340832-04dd-410d-ae88-834c1f3dd202"
+                      LastKnownName="View"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="4b9ef58a-0569-46f3-8ade-79c3bcb8c4b9"
+            name="DeleteCustomer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cc428fb4-3ff4-4b35-a458-22e6238af601"
+                  name="cust"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="f9ff2ea5-d07c-4be3-865b-0fe6afb857bb"
+                      LastKnownName="Customer"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="34793583-e9dc-4996-8474-386be2ffdec7"
+            name="GetCustomers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4eac87f8-ca45-4e1c-b9f5-53e063b91848"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="21779a90-0fed-46d8-9a6c-093c9a13f130"
+                      LastKnownName="List&lt;Customer&gt;"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a5fc9751-f2b6-47a1-ab5e-8cfaa744e328"
+            name="NotifyViews"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="4cee4912-5d99-441e-a8c0-deae96bb9f45"
+            name="DetachView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1cfca7a6-77af-44af-9194-245d3e6d1715"
+                  name="v"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="273e27c2-58d6-4f48-ae7f-f564fd145324"
+                      LastKnownName="View"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="21779a90-0fed-46d8-9a6c-093c9a13f130"
+        name="List&lt;Customer&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="34b58358-2d5f-42f9-aab2-cbbbe0466263"
+        name="List&lt;View&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="f9ff2ea5-d07c-4be3-865b-0fe6afb857bb"
+        name="Customer" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="97340832-04dd-410d-ae88-834c1f3dd202"
+        name="View" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="273e27c2-58d6-4f48-ae7f-f564fd145324"
+        name="View"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="d62e6286-77b3-4767-b8d1-a4450809b895"
+            name="customerList"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="310f4ea9-3e9f-4a20-9739-4515f853de3e"
+                LastKnownName="CustomerList"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="535f6bce-2126-4328-905a-1c3283fff5f1"
+            name="Update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="60a403b7-f34d-4ec2-bf66-3a59484aca83"
+        name="ListView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="55a8087c-57a1-4a20-88cd-4cd1c25af333"
+            isSubstitutable="false">
+            <classMoniker
+              Id="273e27c2-58d6-4f48-ae7f-f564fd145324"
+              LastKnownName="View"
+              LastKnownLocation="App Modeling Project.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="6e211504-e098-47c1-8f19-a258145e4099"
+            name="Update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4a66aaa8-0ad5-415c-8c7b-b444f4616ca4"
+        name="DetailsView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="24e304af-33a3-4b53-b6d5-86670dbf2485"
+            isSubstitutable="false">
+            <classMoniker
+              Id="273e27c2-58d6-4f48-ae7f-f564fd145324"
+              LastKnownName="View"
+              LastKnownLocation="App Modeling Project.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="7a1ccdf1-5ed2-4793-b440-bab7ffda62d7"
+            name="Update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="82e66625-ef4d-4f3c-a0f6-6d565b8b099c"
+        name="CustomerList"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="1949eefc-9b0e-4507-8956-033ec07f1d82"
+            name="Customers"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="3890aa47-0226-4c6c-8501-d4fbc6da961c"
+                LastKnownName="ObservableCollection&lt;Customer&gt;"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="96eee160-af1e-4bc3-87d3-190c9daff702"
+            name="AddCustomer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7e01c9af-d8cb-4757-978a-7e2228b2f825"
+                  name="Customer c"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="8163674f-df75-4311-a786-7580d04fba45"
+            name="DeleteCustomer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6bcc5562-e2bd-4ba1-854b-b22063f9ba6f"
+                  name="Customer c"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9c2f9e5d-80c6-4896-a944-4fa5ac34cbad"
+            name="GetCustomers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4fb115e1-cda1-4be1-a739-2d805e933d22"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="3890aa47-0226-4c6c-8501-d4fbc6da961c"
+                      LastKnownName="ObservableCollection&lt;Customer&gt;"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="3890aa47-0226-4c6c-8501-d4fbc6da961c"
+        name="ObservableCollection&lt;Customer&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="14e49f0c-8472-402e-992e-162ce5687976"
+        name="ListView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="db79a6a7-183c-4c0a-aaa1-ecd48d46036e"
+            name="DataContext">
+            <classMoniker
+              Id="82e66625-ef4d-4f3c-a0f6-6d565b8b099c"
+              LastKnownName="CustomerList"
+              LastKnownLocation="App Modeling Project.uml" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="2994c195-0629-4b7b-8f04-0324f2cb66e2"
+            isSubstitutable="false">
+            <classMoniker
+              Id="af64ff0c-e667-4705-a467-c5824db83793"
+              LastKnownName="UserControl"
+              LastKnownLocation="App Modeling Project.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9181a1ea-5954-4159-941f-b674431e4a8f"
+        name="DetailsView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="5720b4b2-eca7-47f7-9e16-279720298a27"
+            name="DataContext">
+            <classMoniker
+              Id="82e66625-ef4d-4f3c-a0f6-6d565b8b099c"
+              LastKnownName="CustomerList"
+              LastKnownLocation="App Modeling Project.uml" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="03af61ba-ac2e-48ee-99df-93334a501ecd"
+            isSubstitutable="false">
+            <classMoniker
+              Id="af64ff0c-e667-4705-a467-c5824db83793"
+              LastKnownName="UserControl"
+              LastKnownLocation="App Modeling Project.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="af64ff0c-e667-4705-a467-c5824db83793"
+        name="UserControl"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="98ea6823-dfc0-44f3-957f-3a9ac009c375"
+        name="CustomerList"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="48bddad6-e0ec-410c-9acf-ac454036e4c0"
+            name="Customers"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="3890aa47-0226-4c6c-8501-d4fbc6da961c"
+                LastKnownName="ObservableCollection&lt;Customer&gt;"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="d14a0fc1-1305-4b51-9d51-523b64e3bba8"
+            name="AddCustomer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e4388060-d054-4e50-bac3-dae70fded606"
+                  name="Customer c"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="42061649-4854-4673-8d82-357089444346"
+            name="DeleteCustomer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e9d647f1-b0e0-4ad6-8ddf-de037f8981b0"
+                  name="Customer c"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6a18bc19-1a60-4d63-b0ea-97cd36b2bdd1"
+            name="GetCustomers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5bf6dd35-d565-46cf-a006-57a2e93f54ff"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="3890aa47-0226-4c6c-8501-d4fbc6da961c"
+                      LastKnownName="ObservableCollection&lt;Customer&gt;"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b52ba7f8-701d-4978-adc1-398aefb78761"
+        name="ListView : UserControl"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="ba7a55a0-1017-4acf-a3a6-f7388ac31fe8">
+            <classMoniker
+              Id="fa40d4cf-3f19-4765-bed6-0751da6b4e9f"
+              LastKnownName="VMCustomers"
+              LastKnownLocation="App Modeling Project.uml" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="0f17e84c-4ff9-4be3-ab74-0334a0d6febd"
+            isSubstitutable="false">
+            <classMoniker
+              Id="8ef2c843-ec58-426b-b3f5-ad63bf6361a2"
+              LastKnownName="UserControl1"
+              LastKnownLocation="App Modeling Project.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2930b897-3422-4ad5-809b-bfb94dfb29f8"
+        name="DetailsView : UserControl"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="1401d08c-6ce2-46be-9186-837b17907078">
+            <classMoniker
+              Id="fa40d4cf-3f19-4765-bed6-0751da6b4e9f"
+              LastKnownName="VMCustomers"
+              LastKnownLocation="App Modeling Project.uml" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="8f440fe8-e604-4919-bf0c-0be72aa89a79"
+            isSubstitutable="false">
+            <classMoniker
+              Id="8ef2c843-ec58-426b-b3f5-ad63bf6361a2"
+              LastKnownName="UserControl1"
+              LastKnownLocation="App Modeling Project.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8ef2c843-ec58-426b-b3f5-ad63bf6361a2"
+        name="UserControl1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fa40d4cf-3f19-4765-bed6-0751da6b4e9f"
+        name="VMCustomers"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="9eb85ac3-ae1a-496d-8b45-e3fbe09fc687">
+            <classMoniker
+              Id="98ea6823-dfc0-44f3-957f-3a9ac009c375"
+              LastKnownName="CustomerList"
+              LastKnownLocation="App Modeling Project.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="bea7a37b-010d-4e15-920f-849599551ebb"
+            name="SelectedCustomers"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="3890aa47-0226-4c6c-8501-d4fbc6da961c"
+                LastKnownName="ObservableCollection&lt;Customer&gt;"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="05021ddd-feec-42f5-9985-bac0390ade74"
+            name="GetCustomers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="309c9d8d-9ee8-4eba-9829-2386a46bd9ff"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="3890aa47-0226-4c6c-8501-d4fbc6da961c"
+                      LastKnownName="ObservableCollection&lt;Customer&gt;"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ba5380e4-e0ad-4df6-a6fa-06748b0c0a47"
+            name="GetSelectedCustomers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9d8efdf4-c698-4859-8d3f-78ff915b9853"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="3890aa47-0226-4c6c-8501-d4fbc6da961c"
+                      LastKnownName="ObservableCollection&lt;Customer&gt;"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="90a8783c-9dc0-47d2-818f-9d4755f12357"
+        name="CustomerList"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="d77d0344-950d-41d3-a601-14e88fa4ccf7"
+            name="Customers"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="3890aa47-0226-4c6c-8501-d4fbc6da961c"
+                LastKnownName="ObservableCollection&lt;Customer&gt;"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="ef88d4ff-28fe-4286-a135-cee950712463"
+            name="AddCustomer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a228776c-d37b-42c2-a345-2d947405e03f"
+                  name="Customer c"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5671dadf-933e-4cda-810d-cbb5f6063f1e"
+            name="DeleteCustomer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="350e95bc-9cc0-49a2-bf29-47f2c8a11384"
+                  name="Customer c"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ec1f1e28-7ba5-4799-9d04-57433720e531"
+            name="GetCustomers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="79b3601b-b427-4bf5-9a4f-7e379608af6b"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="3890aa47-0226-4c6c-8501-d4fbc6da961c"
+                      LastKnownName="ObservableCollection&lt;Customer&gt;"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="dd182d2d-a2c7-42de-bc35-398c4f318207"
+        name="ListView : UserControl"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="2b17fff6-8e75-4fde-9d2a-9783c763fdff">
+            <classMoniker
+              Id="51580fb2-8421-47a5-bcc9-317d6ae83696"
+              LastKnownName="VMCustomers"
+              LastKnownLocation="App Modeling Project.uml" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="70c409cc-02af-4839-93e2-d61848b44b9a"
+        name="DetailsView : UserControl"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="87cb14c6-efb5-4eef-852d-97e53c33466e">
+            <classMoniker
+              Id="51580fb2-8421-47a5-bcc9-317d6ae83696"
+              LastKnownName="VMCustomers"
+              LastKnownLocation="App Modeling Project.uml" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="51580fb2-8421-47a5-bcc9-317d6ae83696"
+        name="VMCustomers"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="fdfd3fa7-5e86-4289-ae65-0b17aad48364">
+            <classMoniker
+              Id="90a8783c-9dc0-47d2-818f-9d4755f12357"
+              LastKnownName="CustomerList"
+              LastKnownLocation="App Modeling Project.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="4727bbae-f934-48cc-9af2-a2bc491c9308"
+            name="SelectedCustomers"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="3890aa47-0226-4c6c-8501-d4fbc6da961c"
+                LastKnownName="ObservableCollection&lt;Customer&gt;"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="3eca4d5f-670a-4706-83b1-537d811da898"
+            name="GetCustomers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="10ca7bb1-92b8-4b3d-b548-17faa6df3a31"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="3890aa47-0226-4c6c-8501-d4fbc6da961c"
+                      LastKnownName="ObservableCollection&lt;Customer&gt;"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e5761850-446f-4c58-b622-73a1fc0ecd46"
+            name="GetSelectedCustomers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b7efdd0a-dd53-4c81-b7dd-e54d1126ec8f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="3890aa47-0226-4c6c-8501-d4fbc6da961c"
+                      LastKnownName="ObservableCollection&lt;Customer&gt;"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="17ce42fd-c061-41e1-a956-4143c8aa5e8f"
+            name="Prop_AddCustomerCommand"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="81c0f508-337c-469f-a028-d3471a2335ba"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1812fa6e-d545-489a-80e5-12aa949f581b"
+                      LastKnownName="ICommand"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d54385d5-932e-45d8-94d1-787d6034405f"
+            name="Prop_DeleteCustomerCommand"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e9b30f97-fa17-4f30-95b4-7980d69d0783"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1812fa6e-d545-489a-80e5-12aa949f581b"
+                      LastKnownName="ICommand"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d4b119e9-392d-4d71-ad4a-1fd5d30c68f3"
+            name="Prop_SelectCustomerCommand"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="15b4f78e-ba68-433c-8472-d2d276c685f7"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1812fa6e-d545-489a-80e5-12aa949f581b"
+                      LastKnownName="ICommand"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="beabd0c1-fdcc-413e-8ea8-65d499e81443"
+            name="Prop_UnSelectCustomerCommand"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d84f9c87-68e5-4ad1-88f2-c4cd07bbccb9"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1812fa6e-d545-489a-80e5-12aa949f581b"
+                      LastKnownName="ICommand"
+                      LastKnownLocation="App Modeling Project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="1812fa6e-d545-489a-80e5-12aa949f581b"
+        name="ICommand" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="18867946-924a-40b7-b80b-98ea49d51968"
+        name="Layer 2"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <part
+            Id="5dd2ea89-8762-4b2c-aeae-c957b760d4bb"
+            name="Module 1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="7d4248fc-31e8-4977-b334-8fb02a769573"
+                LastKnownName="Component1"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="8e8add8e-faf0-4974-9c2d-e5eff2461523"
+            name="Module2"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="21b9eb25-d8e2-4f86-a5ff-80dfa2385c9a"
+                LastKnownName="Component4"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </part>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="1b4743d5-4e82-4ba9-9343-b185bef20fd1"
+        name="Layer 1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <part
+            Id="62cddea5-7462-4f2e-a386-7c10bd460d64"
+            name="Module 1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="1d70f85a-fa94-484d-ba44-3169dcf9eb3c"
+                LastKnownName="Component2"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </part>
+          <part
+            Id="d5d2270c-2195-47eb-b997-7a0120e3e4aa"
+            name="Module 2"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="5aa42c4a-e021-403a-8bd4-3b9db323c0f6"
+                LastKnownName="Component3"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </part>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="7d4248fc-31e8-4977-b334-8fb02a769573"
+        name="Component1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="1d70f85a-fa94-484d-ba44-3169dcf9eb3c"
+        name="Component2"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="5aa42c4a-e021-403a-8bd4-3b9db323c0f6"
+        name="Component3"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="21b9eb25-d8e2-4f86-a5ff-80dfa2385c9a"
+        name="Component4"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ccf3d57b-bcfe-435a-99bb-86e175f2d234"
+        name="CustomerInformationDTO"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="ee8110e8-f2ee-4ba2-929c-995486902b6e"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="5c8da10d-592e-40e1-bb1f-acd4dc235ce6"
+            name="Country"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="39e5c618-2575-473e-884e-6d466f644961"
+            name="City"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c9b9d48f-c43e-467d-939e-540753271173"
+            name="CustomerID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="306605d0-e7ab-4ccc-a925-f30f52878f97"
+        name="CustomerInfo"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="afa55488-325e-49c5-98cc-37fdfb912b88"
+        name="OrdersInfo"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="72c61360-d61e-4ec4-8a5a-c8a935b74134"
+        name="BankAccount"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8f643c58-1c25-4806-957c-1bc65bd38ac4"
+        name="Cliente"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="17e83355-1cb0-476b-af3c-1978ff77a561">
+            <classMoniker
+              Id="d64d317e-68a9-4c5b-bfd0-4bbc45b051c7"
+              LastKnownName="Handler"
+              LastKnownLocation="App Modeling Project.uml" />
+          </dependency>
+          <dependency
+            Id="f1a86bc4-86ac-44c8-9910-6326e3c08c02">
+            <classMoniker
+              Id="9ea16019-984e-4505-a755-d0d30a331a15"
+              LastKnownName="ComandoConcreto"
+              LastKnownLocation="App Modeling Project.uml" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="740f105e-4a1f-4e49-a151-382afc675058"
+            isDerived="false"
+            sourceEndRoleName="Cliente"
+            targetEndRoleName="Receptor"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="92eb8eb3-73ff-4261-acfb-ee1b836730ea"
+              LastKnownName="Receptor"
+              LastKnownLocation="App Modeling Project.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="90cea174-c048-43ed-ae60-6ba6b156afa9"
+                  name="Cliente"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6ed7c33f-d6b8-4f32-93e3-87ec867eb271"
+                  name="Receptor"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d64d317e-68a9-4c5b-bfd0-4bbc45b051c7"
+        name="Handler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="b76bdab2-89a0-4333-ba4e-e5f83b58ec32"
+            isDerived="false"
+            sourceEndRoleName="Handler"
+            targetEndRoleName="Command"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="a7057b68-47a0-4ce6-9b6c-6640f6e3c965"
+              LastKnownName="Command"
+              LastKnownLocation="App Modeling Project.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5b34b6f1-4718-4779-b038-f2cf0aef0f55"
+                  name="Handler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e797f45b-b1eb-4e6f-95a2-ac580ed9ae25"
+                  name="Command"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="6ef6d254-a496-4a7b-9f73-56efa3c5209a"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="bfda2bc1-09f5-4834-a431-27ef5eac70fa"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4c0caa88-adfb-4d75-a300-8574ee3694ae"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="a7057b68-47a0-4ce6-9b6c-6640f6e3c965"
+        name="Command"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="f6d0ca70-818d-4578-b98e-9d99cf72d8be"
+            name="Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9ea16019-984e-4505-a755-d0d30a331a15"
+        name="ComandoConcreto"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="8dbfc631-078f-49c5-a2c2-0ab106491555">
+            <interfaceMoniker
+              Id="a7057b68-47a0-4ce6-9b6c-6640f6e3c965"
+              LastKnownName="Command"
+              LastKnownLocation="App Modeling Project.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="582d8410-e4b9-4dbd-9621-7b24080016fb"
+            name="Estado"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="1c971f75-bd2a-4b76-b17c-b4297ac34e27"
+            name="Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7aad5621-f4c6-4fe3-b988-329c3e6b6644"
+        name="Command 2 concreto"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="99bc1d47-8fbf-425d-890e-2529b23040ee">
+            <interfaceMoniker
+              Id="a7057b68-47a0-4ce6-9b6c-6640f6e3c965"
+              LastKnownName="Command"
+              LastKnownLocation="App Modeling Project.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="e5c4ffd4-6a65-4271-9c3d-334622a66e01"
+            name="Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="05b9e686-a91c-4ae2-aac7-1bf6d93cca8b"
+        name="Front-Controller Secuence UMLSequenceDiagram"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="e657242f-ee94-422b-b763-95504a9083d0"
+            name="BehaviorExecutionSpecification2">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="011c66b8-5fa5-4e7d-a137-a50a70d102d8"
+                LastKnownName="handler : Handler"
+                LastKnownLocation="App Modeling Project.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="c5eea79c-d027-4967-bceb-baa3848ed335"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="App Modeling Project.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="c846bef5-3089-49f4-aad8-80b1fd63023a"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="App Modeling Project.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="01e40ff5-89e2-484c-bc7a-0f4902d830a2"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="App Modeling Project.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="c846bef5-3089-49f4-aad8-80b1fd63023a"
+            name="ExecutionOccurrenceSpecification3">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="b8a76512-7586-4a03-8636-d4439685b651"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="App Modeling Project.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="011c66b8-5fa5-4e7d-a137-a50a70d102d8"
+                LastKnownName="handler : Handler"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f8edcf76-f979-40fb-83ba-215749f455b3"
+            name="MessageOccurrenceSpecification5">
+            <covered>
+              <lifelineMoniker
+                Id="52146013-5b24-4048-aaa0-018366205b9e"
+                LastKnownName="cliente : Cliente"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="01e40ff5-89e2-484c-bc7a-0f4902d830a2"
+            name="MessageOccurrenceSpecification6">
+            <covered>
+              <lifelineMoniker
+                Id="011c66b8-5fa5-4e7d-a137-a50a70d102d8"
+                LastKnownName="handler : Handler"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="c5eea79c-d027-4967-bceb-baa3848ed335"
+            name="ExecutionOccurrenceSpecification4">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="bd3c35f6-a8ea-4172-9637-3ba15a14ca51"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="App Modeling Project.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="011c66b8-5fa5-4e7d-a137-a50a70d102d8"
+                LastKnownName="handler : Handler"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="f5819c10-421a-4956-b946-47113201036a"
+            name="BehaviorExecutionSpecification3">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="da365c58-c532-48f8-bd06-963eea377e82"
+                LastKnownName="command : Command"
+                LastKnownLocation="App Modeling Project.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="66607d62-2c20-4fde-9a47-142d474bb762"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="App Modeling Project.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="ece96371-d4c5-4885-b72f-3dc45f833e71"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="App Modeling Project.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="a7f5c388-f297-4f74-a7a3-89a6003787a3"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="App Modeling Project.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="ece96371-d4c5-4885-b72f-3dc45f833e71"
+            name="ExecutionOccurrenceSpecification5">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="0ee2b37d-4c0e-48fd-b4e1-d95e5eb8429b"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="App Modeling Project.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="da365c58-c532-48f8-bd06-963eea377e82"
+                LastKnownName="command : Command"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a7f5c388-f297-4f74-a7a3-89a6003787a3"
+            name="MessageOccurrenceSpecification8">
+            <covered>
+              <lifelineMoniker
+                Id="da365c58-c532-48f8-bd06-963eea377e82"
+                LastKnownName="command : Command"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="643b57af-bd65-4dbb-921f-699777a34f4a"
+            name="MessageOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="011c66b8-5fa5-4e7d-a137-a50a70d102d8"
+                LastKnownName="handler : Handler"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="66607d62-2c20-4fde-9a47-142d474bb762"
+            name="ExecutionOccurrenceSpecification6">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="21bac8d0-bd13-4c7f-aae5-798d1ee57a54"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="App Modeling Project.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="da365c58-c532-48f8-bd06-963eea377e82"
+                LastKnownName="command : Command"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="dbace4f6-6b8a-4cd0-9788-9bfb6c67e08d"
+            name="BehaviorExecutionSpecification4">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="ec939126-1573-4190-8cdd-66fa35514df5"
+                LastKnownName="view : View"
+                LastKnownLocation="App Modeling Project.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="7ed33a9c-a56b-4dbb-8436-fd8a30d4b9ad"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="App Modeling Project.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="ad532b66-057a-4afd-8b3a-8fb34ed54910"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="App Modeling Project.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="7483714e-0338-4abf-bd32-5b81e12aaf65"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="App Modeling Project.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="ad532b66-057a-4afd-8b3a-8fb34ed54910"
+            name="ExecutionOccurrenceSpecification7">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="ee855abb-98a7-4c8b-a909-f1fe3d68c9ee"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="App Modeling Project.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="ec939126-1573-4190-8cdd-66fa35514df5"
+                LastKnownName="view : View"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7483714e-0338-4abf-bd32-5b81e12aaf65"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="ec939126-1573-4190-8cdd-66fa35514df5"
+                LastKnownName="view : View"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7b128f18-4f30-4691-b823-fe35e556006e"
+            name="MessageOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="da365c58-c532-48f8-bd06-963eea377e82"
+                LastKnownName="command : Command"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="7ed33a9c-a56b-4dbb-8436-fd8a30d4b9ad"
+            name="ExecutionOccurrenceSpecification8">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="60100fea-0952-4d57-9f52-b1df547ea6f7"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="App Modeling Project.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="ec939126-1573-4190-8cdd-66fa35514df5"
+                LastKnownName="view : View"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="52146013-5b24-4048-aaa0-018366205b9e"
+            name="cliente : Cliente"
+            isActor="false"
+            lifelineDisplayName="cliente : Cliente">
+            <represents>
+              <propertyMoniker
+                Id="b5e52270-3fc1-4294-871b-f00c87f58863"
+                LastKnownLocation="App Modeling Project.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="f8edcf76-f979-40fb-83ba-215749f455b3"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="App Modeling Project.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="011c66b8-5fa5-4e7d-a137-a50a70d102d8"
+            name="handler : Handler"
+            isActor="false"
+            lifelineDisplayName="handler : Handler">
+            <represents>
+              <propertyMoniker
+                Id="378f2dee-4e32-40c4-8dff-47c6f584ae60"
+                LastKnownLocation="App Modeling Project.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="c846bef5-3089-49f4-aad8-80b1fd63023a"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="App Modeling Project.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="c5eea79c-d027-4967-bceb-baa3848ed335"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="App Modeling Project.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="643b57af-bd65-4dbb-921f-699777a34f4a"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="App Modeling Project.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="da365c58-c532-48f8-bd06-963eea377e82"
+            name="command : Command"
+            isActor="false"
+            lifelineDisplayName="command : Command">
+            <represents>
+              <propertyMoniker
+                Id="82f9af96-63b7-4cf0-afa8-55d583fe884b"
+                LastKnownLocation="App Modeling Project.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="ece96371-d4c5-4885-b72f-3dc45f833e71"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="App Modeling Project.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="66607d62-2c20-4fde-9a47-142d474bb762"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="App Modeling Project.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="7b128f18-4f30-4691-b823-fe35e556006e"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="App Modeling Project.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="ec939126-1573-4190-8cdd-66fa35514df5"
+            name="view : View"
+            isActor="false"
+            lifelineDisplayName="view : View">
+            <represents>
+              <propertyMoniker
+                Id="d905e8c1-885c-40db-a21f-cf8a6e5566cd"
+                LastKnownLocation="App Modeling Project.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="ad532b66-057a-4afd-8b3a-8fb34ed54910"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="App Modeling Project.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="7ed33a9c-a56b-4dbb-8436-fd8a30d4b9ad"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="App Modeling Project.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="596a852e-536f-4825-a1b2-aebf66cf2f45"
+            name="Send (Request)"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="f8edcf76-f979-40fb-83ba-215749f455b3"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="App Modeling Project.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="01e40ff5-89e2-484c-bc7a-0f4902d830a2"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="App Modeling Project.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="61af9b45-ba35-4607-bed8-b2facc90ad2e"
+            name="Execute (Request)"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="643b57af-bd65-4dbb-921f-699777a34f4a"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="App Modeling Project.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a7f5c388-f297-4f74-a7a3-89a6003787a3"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="App Modeling Project.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="3cb7c203-11ca-42c9-98c7-52a3a1b7d212"
+            name="Transfer (Request)"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7b128f18-4f30-4691-b823-fe35e556006e"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="App Modeling Project.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7483714e-0338-4abf-bd32-5b81e12aaf65"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="App Modeling Project.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+        <ownedAttributesInternal>
+          <property
+            Id="b5e52270-3fc1-4294-871b-f00c87f58863"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="8f643c58-1c25-4806-957c-1bc65bd38ac4"
+                LastKnownName="Cliente"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="378f2dee-4e32-40c4-8dff-47c6f584ae60"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="d64d317e-68a9-4c5b-bfd0-4bbc45b051c7"
+                LastKnownName="Handler"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="82f9af96-63b7-4cf0-afa8-55d583fe884b"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="a7057b68-47a0-4ce6-9b6c-6640f6e3c965"
+                LastKnownName="Command"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d905e8c1-885c-40db-a21f-cf8a6e5566cd"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="273e27c2-58d6-4f48-ae7f-f564fd145324"
+                LastKnownName="View"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="b8a76512-7586-4a03-8636-d4439685b651"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="bd3c35f6-a8ea-4172-9637-3ba15a14ca51"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="0ee2b37d-4c0e-48fd-b4e1-d95e5eb8429b"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="21bac8d0-bd13-4c7f-aae5-798d1ee57a54"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="ee855abb-98a7-4c8b-a909-f1fe3d68c9ee"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="60100fea-0952-4d57-9f52-b1df547ea6f7"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c3353bd7-eb93-4870-8305-6a7b685c45fa"
+        name="Invocador"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="d3e39339-f77d-4b47-b9d8-ecaa3ad161f5"
+            isDerived="false"
+            sourceEndRoleName="Invocador"
+            targetEndRoleName="Command"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="a7057b68-47a0-4ce6-9b6c-6640f6e3c965"
+              LastKnownName="Command"
+              LastKnownLocation="App Modeling Project.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a11dc0d9-dffa-4a79-9ebf-31a7c8e6abcf"
+                  name="Invocador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0e15ea10-beca-49fa-a921-5b201d9049b8"
+                  name="Command"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="92eb8eb3-73ff-4261-acfb-ee1b836730ea"
+        name="Receptor"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="470f4ce3-ec9b-4638-bcc2-2977a16a0f8c"
+            isDerived="false"
+            sourceEndRoleName="Receptor"
+            targetEndRoleName="ComandoConcreto"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="9ea16019-984e-4505-a755-d0d30a331a15"
+              LastKnownName="ComandoConcreto"
+              LastKnownLocation="App Modeling Project.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="42966f80-cd83-4bce-ad98-1f7fa8deeee4"
+                  name="Receptor"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f54b60b3-44b8-482d-8cbf-7bd14ea2a231"
+                  name="ComandoConcreto"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="93180494-776a-4586-8b34-a78b114f0e5c"
+            name="Action"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="16a2fd47-db6b-498b-920d-71ca2c6b7c6f"
+        name="Command Structure Secuence UMLSequenceDiagram1"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="a5d454c3-5e34-4f96-a563-179b486e81cd"
+            name="BehaviorExecutionSpecification2">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="a184de22-54cb-4bb5-946e-642ce04c6d5d"
+                LastKnownName="comandoConcreto : ComandoConcreto"
+                LastKnownLocation="App Modeling Project.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="74bcabb3-7752-49e9-9866-f1c5ae427972"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="App Modeling Project.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="a1741f38-27ea-4315-9b2d-1af3e920cb20"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="App Modeling Project.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="11635dfd-0791-41e9-a858-6ff28247c241"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="App Modeling Project.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="a1741f38-27ea-4315-9b2d-1af3e920cb20"
+            name="ExecutionOccurrenceSpecification3">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="19c29c98-3ada-4f29-aa9a-8ed1a16ec29e"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="App Modeling Project.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="a184de22-54cb-4bb5-946e-642ce04c6d5d"
+                LastKnownName="comandoConcreto : ComandoConcreto"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="11635dfd-0791-41e9-a858-6ff28247c241"
+            name="MessageOccurrenceSpecification6">
+            <covered>
+              <lifelineMoniker
+                Id="a184de22-54cb-4bb5-946e-642ce04c6d5d"
+                LastKnownName="comandoConcreto : ComandoConcreto"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5b6968d5-00b9-4320-b134-7a3e1c5273f0"
+            name="MessageOccurrenceSpecification5">
+            <covered>
+              <lifelineMoniker
+                Id="452b00ac-d11c-4ee6-a2b6-828693448ca4"
+                LastKnownName="cliente : Cliente"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="74bcabb3-7752-49e9-9866-f1c5ae427972"
+            name="ExecutionOccurrenceSpecification4">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="daabd6e1-b7c2-4596-acf6-ade622af3059"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="App Modeling Project.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="a184de22-54cb-4bb5-946e-642ce04c6d5d"
+                LastKnownName="comandoConcreto : ComandoConcreto"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="ae014b87-f642-4ea5-8506-96ea61934907"
+            name="BehaviorExecutionSpecification3">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="0aa1ea0e-fe10-4ed5-9d8b-69982ba1533b"
+                LastKnownName="invocador : Invocador"
+                LastKnownLocation="App Modeling Project.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="73e27704-021a-428a-9b1f-8855a0c41d0b"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="App Modeling Project.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="852b88c0-89af-453f-ab11-ece1fafa7045"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="App Modeling Project.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="06774c14-6155-4389-b0b6-f2cdf77d3a6c"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="App Modeling Project.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="852b88c0-89af-453f-ab11-ece1fafa7045"
+            name="ExecutionOccurrenceSpecification5">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="0fb8d68f-4ab5-421c-969d-e80c3de9951f"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="App Modeling Project.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="0aa1ea0e-fe10-4ed5-9d8b-69982ba1533b"
+                LastKnownName="invocador : Invocador"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e79748a2-dac7-4dbf-ac42-ca34a53af65a"
+            name="MessageOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="452b00ac-d11c-4ee6-a2b6-828693448ca4"
+                LastKnownName="cliente : Cliente"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="06774c14-6155-4389-b0b6-f2cdf77d3a6c"
+            name="MessageOccurrenceSpecification8">
+            <covered>
+              <lifelineMoniker
+                Id="0aa1ea0e-fe10-4ed5-9d8b-69982ba1533b"
+                LastKnownName="invocador : Invocador"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="73e27704-021a-428a-9b1f-8855a0c41d0b"
+            name="ExecutionOccurrenceSpecification6">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="fe596d97-be09-4bb2-9abc-7d5c9c35e38b"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="App Modeling Project.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="0aa1ea0e-fe10-4ed5-9d8b-69982ba1533b"
+                LastKnownName="invocador : Invocador"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="e2dab503-b229-46e2-be0b-2d411cb9d421"
+            name="BehaviorExecutionSpecification4">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="a184de22-54cb-4bb5-946e-642ce04c6d5d"
+                LastKnownName="comandoConcreto : ComandoConcreto"
+                LastKnownLocation="App Modeling Project.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="992f2361-64a9-401b-93fd-618b95fe4ece"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="App Modeling Project.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="69aefea1-f138-41ad-aab9-99d2d22b01a4"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="App Modeling Project.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="52702ee1-f307-49bd-8364-e8dbcba50865"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="App Modeling Project.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="69aefea1-f138-41ad-aab9-99d2d22b01a4"
+            name="ExecutionOccurrenceSpecification7">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="531f3a1b-fe19-4f73-8dc0-d3d50231b00f"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="App Modeling Project.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="a184de22-54cb-4bb5-946e-642ce04c6d5d"
+                LastKnownName="comandoConcreto : ComandoConcreto"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d469d9d2-5fb3-4530-beb4-6356ac4abddb"
+            name="MessageOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="0aa1ea0e-fe10-4ed5-9d8b-69982ba1533b"
+                LastKnownName="invocador : Invocador"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="52702ee1-f307-49bd-8364-e8dbcba50865"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="a184de22-54cb-4bb5-946e-642ce04c6d5d"
+                LastKnownName="comandoConcreto : ComandoConcreto"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="992f2361-64a9-401b-93fd-618b95fe4ece"
+            name="ExecutionOccurrenceSpecification8">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="3ff69774-707d-4f26-b397-89390f296d87"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="App Modeling Project.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="a184de22-54cb-4bb5-946e-642ce04c6d5d"
+                LastKnownName="comandoConcreto : ComandoConcreto"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="076332fe-e838-4a92-8dbf-c0f4dcff8ffa"
+            name="BehaviorExecutionSpecification5">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="7c7259aa-5a98-4337-b4d0-9fb60062365c"
+                LastKnownName="receptor : Receptor"
+                LastKnownLocation="App Modeling Project.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="e29b050f-136c-4832-a002-85766afc8e37"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="App Modeling Project.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="f64ec2b4-8f4a-4129-8ca0-1038b452a436"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="App Modeling Project.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="6e8efa3f-74fa-4ae0-9925-3554feb4dba1"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="App Modeling Project.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="f64ec2b4-8f4a-4129-8ca0-1038b452a436"
+            name="ExecutionOccurrenceSpecification9">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="77bf92c9-5a6e-41a8-8e7e-2c8ffee1401a"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="App Modeling Project.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="7c7259aa-5a98-4337-b4d0-9fb60062365c"
+                LastKnownName="receptor : Receptor"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f75cda9a-013d-4f74-b738-d7c376682968"
+            name="MessageOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="a184de22-54cb-4bb5-946e-642ce04c6d5d"
+                LastKnownName="comandoConcreto : ComandoConcreto"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="6e8efa3f-74fa-4ae0-9925-3554feb4dba1"
+            name="MessageOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="7c7259aa-5a98-4337-b4d0-9fb60062365c"
+                LastKnownName="receptor : Receptor"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="e29b050f-136c-4832-a002-85766afc8e37"
+            name="ExecutionOccurrenceSpecification10">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="9f0c68ca-2b0d-4b03-86c5-5ac3092e1129"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="App Modeling Project.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="7c7259aa-5a98-4337-b4d0-9fb60062365c"
+                LastKnownName="receptor : Receptor"
+                LastKnownLocation="App Modeling Project.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="7c7259aa-5a98-4337-b4d0-9fb60062365c"
+            name="receptor : Receptor"
+            isActor="false"
+            lifelineDisplayName="receptor : Receptor">
+            <represents>
+              <propertyMoniker
+                Id="2e9bca84-d73f-41ad-ac67-375987c79355"
+                LastKnownLocation="App Modeling Project.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="f64ec2b4-8f4a-4129-8ca0-1038b452a436"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="App Modeling Project.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="e29b050f-136c-4832-a002-85766afc8e37"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="App Modeling Project.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="452b00ac-d11c-4ee6-a2b6-828693448ca4"
+            name="cliente : Cliente"
+            isActor="false"
+            lifelineDisplayName="cliente : Cliente">
+            <represents>
+              <propertyMoniker
+                Id="ab101718-de89-4f24-9593-3d0aec8f26e4"
+                LastKnownLocation="App Modeling Project.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="5b6968d5-00b9-4320-b134-7a3e1c5273f0"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="App Modeling Project.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="e79748a2-dac7-4dbf-ac42-ca34a53af65a"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="App Modeling Project.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="a184de22-54cb-4bb5-946e-642ce04c6d5d"
+            name="comandoConcreto : ComandoConcreto"
+            isActor="false"
+            lifelineDisplayName="comandoConcreto : ComandoConcreto">
+            <represents>
+              <propertyMoniker
+                Id="a2c50de5-f52a-4d42-8188-796b71494995"
+                LastKnownLocation="App Modeling Project.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="a1741f38-27ea-4315-9b2d-1af3e920cb20"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="App Modeling Project.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="74bcabb3-7752-49e9-9866-f1c5ae427972"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="App Modeling Project.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="69aefea1-f138-41ad-aab9-99d2d22b01a4"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="App Modeling Project.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="992f2361-64a9-401b-93fd-618b95fe4ece"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="App Modeling Project.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="f75cda9a-013d-4f74-b738-d7c376682968"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="App Modeling Project.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="0aa1ea0e-fe10-4ed5-9d8b-69982ba1533b"
+            name="invocador : Invocador"
+            isActor="false"
+            lifelineDisplayName="invocador : Invocador">
+            <represents>
+              <propertyMoniker
+                Id="7eddee06-5d01-4480-9475-9e6482f64149"
+                LastKnownLocation="App Modeling Project.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="852b88c0-89af-453f-ab11-ece1fafa7045"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="App Modeling Project.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="73e27704-021a-428a-9b1f-8855a0c41d0b"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="App Modeling Project.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="d469d9d2-5fb3-4530-beb4-6356ac4abddb"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="App Modeling Project.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="d7ad7b3f-991d-4339-967a-6a13af8ed22d"
+            name="new Command"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="5b6968d5-00b9-4320-b134-7a3e1c5273f0"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="App Modeling Project.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="11635dfd-0791-41e9-a858-6ff28247c241"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="App Modeling Project.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="e41b10a1-2c8a-46b8-9609-3021db0ccb6f"
+            name="storeCommand(aCommand)"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="e79748a2-dac7-4dbf-ac42-ca34a53af65a"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="App Modeling Project.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="06774c14-6155-4389-b0b6-f2cdf77d3a6c"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="App Modeling Project.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="380efe99-0ab5-4f99-8a7d-e5e0c0f9ae14"
+            name="Execute()"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="d469d9d2-5fb3-4530-beb4-6356ac4abddb"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="App Modeling Project.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="52702ee1-f307-49bd-8364-e8dbcba50865"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="App Modeling Project.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="57b4ed2d-a23d-44b3-b2b5-ae72be1e321b"
+            name="Action()"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="f75cda9a-013d-4f74-b738-d7c376682968"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="App Modeling Project.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="6e8efa3f-74fa-4ae0-9925-3554feb4dba1"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="App Modeling Project.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+        <ownedAttributesInternal>
+          <property
+            Id="2e9bca84-d73f-41ad-ac67-375987c79355"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="92eb8eb3-73ff-4261-acfb-ee1b836730ea"
+                LastKnownName="Receptor"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ab101718-de89-4f24-9593-3d0aec8f26e4"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="8f643c58-1c25-4806-957c-1bc65bd38ac4"
+                LastKnownName="Cliente"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a2c50de5-f52a-4d42-8188-796b71494995"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="9ea16019-984e-4505-a755-d0d30a331a15"
+                LastKnownName="ComandoConcreto"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="7eddee06-5d01-4480-9475-9e6482f64149"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="c3353bd7-eb93-4870-8305-6a7b685c45fa"
+                LastKnownName="Invocador"
+                LastKnownLocation="App Modeling Project.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="19c29c98-3ada-4f29-aa9a-8ed1a16ec29e"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="daabd6e1-b7c2-4596-acf6-ade622af3059"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="0fb8d68f-4ab5-421c-969d-e80c3de9951f"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="fe596d97-be09-4bb2-9abc-7d5c9c35e38b"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="531f3a1b-fe19-4f73-8dc0-d3d50231b00f"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="3ff69774-707d-4f26-b397-89390f296d87"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="77bf92c9-5a6e-41a8-8e7e-2c8ffee1401a"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="9f0c68ca-2b0d-4b03-86c5-5ac3092e1129"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

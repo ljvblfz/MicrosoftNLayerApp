@@ -1,0 +1,843 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" xmlns:local="clr-namespace:Microsoft.Samples.NLayerApp.Presentation.Windows.WPF.Client.Controls"
+    xmlns:ViewModels="clr-namespace:Microsoft.Samples.NLayerApp.Presentation.Windows.WPF.Client.ViewModels"
+	x:Class="Microsoft.Samples.NLayerApp.Presentation.Windows.WPF.Client.MainWindow"
+	x:Name="Window"
+	Title="NLayerApp WPF Client" Width="900" Height="600" WindowStartupLocation="CenterScreen" WindowStyle="None" MinWidth="800" MinHeight="600">
+
+	<Window.DataContext>
+        <ViewModels:VMMainWindow/>
+	</Window.DataContext>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.278*"/>
+            <RowDefinition Height="0.627*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="0.095*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="MenuColumn" Width="Auto"/>
+            <ColumnDefinition Width="0.113*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.ColumnSpan="3" Grid.RowSpan="4">
+            <Rectangle.Fill>
+                <RadialGradientBrush Center="0.58,0.526" GradientOrigin="0.768,0.763" RadiusX="0.762" RadiusY="0.498">
+                    <GradientStop Color="#FF555555" Offset="0.009"/>
+                    <GradientStop Color="#FF2B2B2B" Offset="1"/>
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Grid Grid.Column="2" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top">
+            <Border BorderBrush="#FF727272" BorderThickness="1,0,0,1" Margin="0" Background="#FF252525" CornerRadius="2" Padding="6,3">
+                <StackPanel Orientation="Horizontal" Margin="0" d:LayoutOverrides="Width">
+                    <Button x:Name="BTN_Minimize" HorizontalAlignment="Left" Style="{DynamicResource CloseButton}" VerticalAlignment="Center" Margin="0,0,4,0" Foreground="#CC000000" BorderBrush="{x:Null}" Background="{x:Null}" Height="15" Width="15" Command="{Binding MinimizeWindowCommand}">
+                        <Path x:Name="Shape_1_copy" Data="F1M9.166,1.651C9.166,1.651 11.205,1.636 11.991,1.636 12.777,1.636 13.414,2.273 13.414,3.059 13.414,3.845 12.777,4.482 11.991,4.482 11.205,4.482 9.166,4.484 9.166,4.484 9.166,4.484 9.063,4.484 9.063,4.484 9.063,4.484 9.063,4.587 9.063,4.587 9.063,4.587 6.229,4.587 6.229,4.587 6.229,4.587 4.173,4.585 3.387,4.585 2.601,4.585 1.964,3.948 1.964,3.162 1.964,2.376 2.601,1.738 3.387,1.738 4.173,1.738 6.229,1.753 6.229,1.753 6.229,1.753 6.332,1.753 6.332,1.753 6.332,1.753 6.332,1.651 6.332,1.651" Fill="White" Margin="0,0,0,-5" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="15"/>
+                    </Button>
+                    <Button x:Name="BTN_Maximize" Style="{DynamicResource CloseButton}" VerticalAlignment="Center" Margin="0,0,4,0" Foreground="#CC000000" BorderBrush="{x:Null}" Background="{x:Null}" Height="15" Command="{Binding MaximizeWindowCommand}">
+                        <Path x:Name="Shape_2" Data="F1M3.573,4.878C3.573,4.878 3.573,11.238 3.573,11.238 3.573,11.238 11.556,11.238 11.556,11.238 11.556,11.238 11.556,4.878 11.556,4.878 11.556,4.878 3.573,4.878 3.573,4.878z M1.95,1.621C1.95,1.621 13.307,1.621 13.307,1.621 13.307,1.621 13.307,12.718 13.307,12.718 13.307,12.718 1.95,12.718 1.95,12.718 1.95,12.718 1.95,1.621 1.95,1.621z" Fill="White" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="15" Height="15"/>
+                    </Button>
+                    <Button x:Name="BTN_Close" HorizontalAlignment="Right" Style="{DynamicResource CloseButton}" VerticalAlignment="Center" Margin="0" Foreground="#CC000000" BorderBrush="{x:Null}" Background="{x:Null}" Height="15" Width="15" Command="{Binding CloseWindowCommand}">
+                        <Path x:Name="Shape_6" Data="F1M7.699,6.052C7.699,6.052 7.626,6.125 7.626,6.125 7.626,6.125 7.699,6.197 7.699,6.197 7.699,6.197 9.139,7.641 9.695,8.196 10.251,8.752 10.251,9.653 9.695,10.209 9.139,10.765 8.238,10.765 7.683,10.209 7.127,9.653 5.695,8.201 5.695,8.201 5.695,8.201 4.239,9.653 3.684,10.209 3.128,10.765 2.227,10.765 1.671,10.209 1.115,9.653 1.115,8.752 1.671,8.196 2.227,7.641 3.691,6.197 3.691,6.197 3.691,6.197 3.764,6.125 3.764,6.125 3.764,6.125 3.691,6.052 3.691,6.052 3.691,6.052 2.227,4.608 1.671,4.053 1.115,3.497 1.115,2.596 1.671,2.04 2.227,1.484 3.128,1.484 3.684,2.04 4.239,2.596 5.695,4.048 5.695,4.048 5.695,4.048 7.127,2.596 7.683,2.04 8.238,1.484 9.139,1.484 9.695,2.04 10.251,2.596 10.251,3.497 9.695,4.053 9.139,4.608 7.699,6.052 7.699,6.052z" Fill="White" Margin="0,0,1,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="11" Height="11"/>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <Grid x:Name="grid" RenderTransformOrigin="0.5,0.5" Width="196" HorizontalAlignment="Left" Margin="0" d:LayoutOverrides="Width" Grid.RowSpan="4">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    <SkewTransform AngleX="0" AngleY="0"/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform Y="0"/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Rectangle Margin="0,0,-32,0">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.914,0.5" StartPoint="0.754,0.5">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#00000000" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Stroke="{x:Null}" VerticalAlignment="Stretch" Height="Auto" Fill="#FF1D1D1D"/>
+            <Rectangle Stroke="{x:Null}" VerticalAlignment="Stretch" Height="Auto">
+                <Rectangle.Fill>
+                    <RadialGradientBrush Center="0.054,-0.07" GradientOrigin="0.054,-0.07" RadiusX="1.923" RadiusY="0.313">
+                        <GradientStop Offset="1"/>
+                        <GradientStop Color="#3EFFFFFF"/>
+                    </RadialGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Fill="#66000000" Stroke="{x:Null}" Margin="0,0,0,0" VerticalAlignment="Stretch" Height="Auto" Width="1" HorizontalAlignment="Right"/>
+            <Rectangle Fill="#4CFFFFFF" Stroke="{x:Null}" HorizontalAlignment="Right" Margin="0,0,1,0" VerticalAlignment="Stretch" Width="1" Height="Auto"/>
+            <Grid VerticalAlignment="Top" Margin="0">
+                <Border BorderBrush="#FFA9A7A7" BorderThickness="0,0,1,1" Margin="0,0,2,-3" d:LayoutOverrides="HorizontalAlignment">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF8D8D8D" Offset="0"/>
+                            <GradientStop Color="#FF727272" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+                <Border BorderBrush="#FF0C0C0C" BorderThickness="0,0,0,1" Margin="0,0,2,-2" d:LayoutOverrides="HorizontalAlignment">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF8D8D8D" Offset="0"/>
+                            <GradientStop Color="#FF727272" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+                <!--<ToggleButton x:Name="HideButton" HorizontalAlignment="Right" Content="" Margin="0,0,10,0" Style="{DynamicResource HideButton}" d:LayoutOverrides="Height" VerticalAlignment="Center" Checked="HideButton_Checked" Unchecked="HideButton_Unchecked" RenderTransformOrigin="0.5,0.5">
+                    <ToggleButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ToggleButton.RenderTransform>
+                </ToggleButton>-->
+            </Grid>
+            <Grid x:Name="Grip" VerticalAlignment="Top" Margin="0" Cursor="Hand" MouseLeftButtonDown="Grip_MouseLeftButtonDown">
+                <Border BorderBrush="#FFA9A7A7" BorderThickness="0,0,1,1" Margin="0,0,2,-3" d:LayoutOverrides="HorizontalAlignment">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF8D8D8D" Offset="0"/>
+                            <GradientStop Color="#FF727272" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+                <Border BorderBrush="#FF0C0C0C" BorderThickness="0,0,0,1" Margin="0,0,2,-2" d:LayoutOverrides="HorizontalAlignment">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF8D8D8D" Offset="0"/>
+                            <GradientStop Color="#FF727272" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+                <Grid Margin="0">
+                    <Ellipse Margin="64.173,3.496,126.826,6.503" Width="5" Height="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="70.841,3.496,120.158,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="77.509,3.496,113.49,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="84.177,3.496,106.822,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="90.845,3.496,100.154,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="68.173,0,122.826,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="74.841,0,116.158,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="81.509,0,109.49,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="88.177,0,102.822,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="94.845,0,96.154,1.503" Width="5" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="30.833,3.496,160.166,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="37.501,3.496,153.498,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="44.169,3.496,146.83,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="50.837,3.496,140.162,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="57.505,3.496,133.494,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="34.833,0,156.166,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="41.501,0,149.498,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="48.169,0,142.83,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="54.837,0,136.162,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="61.505,0,129.494,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="131.673,3.496,59.326,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="138.341,3.496,52.658,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="145.009,3.496,45.99,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="151.677,3.496,39.322,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="158.345,3.496,32.654,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="135.673,0,55.326,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="142.341,0,48.658,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="149.009,0,41.99,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="155.677,0,35.322,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="98.333,3.496,92.666,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="105.001,3.496,85.998,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="111.669,3.496,79.33,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="118.337,3.496,72.662,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="125.005,3.496,65.994,6.503" Width="5">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="102.333,0,88.666,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="109.001,0,81.998,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="115.669,0,75.33,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="122.337,0,68.662,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="5" Margin="129.005,0,61.994,1.503" Width="5" VerticalAlignment="Bottom">
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF494949"/>
+                                <GradientStop Color="DarkGray" Offset="1"/>
+                                <GradientStop Color="#FF5A5A5A" Offset="0.433"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                        <Ellipse.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF606060" Offset="1"/>
+                                <GradientStop Color="#FF121212"/>
+                                <GradientStop Color="#FE212121" Offset="0.322"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Grid>
+            </Grid>
+            <StackPanel x:Name="stackPanel" Margin="0,113,1,0" VerticalAlignment="Top" Orientation="Vertical">
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF6B9B17" Offset="1"/>
+                        <GradientStop Color="#FFACDC58"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <Expander x:Name="expander" Style="{DynamicResource MainMenuExpanderStyle}" Margin="-1,0,0,0">
+                    <Expander.Header>
+                        <local:MenuIconButton Style="{DynamicResource MenuIconButton}" Caption="Customer" Command="{Binding CustomerListCommand, Mode=OneWay}">
+                            <local:MenuIconButton.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FF781919" Offset="1"/>
+                                </LinearGradientBrush>
+                            </local:MenuIconButton.Background>
+                            <Image Source="Images/CustomerIcon.png" Stretch="Fill" Width="18" Height="22" Margin="0,2,0,0"/>
+                        </local:MenuIconButton>
+                    </Expander.Header>
+                    <StackPanel>
+                        <local:MainMenuButton Content="Customer List"  VerticalAlignment="Top" Margin="0" Command="{Binding CustomerListCommand, Mode=OneWay}" ToolTip="Customer List">
+                            <Image Source="Images/CustomerList.png" Stretch="Fill"/>
+                        </local:MainMenuButton>
+                        <local:MainMenuButton Content="Add Customer"  VerticalAlignment="Top" Margin="0" Command="{Binding AddCustomerCommand, Mode=OneWay}" ToolTip="Add Customer">
+                            <Image Source="Images/CustomerAdd.png" Stretch="Fill"/>
+                        </local:MainMenuButton>
+                    </StackPanel>
+                </Expander>
+                <Rectangle Fill="#FF174709" Margin="0,-1,1,0" Height="1"/>
+                <Expander x:Name="expander1" Style="{DynamicResource MainMenuExpander}" Margin="-1,0,0,0">
+                    <Expander.Header>
+                        <local:MenuIconButton Style="{DynamicResource MenuIconButton}" Caption="Banking" Command="{Binding TransferListCommand, Mode=OneWay}">
+                            <Image Source="Images/Bankingicon.png" Stretch="Fill" Width="18" Height="22" Margin="0,2,0,0"/>
+                        </local:MenuIconButton>
+                    </Expander.Header>
+                    <StackPanel>
+                        <local:MainMenuButton Content="Transfer List"  VerticalAlignment="Top" Margin="0" Command="{Binding TransferListCommand, Mode=OneWay}">
+                            <Image Source="Images/TransferList.png" Stretch="Fill"/>
+                        </local:MainMenuButton>
+                        <local:MainMenuButton Content="Perform Transfer"  VerticalAlignment="Top" Margin="0" Command="{Binding PerformTransferCommand, Mode=OneWay}" ToolTip="Perform Transfer">
+                            <Image Source="Images/Transfericon.png" Stretch="Fill"/>
+                        </local:MainMenuButton>
+                    </StackPanel>
+                </Expander>
+                <Rectangle Fill="#FF174709" Margin="0,-1,1,0" Height="1"/>
+                <Expander x:Name="expander2" Style="{DynamicResource MainMenuExpanderStyle}" Margin="-1,0,0,0">
+                    <Expander.Header>
+                        <local:MenuIconButton Style="{DynamicResource MenuIconButton}" Caption="Orders" Command="{Binding CustomerListCommand, Mode=OneWay}">
+                            <local:MenuIconButton.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                    <GradientStop Color="#FF781919" Offset="1"/>
+                                </LinearGradientBrush>
+                            </local:MenuIconButton.Background>
+                            <Image Source="Images/OrdersIcon.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Width="23" Height="18"/>
+                        </local:MenuIconButton>
+                    </Expander.Header>
+                    <StackPanel>
+                        <local:MainMenuButton Content="Order List"  VerticalAlignment="Top" Margin="0" Command="{Binding OrderListCommand, Mode=OneWay}" ToolTip="Order List">
+                            <Image Height="23" Source="Images/OrderList.png" Stretch="Fill" Width="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </local:MainMenuButton>
+                        <local:MainMenuButton Content="Perform Order"  VerticalAlignment="Top" Margin="0" Command="{Binding PerformOrderCommand, Mode=OneWay}" ToolTip="Perform Order">
+                            <Image Height="18" Source="Images/OrderPerform0.png" Stretch="Fill" Width="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </local:MainMenuButton>
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+            <Canvas x:Name="SamplesLogo" ClipToBounds="True" HorizontalAlignment="Left" Height="51" Margin="10,41,0,0" UseLayoutRounding="False" VerticalAlignment="Top" Width="173">
+                <Canvas x:Name="LOGO" Height="42" Canvas.Left="6" Canvas.Top="2" Width="164">
+                    <Path x:Name="Shape_1" Data="F1M123.005,12.476C118.49,11.568 115.12,22.414 119.421,23.298 124.199,24.301 127.401,13.36 123.005,12.476z M83.012,12.452C78.545,11.568 75.2,22.366 79.476,23.274 84.207,24.253 87.384,13.336 83.012,12.452z M158.697,10.302C158.697,10.302 158.577,11.138 158.577,11.138 158.577,11.138 159.055,11.138 159.055,11.138 159.055,11.138 159.534,11.209 159.581,10.732 159.581,10.302 159.175,10.302 159.175,10.302 159.175,10.302 158.697,10.302 158.697,10.302z M158.426,9.967C158.755,9.967 159.414,9.967 159.414,9.967 159.414,9.967 160.059,10.134 160.011,10.756 159.94,11.496 159.342,11.496 159.295,11.496 159.295,11.496 159.772,12.452 159.772,12.452 159.772,12.452 159.199,12.452 159.199,12.452 159.199,12.452 158.816,11.496 158.816,11.496 158.816,11.496 158.482,11.496 158.482,11.496 158.482,11.496 158.339,12.523 158.339,12.523 158.339,12.523 157.837,12.523 157.837,12.523 157.837,12.523 158.243,9.967 158.243,9.967 158.243,9.967 158.316,9.967 158.426,9.967z M158.864,9.25C156.165,9.25 156.165,13.168 158.864,13.168 161.588,13.168 161.588,9.25 158.864,9.25z M34.371,8.844C34.371,8.844 41.132,8.844 41.132,8.844 41.132,8.844 36.999,27.431 36.999,27.431 36.999,27.431 30.238,27.407 30.238,27.407 30.238,27.407 34.371,8.844 34.371,8.844z M158.864,8.82C162.089,8.82 162.089,13.622 158.864,13.622 155.639,13.622 155.639,8.82 158.864,8.82z M52.552,8.342C60.627,8.749 60.22,15.462 60.149,15.749 60.149,15.749 53.173,15.749 53.173,15.749 53.268,15.486 53.507,12.714 51.285,12.763 47.152,12.882 44.214,23.131 48.777,23.227 50.88,23.298 51.859,20.861 52.05,20.55 52.05,20.55 59.073,20.55 59.073,20.55 59.073,20.694 56.948,28.148 47.606,27.957 35.088,27.694 38.336,7.626 52.552,8.342z M123.459,8.104C136.575,8.749 132.848,28.578 119.015,28.028 105.422,27.455 109.507,7.434 123.459,8.104z M102.626,8.056C112.302,8.175 110.486,13.861 110.606,14.244 110.606,14.244 104.155,14.244 104.155,14.244 104.155,14.244 104.848,11.854 101.934,11.854 99.281,11.854 98.637,14.244 101.695,14.888 105.422,15.701 109.697,15.892 109.936,20.694 110.008,22.032 109.22,28.291 99.472,28.1 90.537,27.909 89.916,23.704 90.155,21.745 88.531,25.162 84.469,28.196 79.046,28.004 70.813,27.744 69.084,20.254 72.094,14.541 70.627,14.552 67.464,15.169 66.312,20.814 66.312,20.814 64.807,27.431 64.807,27.431 64.807,27.431 58.428,27.431 58.428,27.431 58.428,27.431 62.61,8.844 62.61,8.844 62.61,8.844 68.654,8.844 68.654,8.844 68.654,8.844 68.128,11.138 68.128,11.138 68.964,10.11 69.968,9.465 71.234,9.036 72.261,8.701 73.241,8.534 74.388,8.534 74.388,8.534 73.334,12.634 73.334,12.634 75.521,9.865 79.003,7.903 83.514,8.128 89.844,8.438 92.258,13.24 91.493,17.971 91.374,18.807 91.302,18.926 91.063,18.998 91.063,18.998 84.851,21.052 84.851,21.052 84.851,21.052 97.465,21.029 97.465,21.029 97.465,21.029 96.391,23.823 100.357,23.847 103.104,23.847 104.179,20.718 100.476,20.072 98.78,19.763 92.21,18.663 92.951,13.599 93.571,9.441 97.896,7.984 102.626,8.056z M142.329,2.469C143.903,2.424 145.223,2.585 145.223,2.585 145.223,2.585 144.482,6.097 144.482,6.097 142.619,6.097 142.26,6.813 141.95,8.223 141.95,8.223 141.831,8.844 141.831,8.844 141.831,8.844 145.772,8.844 145.772,8.844 145.772,8.844 146.752,4.353 146.752,4.353 146.752,4.353 152.916,4.353 152.916,4.353 152.916,4.353 151.96,8.844 151.96,8.844 151.96,8.844 155.137,8.844 155.137,8.844 155.137,8.844 154.206,13.121 154.206,13.121 154.206,13.121 151.029,13.121 151.029,13.121 151.029,13.121 149.285,21.268 149.285,21.268 149.213,21.721 149.046,22.127 149.213,22.629 149.475,23.37 152.127,23.059 152.127,23.059 152.127,23.059 151.1,27.311 151.1,27.311 151.1,27.311 145.701,27.933 143.885,26.667 143.073,26.117 142.188,24.971 142.738,22.51 142.738,22.51 144.817,13.144 144.817,13.144 144.817,13.144 141.114,13.121 141.114,13.121 141.114,13.121 137.984,27.407 137.984,27.407 137.984,27.407 131.342,27.407 131.342,27.407 131.342,27.407 134.449,13.121 134.449,13.121 134.449,13.121 131.032,13.121 131.032,13.121 131.032,13.121 131.988,8.844 131.988,8.844 131.988,8.844 135.308,8.844 135.308,8.844 135.906,6.455 136.432,4.83 137.913,3.589 138.928,2.765 140.755,2.513 142.329,2.469z M35.828,2.346C35.828,2.346 42.566,2.346 42.566,2.346 42.566,2.346 41.658,6.431 41.658,6.431 41.658,6.431 34.944,6.431 34.944,6.431 34.944,6.431 35.828,2.346 35.828,2.346z M7.04,2.346C7.04,2.346 16.979,2.346 16.979,2.346 16.979,2.346 17.432,16.346 17.432,16.346 17.432,16.346 24.122,2.346 24.122,2.346 24.122,2.346 34.084,2.346 34.084,2.346 34.084,2.346 28.494,27.407 28.494,27.407 28.494,27.407 21.279,27.407 21.279,27.407 21.279,27.407 24.265,13.933 24.265,13.933 24.265,13.933 17.552,27.407 17.552,27.407 17.552,27.407 12.368,27.407 12.368,27.407 12.368,27.407 12.105,13.933 12.105,13.933 12.105,13.933 8.76,27.407 8.76,27.407 8.76,27.407 1.474,27.407 1.474,27.407 1.474,27.407 7.04,2.346 7.04,2.346z" Height="30" Canvas.Left="0" Canvas.Top="0" Width="164">
+                        <Path.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFB4B4B4" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <TextBlock x:Name="SAMPLES" Foreground="#FFFFFFFF" FontSize="25.089" FontFamily="DIN" IsHyphenationEnabled="True" LineStackingStrategy="BlockLineHeight" Canvas.Left="113" LineHeight="25.089" TextAlignment="Right" TextWrapping="Wrap" Text="SAMPLES" Canvas.Top="36">
+						<TextBlock.RenderTransform>
+							<MatrixTransform Matrix="0.346,0,0,0.346,0,0"/>
+						</TextBlock.RenderTransform>
+                    </TextBlock>
+                    <Path x:Name="Shape_3" Data="F1M1.47,1.304C1.47,1.304 151.646,1.304 151.646,1.304 151.646,1.304 151.646,1.745 151.646,1.745 151.646,1.745 1.47,1.745 1.47,1.745 1.47,1.745 1.47,1.304 1.47,1.304z" Fill="#FF8FD11F" Height="3" Canvas.Left="0" Canvas.Top="31" Width="153"/>
+                </Canvas>
+            </Canvas>
+        </Grid>
+        <Grid x:Name="ContentHolder" VerticalAlignment="Stretch" Grid.Column="1" Margin="8,25,8,12" Grid.RowSpan="4" Grid.ColumnSpan="2"/>
+    </Grid>
+</Window>

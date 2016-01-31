@@ -1,0 +1,934 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NLayerAppModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="NLayerAppModelStoreContainer">
+          <EntitySet Name="BankAccount" EntityType="NLayerAppModel.Store.BankAccount" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BankTransfers" EntityType="NLayerAppModel.Store.BankTransfers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Book" EntityType="NLayerAppModel.Store.Book" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Country" EntityType="NLayerAppModel.Store.Country" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Customer" EntityType="NLayerAppModel.Store.Customer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Order" EntityType="NLayerAppModel.Store.Order" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderDetails" EntityType="NLayerAppModel.Store.OrderDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product" EntityType="NLayerAppModel.Store.Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Software" EntityType="NLayerAppModel.Store.Software" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_BankAccount_Customer" Association="NLayerAppModel.Store.FK_BankAccount_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="BankAccount" EntitySet="BankAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BankTransfers_BankAccount" Association="NLayerAppModel.Store.FK_BankTransfers_BankAccount">
+            <End Role="BankAccount" EntitySet="BankAccount" />
+            <End Role="BankTransfers" EntitySet="BankTransfers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BankTransfers_BankAccount1" Association="NLayerAppModel.Store.FK_BankTransfers_BankAccount1">
+            <End Role="BankAccount" EntitySet="BankAccount" />
+            <End Role="BankTransfers" EntitySet="BankTransfers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Book_Product" Association="NLayerAppModel.Store.FK_Book_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Book" EntitySet="Book" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Country" Association="NLayerAppModel.Store.FK_Customer_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdeDetails_Order" Association="NLayerAppModel.Store.FK_OrdeDetails_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Customer" Association="NLayerAppModel.Store.FK_Order_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetails_Product" Association="NLayerAppModel.Store.FK_OrderDetails_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Software_Product" Association="NLayerAppModel.Store.FK_Software_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Software" EntitySet="Software" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BankAccount">
+          <Key>
+            <PropertyRef Name="BankAccountId" />
+          </Key>
+          <Property Name="BankAccountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BankAccountNumber" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Balance" Type="money" Nullable="false" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="Locked" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BankTransfers">
+          <Key>
+            <PropertyRef Name="BankTransferId" />
+          </Key>
+          <Property Name="BankTransferId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FromBankAccountId" Type="int" Nullable="false" />
+          <Property Name="ToBankAccountId" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="numeric" Nullable="false" Scale="2" />
+          <Property Name="TransferDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Publisher" Type="nvarchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerCode" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="CompanyName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="20" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryId" Type="int" />
+          <Property Name="Photo" Type="image" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="DeliveryDate" Type="datetime" />
+          <Property Name="ShippingName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingZip" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="OrderDetailsId" />
+          </Key>
+          <Property Name="OrderDetailsId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="UnitPrice" Type="money" />
+          <Property Name="Amount" Type="smallint" />
+          <Property Name="Discount" Type="real" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductDescription" Type="nvarchar" MaxLength="100" />
+          <Property Name="UnitPrice" Type="money" />
+          <Property Name="UnitAmount" Type="nvarchar" MaxLength="50" />
+          <Property Name="Publisher" Type="nvarchar" MaxLength="200" />
+          <Property Name="AmountInStock" Type="smallint" />
+        </EntityType>
+        <EntityType Name="Software">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LicenseCode" Type="nvarchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK_BankAccount_Customer">
+          <End Role="Customer" Type="NLayerAppModel.Store.Customer" Multiplicity="0..1" />
+          <End Role="BankAccount" Type="NLayerAppModel.Store.BankAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="BankAccount">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BankTransfers_BankAccount">
+          <End Role="BankAccount" Type="NLayerAppModel.Store.BankAccount" Multiplicity="1" />
+          <End Role="BankTransfers" Type="NLayerAppModel.Store.BankTransfers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BankAccount">
+              <PropertyRef Name="BankAccountId" />
+            </Principal>
+            <Dependent Role="BankTransfers">
+              <PropertyRef Name="FromBankAccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BankTransfers_BankAccount1">
+          <End Role="BankAccount" Type="NLayerAppModel.Store.BankAccount" Multiplicity="1" />
+          <End Role="BankTransfers" Type="NLayerAppModel.Store.BankTransfers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BankAccount">
+              <PropertyRef Name="BankAccountId" />
+            </Principal>
+            <Dependent Role="BankTransfers">
+              <PropertyRef Name="ToBankAccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Book_Product">
+          <End Role="Product" Type="NLayerAppModel.Store.Product" Multiplicity="1" />
+          <End Role="Book" Type="NLayerAppModel.Store.Book" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="Book">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Country">
+          <End Role="Country" Type="NLayerAppModel.Store.Country" Multiplicity="0..1" />
+          <End Role="Customer" Type="NLayerAppModel.Store.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdeDetails_Order">
+          <End Role="Order" Type="NLayerAppModel.Store.Order" Multiplicity="1" />
+          <End Role="OrderDetails" Type="NLayerAppModel.Store.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Customer">
+          <End Role="Customer" Type="NLayerAppModel.Store.Customer" Multiplicity="0..1" />
+          <End Role="Order" Type="NLayerAppModel.Store.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetails_Product">
+          <End Role="Product" Type="NLayerAppModel.Store.Product" Multiplicity="1" />
+          <End Role="OrderDetails" Type="NLayerAppModel.Store.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Software_Product">
+          <End Role="Product" Type="NLayerAppModel.Store.Product" Multiplicity="1" />
+          <End Role="Software" Type="NLayerAppModel.Store.Software" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="Software">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MainModuleUnitOfWork" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BankAccounts" EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.BankAccount" />
+          <EntitySet Name="BankTransfers" EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.BankTransfer" />
+          <EntitySet Name="Countries" EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Country" />
+          <EntitySet Name="Customers" EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Customer" />
+          <EntitySet Name="Orders" EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Order" />
+          <EntitySet Name="OrderDetails" EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.OrderDetail" />
+          <EntitySet Name="Products" EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Product" />
+          <AssociationSet Name="FK_BankAccount_Customer" Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_BankAccount_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="BankAccount" EntitySet="BankAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BankTransfers_BankAccount" Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_BankTransfers_BankAccount">
+            <End Role="BankAccount" EntitySet="BankAccounts" />
+            <End Role="BankTransfers" EntitySet="BankTransfers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BankTransfers_BankAccount1" Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_BankTransfers_BankAccount1">
+            <End Role="BankAccount" EntitySet="BankAccounts" />
+            <End Role="BankTransfers" EntitySet="BankTransfers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Country" Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_Customer_Country">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Customer" Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_Order_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdeDetails_Order" Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_OrdeDetails_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetails_Product" Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_OrderDetails_Product">
+            <End EntitySet="Products" Role="Product" />
+            <End EntitySet="OrderDetails" Role="OrderDetails" />
+          </AssociationSet>
+          <EntitySet Name="CustomerPictures" EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.CustomerPicture" />
+          <AssociationSet Name="CustomerPictureAssociation" Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.CustomerPictureAssociation">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="CustomerPicture" EntitySet="CustomerPictures" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BankAccount">
+          <Documentation>
+            <Summary>Bank Account entity</Summary>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="BankAccountId" />
+          </Key>
+          <Property Name="BankAccountId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" >
+            <Documentation>
+              <Summary>Unique identifier</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="BankAccountNumber" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Get or set bank account number</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="Balance" Type="Decimal" Nullable="false" Precision="19" Scale="4" ConcurrencyMode="Fixed" >
+            <Documentation>
+              <Summary>Get or set balance</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="CustomerId" Type="Int32" >
+            <Documentation>
+              <Summary>Get or set customer identifier</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="Locked" Type="Boolean" Nullable="false" >
+            <Documentation>
+              <Summary>Get or set locked state</Summary>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Customer" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_BankAccount_Customer" FromRole="BankAccount" ToRole="Customer" >
+            <Documentation>
+              <Summary>Associated ustomer</Summary>
+            </Documentation>
+          </NavigationProperty>
+          <NavigationProperty Name="BankTransfersFromThis" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_BankTransfers_BankAccount" FromRole="BankAccount" ToRole="BankTransfers" >
+            <Documentation>
+              <Summary>A collection of bank transfer from this account</Summary>
+            </Documentation>
+          </NavigationProperty>
+          <NavigationProperty Name="BankTransfersToThis" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_BankTransfers_BankAccount1" FromRole="BankAccount" ToRole="BankTransfers" >
+            <Documentation>
+              <Summary>A collection of transfers to this account</Summary>
+            </Documentation>
+          </NavigationProperty>
+        </EntityType>
+        <EntityType Name="BankTransfer">
+          <Documentation>
+            <Summary>Bank transfer entity</Summary>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="BankTransferId" />
+          </Key>
+          <Property Name="BankTransferId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" >
+            <Documentation>
+              <Summary>Bank transfer unique identifier</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="FromBankAccountId" Type="Int32" Nullable="false" >
+            <Documentation>
+              <Summary>Get or set from bank account identifier</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="ToBankAccountId" Type="Int32" Nullable="false" >
+            <Documentation>
+              <Summary>Get or set to bank account identifier</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" >
+            <Documentation>
+              <Summary>Get or set amount of transfer</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="TransferDate" Type="DateTime" Nullable="false" >
+            <Documentation>
+              <Summary>Get or set transfer date</Summary>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="BankAccount" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_BankTransfers_BankAccount" FromRole="BankTransfers" ToRole="BankAccount" >
+            <Documentation>
+              <Summary>Associated to bank account from</Summary>
+            </Documentation>
+          </NavigationProperty>
+          <NavigationProperty Name="BankAccount1" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_BankTransfers_BankAccount1" FromRole="BankTransfers" ToRole="BankAccount" >
+            <Documentation>
+              <Summary>Associated bank account to</Summary>
+            </Documentation>
+          </NavigationProperty>
+        </EntityType>
+        <EntityType Name="Book" BaseType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Product">
+          <Documentation>
+            <Summary>A Book entity that inherit from Product</Summary>
+          </Documentation>
+          <Property Name="Editor" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Get or set the editor name of this book</Summary>
+            </Documentation>
+          </Property>
+        </EntityType>
+        <EntityType Name="Country">
+          <Documentation>
+            <Summary>Country entity</Summary>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" >
+            <Documentation>
+              <Summary>Unique identifier</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="CountryName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Get or Set Country name</Summary>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Customers" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_Customer_Country" FromRole="Country" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Documentation>
+            <Summary>Customer entity</Summary>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" >
+            <Documentation>
+              <Summary>Unique identier of this customer</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="CustomerCode" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Get or set customer code</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Get or set company name</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="ContactName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Get or set contact name</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="ContactTitle" Type="String" MaxLength="50" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Get or set contact title</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="CountryId" Type="Int32" >
+            <Documentation>
+              <Summary>Get or ste country identifier for this customer</Summary>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="BankAccounts" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_BankAccount_Customer" FromRole="Customer" ToRole="BankAccount" >
+            <Documentation>
+              <Summary>Associated Bank Accounts for a customer</Summary>
+            </Documentation>
+          </NavigationProperty>
+          <NavigationProperty Name="Country" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_Customer_Country" FromRole="Customer" ToRole="Country" >
+            <Documentation>
+              <Summary>Associated country for this customer</Summary>
+            </Documentation>
+          </NavigationProperty>
+          <NavigationProperty Name="Orders" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_Order_Customer" FromRole="Customer" ToRole="Order" >
+            <Documentation>
+              <Summary>Associated orders for this customer</Summary>
+            </Documentation>
+          </NavigationProperty>
+          <Property Name="Address" Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.AddressInformation" Nullable="false" >
+            <Documentation>
+              <Summary>Get or set address information</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="IsEnabled" Nullable="false" >
+            <Documentation>
+              <Summary>Get or set a enabled state of this customer</Summary>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="CustomerPicture" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.CustomerPictureAssociation" FromRole="Customer" ToRole="CustomerPicture" >
+            <Documentation>
+              <Summary>A customer picture information</Summary>
+            </Documentation>
+          </NavigationProperty>
+        </EntityType>
+        <EntityType Name="Order">
+          <Documentation>
+            <Summary>Order entity</Summary>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" >
+            <Documentation>
+              <Summary>Unique order identifer</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="CustomerId" Type="Int32" >
+            <Documentation>
+              <Summary>Associated customer identifier</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="OrderDate" Type="DateTime" >
+            <Documentation>
+              <Summary>Get or set order date</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="DeliveryDate" Type="DateTime" >
+            <Documentation>
+              <Summary>Get or set delivery date</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="ShippingName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Get or set shipping name</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="ShippingAddress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Get or set shipping address</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="ShippingCity" Type="String" MaxLength="50" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Get or set shipping city</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="ShippingZip" Type="String" MaxLength="50" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Get or set shipping zip</Summary>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Customer" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_Order_Customer" FromRole="Order" ToRole="Customer" >
+            <Documentation>
+              <Summary>Associated customer</Summary>
+            </Documentation>
+          </NavigationProperty>
+          <NavigationProperty Name="OrderDetails" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_OrdeDetails_Order" FromRole="Order" ToRole="OrderDetails" >
+            <Documentation>
+              <Summary>Associated collection of Order Details</Summary>
+            </Documentation>
+          </NavigationProperty>
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Documentation>
+            <Summary>Order Details entity</Summary>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="OrderDetailsId" />
+          </Key>
+          <Property Name="OrderDetailsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" >
+            <Documentation>
+              <Summary>Unique identifier of this order</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="OrderId" Type="Int32" Nullable="false" >
+            <Documentation>
+              <Summary>Associated order identifier for this detail</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="ProductId" Type="Int32" Nullable="false" >
+            <Documentation>
+              <Summary>Associated product identifier</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" >
+            <Documentation>
+              <Summary>Get or set unit price in this order detail</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="Amount" Type="Int16" >
+            <Documentation>
+              <Summary>Get or set amount in this order detail</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="Discount" Type="Single" >
+            <Documentation>
+              <Summary>Get or set discount in this order detail</Summary>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Order" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_OrdeDetails_Order" FromRole="OrderDetails" ToRole="Order" >
+            <Documentation>
+              <Summary>Associated Order</Summary>
+            </Documentation>
+          </NavigationProperty>
+          <NavigationProperty Name="Product" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_OrderDetails_Product" FromRole="OrderDetails" ToRole="Product">
+            <Documentation>
+              <Summary>Associated Product</Summary>
+            </Documentation>
+          </NavigationProperty>
+        </EntityType>
+        <EntityType Name="Product">
+          <Documentation>
+            <Summary>A Product entity</Summary>
+            <LongDescription>A Product entity</LongDescription>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" >
+            <Documentation>
+              <Summary>Unique identifier of this product</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="ProductDescription" Type="String" MaxLength="100" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Get or set description for this product</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" >
+            <Documentation>
+              <Summary>Get or set Unit price for this product</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="UnitAmount" Type="String" MaxLength="50" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Get or set Unit amount for this product</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="Publisher" Type="String" MaxLength="200" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Get or set the publisher of  this product</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="AmountInStock" Type="Int16" >
+            <Documentation>
+              <Summary>Get or set amount of this element in stock</Summary>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="OrderDetails" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_OrderDetails_Product" FromRole="Product" ToRole="OrderDetails">
+            <Documentation>
+              <Summary>Order details that sale this product</Summary>
+            </Documentation>
+          </NavigationProperty>
+        </EntityType>
+        <EntityType Name="Software" BaseType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Product">
+          <Documentation>
+            <Summary>A Software entity that inherit from Product</Summary>
+          </Documentation>
+          <Property Name="LicenseCode" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Get or set the license code of this software product</Summary>
+            </Documentation>
+          </Property>
+        </EntityType>
+        <Association Name="FK_BankAccount_Customer">
+          <End Role="Customer" Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Customer" Multiplicity="0..1" />
+          <End Role="BankAccount" Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.BankAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="BankAccount">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BankTransfers_BankAccount">
+          <End Role="BankAccount" Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.BankAccount" Multiplicity="1" />
+          <End Role="BankTransfers" Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.BankTransfer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BankAccount">
+              <PropertyRef Name="BankAccountId" />
+            </Principal>
+            <Dependent Role="BankTransfers">
+              <PropertyRef Name="FromBankAccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BankTransfers_BankAccount1">
+          <End Role="BankAccount" Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.BankAccount" Multiplicity="1" />
+          <End Role="BankTransfers" Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.BankTransfer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BankAccount">
+              <PropertyRef Name="BankAccountId" />
+            </Principal>
+            <Dependent Role="BankTransfers">
+              <PropertyRef Name="ToBankAccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Country">
+          <End Role="Country" Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Country" Multiplicity="0..1" />
+          <End Role="Customer" Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Customer">
+          <End Role="Customer" Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Customer" Multiplicity="0..1" />
+          <End Role="Order" Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdeDetails_Order">
+          <End Role="Order" Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Order" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetails_Product">
+          <End Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Product" Multiplicity="1" Role="Product" />
+          <End Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.OrderDetail" Multiplicity="*" Role="OrderDetails" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="AddressInformation">
+          <Property Type="String" Name="Fax" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Telephone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PostalCode" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="50" FixedLength="false" Unicode="true" /></ComplexType>
+        <EntityType Name="CustomerPicture">
+          <Documentation>
+            <Summary>Customer picture entity</Summary>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Type="Int32" Name="CustomerId" Nullable="false" annotation:StoreGeneratedPattern="Identity" >
+            <Documentation>
+              <Summary>Unique identifier</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Binary" Name="Photo" MaxLength="Max" FixedLength="false" >
+            <Documentation>
+              <Summary>Picture of this customer</Summary>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Customer" Relationship="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.CustomerPictureAssociation" FromRole="CustomerPicture" ToRole="Customer" />
+        </EntityType>
+        <Association Name="CustomerPictureAssociation">
+          <End Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.CustomerPicture" Role="CustomerPicture" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="CustomerPicture">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NLayerAppModelStoreContainer" CdmEntityContainer="MainModuleUnitOfWork">
+          <EntitySetMapping Name="BankAccounts"><EntityTypeMapping TypeName="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.BankAccount"><MappingFragment StoreEntitySet="BankAccount">
+            <ScalarProperty Name="BankAccountId" ColumnName="BankAccountId" />
+            <ScalarProperty Name="BankAccountNumber" ColumnName="BankAccountNumber" />
+            <ScalarProperty Name="Balance" ColumnName="Balance" />
+            <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+            <ScalarProperty Name="Locked" ColumnName="Locked" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="BankTransfers"><EntityTypeMapping TypeName="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.BankTransfer"><MappingFragment StoreEntitySet="BankTransfers">
+            <ScalarProperty Name="BankTransferId" ColumnName="BankTransferId" />
+            <ScalarProperty Name="FromBankAccountId" ColumnName="FromBankAccountId" />
+            <ScalarProperty Name="ToBankAccountId" ColumnName="ToBankAccountId" />
+            <ScalarProperty Name="Amount" ColumnName="Amount" />
+            <ScalarProperty Name="TransferDate" ColumnName="TransferDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Countries"><EntityTypeMapping TypeName="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Country"><MappingFragment StoreEntitySet="Country">
+            <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+            <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Customers"><EntityTypeMapping TypeName="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Customer"><MappingFragment StoreEntitySet="Customer">
+            <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+            <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+            <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+            <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+            <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+            <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ComplexProperty Name="Address">
+                  <ScalarProperty Name="Address" ColumnName="Address" />
+                  <ScalarProperty Name="City" ColumnName="City" />
+                  <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                  <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                  <ScalarProperty Name="Fax" ColumnName="Fax" /></ComplexProperty>
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Orders"><EntityTypeMapping TypeName="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Order"><MappingFragment StoreEntitySet="Order">
+            <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+            <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+            <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+            <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+            <ScalarProperty Name="ShippingName" ColumnName="ShippingName" />
+            <ScalarProperty Name="ShippingAddress" ColumnName="ShippingAddress" />
+            <ScalarProperty Name="ShippingCity" ColumnName="ShippingCity" />
+            <ScalarProperty Name="ShippingZip" ColumnName="ShippingZip" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails"><EntityTypeMapping TypeName="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.OrderDetail"><MappingFragment StoreEntitySet="OrderDetails">
+            <ScalarProperty Name="OrderDetailsId" ColumnName="OrderDetailsId" />
+            <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+            <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+            <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+            <ScalarProperty Name="Amount" ColumnName="Amount" />
+            <ScalarProperty Name="Discount" ColumnName="Discount" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Product)">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="AmountInStock" ColumnName="AmountInStock" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+                <ScalarProperty Name="UnitAmount" ColumnName="UnitAmount" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" /></MappingFragment></EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Software)">
+              <MappingFragment StoreEntitySet="Software">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="LicenseCode" ColumnName="LicenseCode" />
+                </MappingFragment></EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Book)">
+              <MappingFragment StoreEntitySet="Book">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Editor" ColumnName="Publisher" />
+                </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CustomerPictures">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.CustomerPicture)">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="MainModuleDataModel" ZoomLevel="86">
+        <EntityTypeShape EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.BankAccount" Width="1.5" PointX="7.375" PointY="5.5" Height="2.5571907552083326" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.BankTransfer" Width="1.5" PointX="5.375" PointY="4.625" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Book" Width="1.5" PointX="2.625" PointY="3.625" Height="1.2110807291666665" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Country" Width="1.5" PointX="13.875" PointY="3.375" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Customer" Width="1.5" PointX="10.5" PointY="4" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Order" Width="1.5" PointX="7" PointY="0.625" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.OrderDetail" Width="1.5" PointX="4.625" PointY="0.875" Height="2.5571907552083326" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Product" Width="1.5" PointX="1.375" PointY="0.75" Height="2.3648893229166665" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Software" Width="1.5" PointX="0.5" PointY="4" Height="1.2110807291666665" IsExpanded="true" />
+        <AssociationConnector Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_BankAccount_Customer" ManuallyRouted="false">
+          <ConnectorPoint PointX="10.5" PointY="6.4131982421875" />
+          <ConnectorPoint PointX="8.875" PointY="6.4131982421875" />
+          </AssociationConnector>
+        <AssociationConnector Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_BankTransfers_BankAccount" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.375" PointY="6.2449446614583328" />
+          <ConnectorPoint PointX="6.875" PointY="6.2449446614583328" />
+          </AssociationConnector>
+        <AssociationConnector Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_BankTransfers_BankAccount1" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.375" PointY="5.8099723307291669" />
+          <ConnectorPoint PointX="6.875" PointY="5.8099723307291669" />
+          </AssociationConnector>
+        <AssociationConnector Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_Customer_Country" ManuallyRouted="false">
+          <ConnectorPoint PointX="13.875" PointY="4.485341796875" />
+          <ConnectorPoint PointX="12" PointY="4.485341796875" />
+          </AssociationConnector>
+        <AssociationConnector Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_Order_Customer" ManuallyRouted="false">
+          <ConnectorPoint PointX="10.5" PointY="4.71875" />
+          <ConnectorPoint PointX="7.15625" PointY="4.71875" />
+          <ConnectorPoint PointX="7.15625" PointY="3.5667936197916656" />
+          </AssociationConnector>
+        <AssociationConnector Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_OrdeDetails_Order" ManuallyRouted="false">
+          <ConnectorPoint PointX="7" PointY="2.1535953776041663" />
+          <ConnectorPoint PointX="6.125" PointY="2.1535953776041663" />
+          </AssociationConnector>
+        <AssociationConnector ManuallyRouted="false" Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.FK_OrderDetails_Product">
+          <ConnectorPoint PointX="2.875" PointY="1.9949446614583335" />
+          <ConnectorPoint PointX="4.625" PointY="1.9949446614583335" />
+          </AssociationConnector>
+        <InheritanceConnector EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Software" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.125" PointY="3.1148893229166665" />
+          <ConnectorPoint PointX="2.125" PointY="3.625" />
+          <ConnectorPoint PointX="1.25" PointY="3.625" />
+          <ConnectorPoint PointX="1.25" PointY="4" />
+          </InheritanceConnector>
+        <InheritanceConnector EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.Book" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.125" PointY="3.1148893229166665" />
+          <ConnectorPoint PointX="2.125" PointY="3.2500000000000004" />
+          <ConnectorPoint PointX="3.375" PointY="3.2500000000000004" />
+          <ConnectorPoint PointX="3.375" PointY="3.625" /></InheritanceConnector>
+        <EntityTypeShape EntityType="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.CustomerPicture" Width="1.5" PointX="11.5" PointY="1.375" Height="1.4279589843749996" />
+        <AssociationConnector Association="Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Model.CustomerPictureAssociation">
+          <ConnectorPoint PointX="11.75" PointY="4" />
+          <ConnectorPoint PointX="11.75" PointY="2.97068359375" />
+        </AssociationConnector>
+        </Diagram></Diagrams>
+  </Designer>
+</edmx:Edmx>

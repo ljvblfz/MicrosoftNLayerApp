@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://hpelitebook.europe.corp.microsoft.com:8888/MainModule.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" />
+  <xs:import schemaLocation="http://hpelitebook.europe.corp.microsoft.com:8888/MainModule.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfBankAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BankAccount" nillable="true" type="tns:BankAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBankAccount" nillable="true" type="tns:ArrayOfBankAccount" />
+  <xs:complexType name="BankAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Balance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BankAccountId" type="xs:int" />
+      <xs:element minOccurs="0" name="BankAccountNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" minOccurs="0" name="BankTransfersFromThis" nillable="true" type="q1:TrackableCollectionOfBankTransferwCMH1Nrk" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" minOccurs="0" name="BankTransfersToThis" nillable="true" type="q2:TrackableCollectionOfBankTransferwCMH1Nrk" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" minOccurs="0" name="ChangeTracker" nillable="true" type="q3:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
+      <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Locked" type="xs:boolean" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="BankAccount" nillable="true" type="tns:BankAccount" />
+  <xs:complexType name="BankTransfer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BankAccount" nillable="true" type="tns:BankAccount" />
+      <xs:element minOccurs="0" name="BankAccount1" nillable="true" type="tns:BankAccount" />
+      <xs:element minOccurs="0" name="BankTransferId" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" minOccurs="0" name="ChangeTracker" nillable="true" type="q4:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FromBankAccountId" type="xs:int" />
+      <xs:element minOccurs="0" name="ToBankAccountId" type="xs:int" />
+      <xs:element minOccurs="0" name="TransferDate" type="xs:dateTime" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="BankTransfer" nillable="true" type="tns:BankTransfer" />
+  <xs:complexType name="Customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:AddressInformation" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" minOccurs="0" name="BankAccounts" nillable="true" type="q5:TrackableCollectionOfBankAccountwCMH1Nrk" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" minOccurs="0" name="ChangeTracker" nillable="true" type="q6:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="tns:Country" />
+      <xs:element minOccurs="0" name="CountryId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerPicture" nillable="true" type="tns:CustomerPicture" />
+      <xs:element minOccurs="0" name="IsEnabled" type="xs:boolean" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" minOccurs="0" name="Orders" nillable="true" type="q7:TrackableCollectionOfOrderwCMH1Nrk" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Customer" nillable="true" type="tns:Customer" />
+  <xs:complexType name="AddressInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressInformation" nillable="true" type="tns:AddressInformation" />
+  <xs:complexType name="Country">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" minOccurs="0" name="ChangeTracker" nillable="true" type="q8:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="CountryId" type="xs:int" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" minOccurs="0" name="Customers" nillable="true" type="q9:TrackableCollectionOfCustomerwCMH1Nrk" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Country" nillable="true" type="tns:Country" />
+  <xs:complexType name="Order">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" minOccurs="0" name="ChangeTracker" nillable="true" type="q10:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
+      <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DeliveryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" minOccurs="0" name="OrderDetails" nillable="true" type="q11:TrackableCollectionOfOrderDetailwCMH1Nrk" />
+      <xs:element minOccurs="0" name="OrderId" type="xs:int" />
+      <xs:element minOccurs="0" name="ShippingAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingZip" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Order" nillable="true" type="tns:Order" />
+  <xs:complexType name="OrderDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:short" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" minOccurs="0" name="ChangeTracker" nillable="true" type="q12:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="Discount" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Order" />
+      <xs:element minOccurs="0" name="OrderDetailsId" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderId" type="xs:int" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitPrice" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="OrderDetail" nillable="true" type="tns:OrderDetail" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountInStock" nillable="true" type="xs:short" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" minOccurs="0" name="ChangeTracker" nillable="true" type="q13:ObjectChangeTracker" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" minOccurs="0" name="OrderDetails" nillable="true" type="q14:TrackableCollectionOfOrderDetailwCMH1Nrk" />
+      <xs:element minOccurs="0" name="ProductDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="Publisher" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitPrice" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="Software">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Product">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LicenseCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Software" nillable="true" type="tns:Software" />
+  <xs:complexType name="Book">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Product">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Editor" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Book" nillable="true" type="tns:Book" />
+  <xs:complexType name="CustomerPicture">
+    <xs:sequence>
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" minOccurs="0" name="ChangeTracker" nillable="true" type="q15:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="Photo" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="CustomerPicture" nillable="true" type="tns:CustomerPicture" />
+  <xs:complexType name="ArrayOfBankTransfer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BankTransfer" nillable="true" type="tns:BankTransfer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBankTransfer" nillable="true" type="tns:ArrayOfBankTransfer" />
+  <xs:complexType name="ArrayOfCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true" type="tns:Customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomer" nillable="true" type="tns:ArrayOfCustomer" />
+  <xs:complexType name="ArrayOfCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Country" nillable="true" type="tns:Country" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountry" nillable="true" type="tns:ArrayOfCountry" />
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="ArrayOfOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrder" nillable="true" type="tns:ArrayOfOrder" />
+</xs:schema>

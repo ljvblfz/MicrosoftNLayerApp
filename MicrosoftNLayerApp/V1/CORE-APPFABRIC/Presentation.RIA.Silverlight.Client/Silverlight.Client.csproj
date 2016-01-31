@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1832D5D5-E2C8-4767-B3E8-CA96F98F4346}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Samples.NLayerApp.Presentation.Silverlight.Client</RootNamespace>
+    <AssemblyName>Microsoft.Samples.NLayerApp.Presentation.Silverlight.Client</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Microsoft.Samples.NLayerApp.Presentation.Silverlight.Client.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Microsoft.Samples.NLayerApp.Presentation.Silverlight.Client.App</SilverlightAppEntry>
+    <TestPageFileName>MicrosoftSamplesTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20421.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Drawing" />
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>..\..\..\Third Party\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit">
+      <HintPath>..\..\System.Windows.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit.Internals">
+      <HintPath>..\..\System.Windows.Controls.Toolkit.Internals.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\..\Third Party\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FloatingGrid.cs" />
+    <Compile Include="Service References\ServiceAgent\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TypeConverters\BinaryImageConverter.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MenuControl.xaml.cs">
+      <DependentUpon>MenuControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Resource Include="Resources\Fonts\HelveticaThn.ttf" />
+    <Compile Include="TypeConverters\BoolToOppositeBoolConverter.cs" />
+    <Compile Include="TypeConverters\CurrentPageConverter.cs" />
+    <Compile Include="ViewModelBase\DelegateCommand.cs" />
+    <Compile Include="ViewModelBase\ObservableObject.cs" />
+    <Compile Include="ViewModelBase\WeakEvenHandlerManager.cs" />
+    <Compile Include="ViewModels\VMAddCustomer.cs" />
+    <Compile Include="ViewModels\VMCustomer.cs" />
+    <Compile Include="ViewModels\VMCustomerListView.cs" />
+    <Compile Include="ViewModels\VMEditCustomer.cs" />
+    <Compile Include="ViewModels\VMMenu.cs" />
+    <Compile Include="ViewModels\VMMenuBanking.cs" />
+    <Compile Include="ViewModels\VMMenuCustomers.cs" />
+    <Compile Include="ViewModels\VMMenuOrders.cs" />
+    <Compile Include="ViewModels\VMOrderList.cs" />
+    <Compile Include="ViewModels\VMPerformOrder.cs" />
+    <Compile Include="ViewModels\VMPerformTransfer.cs" />
+    <Compile Include="ViewModels\VMTransferList.cs" />
+    <Compile Include="Views\BankingViews\PerformTransferView.xaml.cs">
+      <DependentUpon>PerformTransferView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BankingViews\TransferListView.xaml.cs">
+      <DependentUpon>TransferListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerViews\AddCustomerView.xaml.cs">
+      <DependentUpon>AddCustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerViews\CustomerListView.xaml.cs">
+      <DependentUpon>CustomerListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerViews\CustomerView.xaml.cs">
+      <DependentUpon>CustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerViews\EditCustomerView.xaml.cs">
+      <DependentUpon>EditCustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrdersViews\OrderView.xaml.cs">
+      <DependentUpon>OrderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrdersViews\PerformOrder.xaml.cs">
+      <DependentUpon>PerformOrder.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Resources\Themes\Default\ResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MenuControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BankingViews\PerformTransferView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BankingViews\TransferListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomerViews\AddCustomerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomerViews\CustomerListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomerViews\CustomerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomerViews\EditCustomerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\OrdersViews\OrderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\OrdersViews\PerformOrder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ListBackground.png" />
+    <Resource Include="Resources\Images\TitleRibbon.png" />
+    <Content Include="Properties\AppManifest.xml" />
+    <Content Include="Resources\Images\Unknown.png" />
+    <None Include="Properties\DataSources\Microsoft.Samples.NLayerApp.Domain.MainModule.Entities.BankAccount.datasource" />
+    <None Include="Properties\DataSources\Microsoft.Samples.NLayerApp.Domain.MainModule.Entities.BankTransfer.datasource" />
+    <None Include="Properties\DataSources\Microsoft.Samples.NLayerApp.Domain.MainModule.Entities.Country.datasource" />
+    <None Include="Properties\DataSources\Microsoft.Samples.NLayerApp.Domain.MainModule.Entities.Customer.datasource" />
+    <None Include="Properties\DataSources\Microsoft.Samples.NLayerApp.Domain.MainModule.Entities.Order.datasource" />
+    <None Include="Properties\DataSources\Microsoft.Samples.NLayerApp.Domain.MainModule.Entities.Product.datasource" />
+    <None Include="Service References\ServiceAgent\configuration91.svcinfo" />
+    <None Include="Service References\ServiceAgent\configuration.svcinfo" />
+    <None Include="Service References\ServiceAgent\MainModule2.wsdl" />
+    <None Include="Service References\ServiceAgent\MainModule21.wsdl" />
+    <None Include="Service References\ServiceAgent\MainModule5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceAgent\MainModule51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceAgent\MainModule52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceAgent\MainModule53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceAgent\MainModule54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceAgent\MainModuleService1.wsdl" />
+    <None Include="Service References\ServiceAgent\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceAgent\MainModule1.disco" />
+    <Content Include="ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Background.jpg" />
+    <Resource Include="Resources\Images\Bankingicon.png" />
+    <Resource Include="Resources\Images\CustomerAdd.png" />
+    <Resource Include="Resources\Images\CustomerDelete.png" />
+    <Resource Include="Resources\Images\CustomerEdit.png" />
+    <Resource Include="Resources\Images\CustomerIcon.png" />
+    <Resource Include="Resources\Images\CustomerList.png" />
+    <Resource Include="Resources\Images\FichaButton_Save.png" />
+    <Resource Include="Resources\Images\LockAccount.png" />
+    <Resource Include="Resources\Images\Logo.png" />
+    <Resource Include="Resources\Images\OrderAdd.png" />
+    <Resource Include="Resources\Images\OrderDelete.png" />
+    <Resource Include="Resources\Images\OrderEdit.png" />
+    <Resource Include="Resources\Images\OrderList.png" />
+    <Resource Include="Resources\Images\OrderPerform0.png" />
+    <Resource Include="Resources\Images\OrdersIcon.png" />
+    <Resource Include="Resources\Images\refreshbutton.png" />
+    <Resource Include="Resources\Images\TranfserAdd.png" />
+    <Resource Include="Resources\Images\TransferDelete.png" />
+    <Resource Include="Resources\Images\TransferEdit.png" />
+    <Resource Include="Resources\Images\Transfericon.png" />
+    <Resource Include="Resources\Images\TransferList.png" />
+    <Resource Include="Resources\Images\unlockAccount.png" />
+    <Resource Include="Resources\Images\user_add-001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CustomerImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Presentation.RIA.Silverlight.Domain.Core.Entities\Silverlight.Domain.Core.Entities.csproj">
+      <Project>{01565B37-9830-47A8-B29E-25C16407EF0A}</Project>
+      <Name>Silverlight.Domain.Core.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Presentation.RIA.Silverlight.Domain.MainModule.Entities\Silverlight.Domain.MainModule.Entities.csproj">
+      <Project>{D89521E5-F309-45F8-8923-F518EFEC8E7C}</Project>
+      <Name>Silverlight.Domain.MainModule.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceAgent\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

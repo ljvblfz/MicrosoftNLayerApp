@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService" elementFormDefault="qualified" targetNamespace="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://hpelitebook.europe.corp.microsoft.com:8888/MainModule.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" />
+  <xs:element name="GetPagedBankAccounts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pagedCriteria" nillable="true" type="tns:PagedCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PagedCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageCount" type="xs:int" />
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagedCriteria" nillable="true" type="tns:PagedCriteria" />
+  <xs:element name="GetPagedBankAccountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="GetPagedBankAccountsResult" nillable="true" type="q1:ArrayOfBankAccount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBankAccounts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bankAccountInformation" nillable="true" type="tns:BankAccountInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="BankAccountInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BankAccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankAccountInformation" nillable="true" type="tns:BankAccountInformation" />
+  <xs:element name="GetBankAccountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="GetBankAccountsResult" nillable="true" type="q2:ArrayOfBankAccount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBankAccountByNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bankAccountNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBankAccountByNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="GetBankAccountByNumberResult" nillable="true" type="q3:BankAccount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeBankAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="bankAccount" nillable="true" type="q4:BankAccount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeBankAccountResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddBankAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="bankAccount" nillable="true" type="q5:BankAccount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddBankAccountResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagedTransfers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pagedCriteria" nillable="true" type="tns:PagedCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagedTransfersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="GetPagedTransfersResult" nillable="true" type="q6:ArrayOfBankTransfer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformBankTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="transferInformation" nillable="true" type="tns:TransferInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TransferInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DestinationAccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginAccountNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransferInformation" nillable="true" type="tns:TransferInformation" />
+  <xs:element name="PerformBankTransferResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerByCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerByCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="GetCustomerByCodeResult" nillable="true" type="q7:Customer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="customer" nillable="true" type="q8:Customer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeCustomerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="customer" nillable="true" type="q9:Customer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCustomerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="customer" nillable="true" type="q10:Customer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCustomerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagedCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pagedCriteria" nillable="true" type="tns:PagedCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagedCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="GetPagedCustomerResult" nillable="true" type="q11:ArrayOfCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagedCountries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pagedCriteria" nillable="true" type="tns:PagedCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagedCountriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="GetPagedCountriesResult" nillable="true" type="q12:ArrayOfCountry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountriesByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="countryName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountriesByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="GetCountriesByNameResult" nillable="true" type="q13:ArrayOfCountry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagedProducts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pagedCriteria" nillable="true" type="tns:PagedCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagedProductsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="GetPagedProductsResult" nillable="true" type="q14:ArrayOfProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductByPublisherInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="publisherInformation" nillable="true" type="tns:PublisherInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PublisherInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PublisherName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PublisherInformation" nillable="true" type="tns:PublisherInformation" />
+  <xs:element name="GetProductByPublisherInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="GetProductByPublisherInformationResult" nillable="true" type="q15:ArrayOfProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="product" nillable="true" type="q16:Product" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeProductResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="product" nillable="true" type="q17:Product" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddProductResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrdersByOrderInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderInformation" nillable="true" type="tns:OrderInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="OrderInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="DateTimeFrom" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateTimeTo" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderInformation" nillable="true" type="tns:OrderInformation" />
+  <xs:element name="GetOrdersByOrderInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="GetOrdersByOrderInformationResult" nillable="true" type="q18:ArrayOfOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrdersByDates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrdersByDatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="GetOrdersByDatesResult" nillable="true" type="q19:ArrayOfOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagedOrders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pagedCriteria" nillable="true" type="tns:PagedCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagedOrdersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="GetPagedOrdersResult" nillable="true" type="q20:ArrayOfOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrdersByShippingData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="shippingData" nillable="true" type="tns:ShippingInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ShippingInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ShippingAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingZip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShippingInformation" nillable="true" type="tns:ShippingInformation" />
+  <xs:element name="GetOrdersByShippingDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="GetOrdersByShippingDataResult" nillable="true" type="q21:ArrayOfOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="order" nillable="true" type="q22:Order" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeOrderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" minOccurs="0" name="order" nillable="true" type="q23:Order" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOrderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

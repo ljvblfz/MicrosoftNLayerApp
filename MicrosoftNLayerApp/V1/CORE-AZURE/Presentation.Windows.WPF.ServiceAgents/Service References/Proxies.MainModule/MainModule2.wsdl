@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WS2007ForIntranetClients_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService" location="http://127.0.0.1:88/MainModule.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicBindingForSilverlightClients" type="i0:IMainModuleService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPagedBankAccounts">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedBankAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankAccounts">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetBankAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankAccountByNumber">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetBankAccountByNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeBankAccount">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeBankAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddBankAccount">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddBankAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedTransfers">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedTransfers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PerformBankTransfer">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/PerformBankTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerByCode">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetCustomerByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCustomer">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCustomer">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/RemoveCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedCustomer">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedCountries">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountriesByName">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetCountriesByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedProducts">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByPublisherInformation">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetProductByPublisherInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProduct">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByOrderInformation">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetOrdersByOrderInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByDates">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetOrdersByDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedOrders">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByShippingData">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetOrdersByShippingData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeOrder">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <soap:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS2007ForIntranetClients" type="i0:IMainModuleService">
+    <wsp:PolicyReference URI="#WS2007ForIntranetClients_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPagedBankAccounts">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedBankAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankAccounts">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetBankAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankAccountByNumber">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetBankAccountByNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeBankAccount">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeBankAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddBankAccount">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddBankAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedTransfers">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedTransfers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PerformBankTransfer">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/PerformBankTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerByCode">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetCustomerByCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCustomer">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCustomer">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/RemoveCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedCustomer">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedCountries">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountriesByName">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetCountriesByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedProducts">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByPublisherInformation">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetProductByPublisherInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProduct">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByOrderInformation">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetOrdersByOrderInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByDates">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetOrdersByDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedOrders">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByShippingData">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetOrdersByShippingData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeOrder">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <soap12:operation soapAction="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceErrorFault">
+        <soap12:fault use="literal" name="ServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

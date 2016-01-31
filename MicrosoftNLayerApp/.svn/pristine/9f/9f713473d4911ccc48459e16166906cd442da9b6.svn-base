@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="33f01ed4-171b-42a3-ac04-976158bd94b8" name="Presentation Front-Controller pattern Evolution UMLClassDiagram1" linkedPackageId="5998558d-b26e-4491-8bf6-d6942f4cfc0d" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="14c4f32a-a23a-4abc-8036-04a7182c1140">
+      <profileInstance Id="d67c8db7-c698-4230-8822-92b39d797af3" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="42a422e5-bc04-47b3-b8f0-58155a6749a8">
+      <profileInstance Id="f2e8f587-ff1e-4408-9845-38b0203de6d4" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="44d76121-7517-4e08-a781-e382af1ed405" name="Cliente" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8f643c58-1c25-4806-957c-1bc65bd38ac4" />
+        <suppliersInternal>
+          <dependency Id="7b8caeb9-dfbb-480e-a06e-3c8d7cbacc14">
+            <classMoniker Id="20dca8c9-cd2e-44c3-8c0e-2f3bb0964b30" LastKnownName="Handler" />
+            <elementDefinition Id="17e83355-1cb0-476b-af3c-1978ff77a561" />
+          </dependency>
+          <dependency Id="45e6f523-3e08-4359-bcbf-b29cb819f1ac">
+            <classMoniker Id="647b63f0-2dd5-440f-8eec-5883d9e587b2" LastKnownName="ComandoConcreto" />
+            <elementDefinition Id="f1a86bc4-86ac-44c8-9910-6326e3c08c02" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="20dca8c9-cd2e-44c3-8c0e-2f3bb0964b30" name="Handler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d64d317e-68a9-4c5b-bfd0-4bbc45b051c7" />
+        <targetEnds>
+          <association Id="6aa0d61e-4b11-44fa-b8ef-085048d0620d" isDerived="false" sourceEndRoleName="Handler" targetEndRoleName="Command" isLeaf="false" isAbstract="false">
+            <interfaceMoniker Id="539b8ed4-466f-4b97-bd54-c90b8af512b2" LastKnownName="Command" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7d4d85e6-1021-42d9-9403-6db0705c840f" name="Handler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5b34b6f1-4718-4779-b038-f2cf0aef0f55" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d6d81eac-2939-43d9-b50b-d67dc9f24109" name="Command" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="4a80380b-ed88-428a-b41c-c2dc38bcf627" name="Lower" value="*">
+                      <elementDefinition Id="6ef6d254-a496-4a7b-9f73-56efa3c5209a" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="73e47e70-7438-4c8f-b46a-60adbfe3b1a7" name="Upper" value="*">
+                      <elementDefinition Id="bfda2bc1-09f5-4834-a431-27ef5eac70fa" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="e797f45b-b1eb-4e6f-95a2-ac580ed9ae25" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b76bdab2-89a0-4333-ba4e-e5f83b58ec32" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="539b8ed4-466f-4b97-bd54-c90b8af512b2" name="Command" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a7057b68-47a0-4ce6-9b6c-6640f6e3c965" />
+        <ownedOperations>
+          <operation Id="fa2d4ae8-1ff2-4d55-8493-9d6b1e5beba6" name="Execute" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f6d0ca70-818d-4578-b98e-9d99cf72d8be" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="647b63f0-2dd5-440f-8eec-5883d9e587b2" name="ComandoConcreto" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9ea16019-984e-4505-a755-d0d30a331a15" />
+        <suppliersInternal>
+          <interfaceRealization Id="9f20810d-2433-46cf-86c7-3bdc56940109">
+            <interfaceMoniker Id="539b8ed4-466f-4b97-bd54-c90b8af512b2" LastKnownName="Command" />
+            <elementDefinition Id="8dbfc631-078f-49c5-a2c2-0ab106491555" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="4a777f0e-53d7-4ecd-91ef-225485b5b390" name="Estado" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="582d8410-e4b9-4dbd-9621-7b24080016fb" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="b01dcdfe-daf2-4eb7-9698-8cc0b80bd779" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1c971f75-bd2a-4b76-b17c-b4297ac34e27" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7959ca38-3d0b-458b-9053-6aa1ca5e2062" name="Command 2 concreto" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7aad5621-f4c6-4fe3-b988-329c3e6b6644" />
+        <suppliersInternal>
+          <interfaceRealization Id="668429a1-b8d3-4021-9115-fe4f93351559">
+            <interfaceMoniker Id="539b8ed4-466f-4b97-bd54-c90b8af512b2" LastKnownName="Command" />
+            <elementDefinition Id="99bc1d47-8fbf-425d-890e-2529b23040ee" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="e1dade42-8c5c-4b2e-88fe-14095e62261f" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e5c4ffd4-6a65-4271-9c3d-334622a66e01" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="5998558d-b26e-4491-8bf6-d6942f4cfc0d" name="App Modeling Project">
+    <elementDefinition Id="556bb672-79e8-4125-ba3d-31d2e0361502" />
+  </package>
+</logicalClassDesignerModel>

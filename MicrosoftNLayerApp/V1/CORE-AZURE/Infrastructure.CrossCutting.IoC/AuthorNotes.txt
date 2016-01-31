@@ -1,0 +1,5 @@
+﻿
+This assembly contains IoC (Inversion of Control) and DI (Dependency Injection) crosscutting Infrastructure classes.
+At the moment we're using UNITY container as IoC container. 
+
+

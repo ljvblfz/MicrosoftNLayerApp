@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <connectionStrings>
+    <add name="MainModuleUnitOfWork" connectionString="metadata=res://*/Model.MainModuleDataModel.csdl|res://*/Model.MainModuleDataModel.ssdl|res://*/Model.MainModuleDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=.\SQLEXPRESS;Initial Catalog=NLayerApp;Integrated Security=True;MultipleActiveResultSets=True&quot;" providerName="System.Data.EntityClient"/>
+  </connectionStrings>
+  <appSettings>
+    <!--RealAppContext - Real Container-->
+    <!--FakeAppContext - Fake Container-->
+    <!--<add key="defaultIoCContainer" value="RealAppContext" />-->
+    <add key="defaultIoCContainer" value="RealAppContext"/>
+   
+  </appSettings>
+  
+</configuration>

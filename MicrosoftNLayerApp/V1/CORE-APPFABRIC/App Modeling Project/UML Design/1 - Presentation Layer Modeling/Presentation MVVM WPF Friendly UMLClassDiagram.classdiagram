@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="68ffbc2f-dd6c-4bba-ad6e-1a22963147f9" name="Presentation MVVM WPF Friendly UMLClassDiagram" linkedPackageId="8edb8bb4-4c45-46a2-b408-641d2c74fc03" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="48be9529-f7f4-4fef-b75c-6f37b3528938">
+      <profileInstance Id="87d0eef4-342f-4228-95b1-931da23ec03d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="0869465c-10e2-401e-983a-001d7accdb37">
+      <profileInstance Id="0fa4d569-3bb3-4b87-8731-67b1518df10f" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <referencedType Id="7ba02208-2e1e-476d-8f8b-a28cbf07399a" name="ObservableCollection&lt;Customer&gt;" isAbstract="false" isLeaf="false" cachedFullName="ObservableCollection&lt;Customer&gt;">
+        <elementDefinition Id="3890aa47-0226-4c6c-8501-d4fbc6da961c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="45dbbe08-0636-4b2a-bfd0-246d0442f6e7" name="ObservableCollection&lt;Customer&gt;" isAbstract="false" isLeaf="false" cachedFullName="ObservableCollection&lt;Customer&gt;">
+        <elementDefinition Id="3890aa47-0226-4c6c-8501-d4fbc6da961c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bbe9a07c-12ca-42c4-98e4-2e7d337df037" name="CustomerList" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="98ea6823-dfc0-44f3-957f-3a9ac009c375" />
+        <ownedAttributesInternal>
+          <property Id="08aafa7f-cedd-4a91-9217-d4ec2e05d571" name="Customers" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="48bddad6-e0ec-410c-9acf-ac454036e4c0" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7ba02208-2e1e-476d-8f8b-a28cbf07399a" LastKnownName="ObservableCollection&lt;Customer&gt;" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="801db0a9-3033-45dc-989a-2596b2f20c94" name="AddCustomer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d14a0fc1-1305-4b51-9d51-523b64e3bba8" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="88de7130-a929-494e-9900-00ad7950d0b7" name="Customer c" direction="In" isUnique="false">
+                  <elementDefinition Id="e4388060-d054-4e50-bac3-dae70fded606" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="dbc0e20e-3f4c-4e38-bf8c-ba8908a5a7e4" name="DeleteCustomer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="42061649-4854-4673-8d82-357089444346" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fc34ba26-5f60-45ad-8228-4bab3cd1e866" name="Customer c" direction="In" isUnique="false">
+                  <elementDefinition Id="e9d647f1-b0e0-4ad6-8ddf-de037f8981b0" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="7b12d7a5-6f0c-4ce0-bbaf-8239e19138ac" name="GetCustomers" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6a18bc19-1a60-4d63-b0ea-97cd36b2bdd1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a6ffc825-f976-4ed5-bcf1-8d6d1f131c04" direction="Return">
+                  <elementDefinition Id="5bf6dd35-d565-46cf-a006-57a2e93f54ff" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="45dbbe08-0636-4b2a-bfd0-246d0442f6e7" LastKnownName="ObservableCollection&lt;Customer&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8c0f8cee-7a33-442c-8344-e209982d2759" name="ListView : UserControl" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b52ba7f8-701d-4978-adc1-398aefb78761" />
+        <suppliersInternal>
+          <dependency Id="2e29d63b-b922-4fae-9c53-bbb52cdfc67c">
+            <classMoniker Id="aed6ae3b-3468-4a61-b494-c87f0915ab12" LastKnownName="VMCustomers" />
+            <elementDefinition Id="ba7a55a0-1017-4acf-a3a6-f7388ac31fe8" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="99348d59-430b-4ae4-9c99-29d47d9c4c99" name="DetailsView : UserControl" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2930b897-3422-4ad5-809b-bfb94dfb29f8" />
+        <suppliersInternal>
+          <dependency Id="21550b68-1eb7-4443-a86a-5c7035852df9">
+            <classMoniker Id="aed6ae3b-3468-4a61-b494-c87f0915ab12" LastKnownName="VMCustomers" />
+            <elementDefinition Id="1401d08c-6ce2-46be-9186-837b17907078" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="aed6ae3b-3468-4a61-b494-c87f0915ab12" name="VMCustomers" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fa40d4cf-3f19-4765-bed6-0751da6b4e9f" />
+        <suppliersInternal>
+          <dependency Id="1e386544-b72e-41e2-9748-37b4031a691d">
+            <classMoniker Id="bbe9a07c-12ca-42c4-98e4-2e7d337df037" LastKnownName="CustomerList" />
+            <elementDefinition Id="9eb85ac3-ae1a-496d-8b45-e3fbe09fc687" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="8951f581-7469-4e67-ab2b-9ec909cd5f59" name="SelectedCustomers" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bea7a37b-010d-4e15-920f-849599551ebb" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="64dacbbe-a889-473a-9ba6-3a007cdb9f94" LastKnownName="ObservableCollection&lt;Customer&gt;" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="fd2e66a5-990b-4de5-97d6-a7fee925db45" name="GetCustomers" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="05021ddd-feec-42f5-9985-bac0390ade74" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a1fef2fa-a383-4e5e-904e-40127ca6289a" direction="Return">
+                  <elementDefinition Id="309c9d8d-9ee8-4eba-9829-2386a46bd9ff" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="89a42c59-4230-498a-8ea6-d181768fd6c0" LastKnownName="ObservableCollection&lt;Customer&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b788f389-bb32-467e-b152-438f0d650428" name="GetSelectedCustomers" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ba5380e4-e0ad-4df6-a6fa-06748b0c0a47" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a3d75d74-f4fc-4701-811b-baa89f91aa1a" direction="Return">
+                  <elementDefinition Id="9d8efdf4-c698-4859-8d3f-78ff915b9853" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="231d7ddb-b64c-40f2-ab25-740ec1a0f7dd" LastKnownName="ObservableCollection&lt;Customer&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="64dacbbe-a889-473a-9ba6-3a007cdb9f94" name="ObservableCollection&lt;Customer&gt;" isAbstract="false" isLeaf="false" cachedFullName="ObservableCollection&lt;Customer&gt;">
+        <elementDefinition Id="3890aa47-0226-4c6c-8501-d4fbc6da961c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="89a42c59-4230-498a-8ea6-d181768fd6c0" name="ObservableCollection&lt;Customer&gt;" isAbstract="false" isLeaf="false" cachedFullName="ObservableCollection&lt;Customer&gt;">
+        <elementDefinition Id="3890aa47-0226-4c6c-8501-d4fbc6da961c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="231d7ddb-b64c-40f2-ab25-740ec1a0f7dd" name="ObservableCollection&lt;Customer&gt;" isAbstract="false" isLeaf="false" cachedFullName="ObservableCollection&lt;Customer&gt;">
+        <elementDefinition Id="3890aa47-0226-4c6c-8501-d4fbc6da961c" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="8edb8bb4-4c45-46a2-b408-641d2c74fc03" name="NLayerApp Modeling Project">
+    <elementDefinition Id="556bb672-79e8-4125-ba3d-31d2e0361502" />
+  </package>
+</logicalClassDesignerModel>

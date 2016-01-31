@@ -1,0 +1,6 @@
+﻿English
+
+Spanish
+Este proyecto contiene un mock del contexto del módulo MainModule perfectamente configurado para pasar las pruebas sin necesidad de acceder a 
+una base de datos, pruebas que también deberían realizarse, aunque por una cuestión de agilidad no tan frecuentemente como las pruebas sobre este 
+mock. Para la realización del mock se ha usado Microsoft Pex que contiene la infraestructura para Moles y Stubs

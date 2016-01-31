@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <link href="<%: Url.Content("~/Content/Site.css") %>" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body
+        {
+            background-color: #0f191a;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <img src="<%: Url.Content("~/Content/Images/microsoft.png") %>" width="220" height="110"
+                alt="Microsoft" />
+        </div>
+        <div class="sub-header">
+            <asp:ContentPlaceHolder ID="SubHeaderContent" runat="server" />
+        </div>
+        <div class="principal-content">
+            <div class="left-column">
+                <% Html.RenderAction("Menu", "Home"); %>
+            </div>
+            <div class="right-column">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <div class="middle">
+            </div>
+        </div>
+        <div class="footer">
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a> </li>
+                            <li><a href="#">Terms of use</a> </li>
+                            <li><a href="#">Contents Map</a> </li>
+                        </ul>
+                    </td>
+                    <td class="n-layer-app-link">
+                    <a href="#">Microsoft Samples</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <%--    <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1>My MVC Application</h1>
+            </div>
+              
+            <div id="logindisplay">
+                <% Html.RenderPartial("LogOnUserControl"); %>
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                    <li><%: Html.ActionLink("Home", "Index", "Home")%></li>
+                    <li><%: Html.ActionLink("Customers", "Index", "Customer", new { page = 0, pageSize = 5 },null)%></li>
+                    <li><%: Html.ActionLink("Bank Accounts","Index","BankAccount") %></li>
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            <%--<asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>--%>
+</body>
+</html>

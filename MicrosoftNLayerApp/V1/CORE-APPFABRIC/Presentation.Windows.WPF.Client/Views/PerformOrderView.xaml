@@ -1,0 +1,99 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+    xmlns:ViewModel="clr-namespace:Microsoft.Samples.NLayerApp.Presentation.Windows.WPF.Client.ViewModels"
+	xmlns:ValidationRules="clr-namespace:Microsoft.Samples.NLayerApp.Presentation.Windows.WPF.Client.ValidationRules"
+	x:Class="Microsoft.Samples.NLayerApp.Presentation.Windows.WPF.Client.PerformOrderView"
+	x:Name="userControl"
+	UseLayoutRounding="True"
+	d:DesignWidth="640" d:DesignHeight="480">
+
+    <UserControl.DataContext>
+        <ViewModel:VMPerformOrder/>
+    </UserControl.DataContext>
+    
+    <Border x:Name="border" BorderThickness="1,1,1,1" BorderBrush="#CC000000" RenderTransformOrigin="0.5,0.5" Margin="0">
+        <Border.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Border.RenderTransform>
+        <Border x:Name="border1" BorderBrush="#19FFFFFF" BorderThickness="1,1,0,0">
+            <Grid x:Name="MainGrid" Background="{DynamicResource ViewsBacground}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="58"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border BorderThickness="0,1,0,0" Margin="0" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF90D11F">
+                    <Border.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Border.RenderTransform>
+                    <Border.Background>
+                        <RadialGradientBrush GradientOrigin="0.915,1.183" Center="0.924,1.155" RadiusY="1.501" RadiusX="0.741">
+                            <GradientStop Color="#FF525252" Offset="0"/>
+                            <GradientStop Color="#BF3B3B3B" Offset="1"/>
+                        </RadialGradientBrush>
+                    </Border.Background>
+                </Border>
+                <TextBlock x:Name="TB_OrderNumber" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Shipping Name" TextWrapping="Wrap" Foreground="White" FontFamily="{DynamicResource SystemFont}" Margin="15,0,0,0" FontSize="26.667" d:LayoutOverrides="HorizontalAlignment"/>
+                <Grid Margin="0" Grid.Row="1">
+                    <Grid Margin="0,0,22,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel VerticalAlignment="Top" Orientation="Vertical" Margin="70,70,70,0">
+                            <TextBlock FontFamily="{DynamicResource SystemFont}" FontSize="18.667" Foreground="#CCFFFFFF" Text="Customer" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center"/>
+                            <TextBox x:Name="TB_ContactName" Margin="0,5,15,0" Style="{DynamicResource TextBoxStyle1}" TextWrapping="Wrap" d:LayoutOverrides="Width">
+                            	<Binding Path="ContactName" Mode="TwoWay" NotifyOnValidationError="True" UpdateSourceTrigger="LostFocus" ValidatesOnDataErrors="True" ValidatesOnExceptions="True">
+                            		<Binding.ValidationRules>
+                            			<ValidationRules:RequiredValidationRule />
+                            		</Binding.ValidationRules>
+                            	</Binding>
+                            </TextBox>
+                            <TextBlock FontFamily="{DynamicResource SystemFont}" FontSize="18.667" Foreground="#CCFFFFFF" Text="Delivery Date" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Center"/>
+                            <DatePicker x:Name="DP_DeliveryDate" Margin="0,5,15,0" BorderBrush="{x:Null}" FontFamily="{DynamicResource SystemFont}" FontSize="16" Foreground="#CC000000" SelectedDate="{Binding DeliveryDate}"/>
+                            <TextBlock FontFamily="{DynamicResource SystemFont}" FontSize="18.667" Foreground="#CCFFFFFF" Text="Order Date" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Center"/>
+                            <DatePicker x:Name="DP_OrderDate" Margin="0,5,15,0" BorderBrush="{x:Null}" FontFamily="{DynamicResource SystemFont}" FontSize="16" Foreground="#CC000000" SelectedDate="{Binding OrderDate}"/>
+                            <TextBlock FontFamily="{DynamicResource SystemFont}" FontSize="18.667" Foreground="#CCFFFFFF" Text="City" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,5,0,0"/>
+                            <TextBox x:Name="TB_City" Margin="0,5,15,0" Style="{DynamicResource TextBoxStyle1}" TextWrapping="Wrap" d:LayoutOverrides="Width" Text="{Binding ShippingCity}"/>
+                            <TextBlock FontFamily="{DynamicResource SystemFont}" FontSize="18.667" Foreground="#CCFFFFFF" Text="Address" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Center"/>
+                            <TextBox x:Name="TB_Address" Margin="0,5,15,0" Style="{DynamicResource TextBoxStyle1}" TextWrapping="Wrap" d:LayoutOverrides="Width" Text="{Binding ShippingAddress}"/>
+                            <TextBlock FontFamily="{DynamicResource SystemFont}" FontSize="18.667" Foreground="#CCFFFFFF" Text="Zip" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,5,0,0"/>
+                            <TextBox x:Name="TB_Zip" Margin="0,5,15,0" Style="{DynamicResource TextBoxStyle1}" TextWrapping="Wrap" d:LayoutOverrides="Width">
+                            	<Binding Path="ShippingZip" Mode="TwoWay" NotifyOnValidationError="True" UpdateSourceTrigger="LostFocus" ValidatesOnDataErrors="True" ValidatesOnExceptions="True">
+                            		<Binding.ValidationRules>
+                            			<ValidationRules:PositiveIntValidationRule />
+                            		</Binding.ValidationRules>
+                            	</Binding>
+                            </TextBox>
+                        </StackPanel>
+                        <Button x:Name="BTN_Save" Cursor="Hand" Style="{DynamicResource addTransfer}" FontFamily="{DynamicResource SystemFont}" FontSize="13.333" Foreground="White" Margin="0,-50,40,0" Command="{Binding SaveCommand, Mode=OneWay}" CommandParameter="{Binding IsValidData, ElementName=userControl}" Focusable="True" HorizontalAlignment="Right" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" >
+                            <Image Cursor="Arrow" Height="20" Margin="0,2,3,2" Source="/Images/FichaButton_Save.png" Stretch="Fill" Width="20"/>
+                        </Button>
+                        <Grid Margin="0,16,0,0" Height="20" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Button x:Name="BTN_Close" HorizontalAlignment="Right" Margin="0,0,10,0" Content="" VerticalAlignment="Center" Style="{DynamicResource CloseCustomer}" Foreground="White" FontFamily="{DynamicResource SystemFont}" Height="20" Command="{Binding CloseCommand, Mode=OneWay}"/>
+            </Grid>
+        </Border>
+    </Border>
+</UserControl>

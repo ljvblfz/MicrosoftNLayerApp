@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Generic UMLComponentDiagram">
+  <componentModelMoniker Id="5ef9ec40-c284-434d-a107-eeafad7200e0" />
+  <nestedChildShapes>
+    <componentShape Id="590f7457-bdfb-4946-be49-442c28a03003" absoluteBounds="2.875, 1, 4.6458333333333339, 1.9979165871938074" customColor="161, 199, 231" whiteBoxBoundsHeight="1.8458333333333332" whiteBoxBoundsWidth="4.229166666666667" blackBoxBoundsHeight="0.7" blackBoxBoundsWidth="4.229166666666667" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0" whiteBoxSettingsInitialized="true" blackBoxSettingsInitialized="true">
+      <componentMoniker Id="bd24b155-5865-464b-9c00-26a212a69258" LastKnownName="Layer 2" />
+      <nestedChildShapes>
+        <componentUseShape Id="4726cab8-f1b7-4aef-a3ac-18bcf7f40208" absoluteBounds="3.125, 1.75, 1.7916666666666661, 0.95" customColor="161, 199, 231" whiteBoxBoundsHeight="0" whiteBoxBoundsWidth="0" blackBoxBoundsHeight="0" blackBoxBoundsWidth="0" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0">
+          <partMoniker Id="9c9e2e3c-69a4-41a0-a383-e6c78285f473" LastKnownName="Module 1" />
+        </componentUseShape>
+        <componentUseShape Id="68c27c78-54d7-43ba-96ed-7b67422df16a" absoluteBounds="5.375, 1.75, 1.75, 0.95" customColor="161, 199, 231" whiteBoxBoundsHeight="0" whiteBoxBoundsWidth="0" blackBoxBoundsHeight="0" blackBoxBoundsWidth="0" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0">
+          <partMoniker Id="5737072d-3959-4954-be06-84805f7ff8f3" LastKnownName="Module2" />
+        </componentUseShape>
+      </nestedChildShapes>
+    </componentShape>
+    <componentShape Id="641db7bf-fa1f-48a7-9dcb-ed2b07d1922a" absoluteBounds="2.875, 3.5, 4.6520834922790524, 2.08125" customColor="161, 199, 231" whiteBoxBoundsHeight="0" whiteBoxBoundsWidth="0" blackBoxBoundsHeight="0" blackBoxBoundsWidth="0" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0">
+      <componentMoniker Id="4f06a72c-a7ff-489f-9b8b-94bd039d862a" LastKnownName="Layer 1" />
+      <nestedChildShapes>
+        <componentUseShape Id="f310bd25-731f-46bb-8a9b-b0f1f3bf6074" absoluteBounds="3.125, 4.25, 1.8125, 0.95" customColor="161, 199, 231" whiteBoxBoundsHeight="0" whiteBoxBoundsWidth="0" blackBoxBoundsHeight="0" blackBoxBoundsWidth="0" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0">
+          <partMoniker Id="7edf69c5-997c-4439-9f5e-50e2faadc19e" LastKnownName="Module 1" />
+        </componentUseShape>
+        <componentUseShape Id="a88e5554-e2b4-48e7-920b-47c0990eab0a" absoluteBounds="5.375, 4.25, 1.78125, 0.95" customColor="161, 199, 231" whiteBoxBoundsHeight="0" whiteBoxBoundsWidth="0" blackBoxBoundsHeight="0" blackBoxBoundsWidth="0" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0">
+          <partMoniker Id="79f68ad4-7a3e-4e16-8963-de8e3f55f332" LastKnownName="Module 2" />
+        </componentUseShape>
+      </nestedChildShapes>
+    </componentShape>
+  </nestedChildShapes>
+</componentDiagram>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestSettings name="Trace and Test Impact" id="f1f75c38-1571-47d9-8cc2-f73a93a20427" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Description>These are test settings for Trace and Test Impact.</Description>
+  <Execution>
+    <TestTypeSpecific>
+      <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+        <AssemblyResolution>
+          <TestDirectory useLoadContext="true" />
+        </AssemblyResolution>
+      </UnitTestRunConfig>
+      <WebTestRunConfiguration testTypeId="4e7599fa-5ecb-43e9-a887-cd63cf72d207">
+        <Browser name="Internet Explorer 7.0">
+          <Headers>
+            <Header name="User-Agent" value="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)" />
+            <Header name="Accept" value="*/*" />
+            <Header name="Accept-Language" value="{{$IEAcceptLanguage}}" />
+            <Header name="Accept-Encoding" value="GZIP" />
+          </Headers>
+        </Browser>
+      </WebTestRunConfiguration>
+    </TestTypeSpecific>
+    <AgentRule name="LocalMachineDefaultRole">
+      <DataCollectors>
+        <DataCollector uri="datacollector://microsoft/SystemInfo/1.0" assemblyQualifiedName="Microsoft.VisualStudio.TestTools.DataCollection.SystemInfo.SystemInfoDataCollector, Microsoft.VisualStudio.TestTools.DataCollection.SystemInfo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" friendlyName="System Information">
+        </DataCollector>
+        <DataCollector uri="datacollector://microsoft/HttpProxy/1.0" assemblyQualifiedName="Microsoft.VisualStudio.TraceCollector.HttpProxyCollector, Microsoft.VisualStudio.TraceCollector, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" friendlyName="ASP.NET Client Proxy for IntelliTrace and Test Impact">
+        </DataCollector>
+        <DataCollector uri="datacollector://microsoft/TestImpact/1.0" assemblyQualifiedName="Microsoft.VisualStudio.TraceCollector.TestImpactDataCollector, Microsoft.VisualStudio.TraceCollector, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" friendlyName="Test Impact">
+        </DataCollector>
+        <DataCollector uri="datacollector://microsoft/TraceDebugger/1.0" assemblyQualifiedName="Microsoft.VisualStudio.TraceCollector.TraceDebuggerDataCollector, Microsoft.VisualStudio.TraceCollector, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" friendlyName="IntelliTrace">
+        </DataCollector>
+        <DataCollector uri="datacollector://microsoft/CodeCoverage/1.0" assemblyQualifiedName="Microsoft.VisualStudio.TestTools.CodeCoverage.CoveragePlugIn, Microsoft.VisualStudio.QualityTools.Plugins.CodeCoverage, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" friendlyName="Code Coverage">
+          <Configuration>
+            <CodeCoverage xmlns="">
+              <Regular>
+                <CodeCoverageItem binaryFile="Application.MainModule.Tests\bin\Debug\Application.MainModule.Tests.dll" pdbFile="Application.MainModule.Tests\bin\Debug\Application.MainModule.Tests.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Presentation.Web.MVC.Client.Tests\bin\Debug\Asp.NetMVC.Client.Tests.dll" pdbFile="Presentation.Web.MVC.Client.Tests\bin\Debug\Asp.NetMVC.Client.Tests.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Presentation.RIA.Silverlight.Client\Bin\Debug\Microsoft.Samples.NLayerApp.Presentation.Silverlight.Client.dll" pdbFile="Presentation.RIA.Silverlight.Client\Bin\Debug\Microsoft.Samples.NLayerApp.Presentation.Silverlight.Client.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Application.MainModule\bin\Debug\NLayerApp.Application.MainModule.dll" pdbFile="Application.MainModule\bin\Debug\NLayerApp.Application.MainModule.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="DistributedServices.Core\bin\Debug\NLayerApp.DistributedServices.Core.dll" pdbFile="DistributedServices.Core\bin\Debug\NLayerApp.DistributedServices.Core.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="DistributedServices.MainModule\bin\Debug\NLayerApp.DistributedServices.MainModule.dll" pdbFile="DistributedServices.MainModule\bin\Debug\NLayerApp.DistributedServices.MainModule.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Domain.Core\bin\Debug\NLayerApp.Domain.Core.dll" pdbFile="Domain.Core\bin\Debug\NLayerApp.Domain.Core.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Domain.Core.Entities\bin\Debug\NLayerApp.Domain.Core.Entities.dll" pdbFile="Domain.Core.Entities\bin\Debug\NLayerApp.Domain.Core.Entities.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Domain.Core.Tests\bin\Debug\NLayerApp.Domain.Core.Tests.dll" pdbFile="Domain.Core.Tests\bin\Debug\NLayerApp.Domain.Core.Tests.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Domain.MainModule\bin\Debug\NLayerApp.Domain.MainModule.dll" pdbFile="Domain.MainModule\bin\Debug\NLayerApp.Domain.MainModule.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Domain.MainModule.Entities\bin\Debug\NLayerApp.Domain.MainModule.Entities.dll" pdbFile="Domain.MainModule.Entities\bin\Debug\NLayerApp.Domain.MainModule.Entities.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Domain.MainModule.Tests\bin\Debug\NLayerApp.Domain.MainModule.Tests.dll" pdbFile="Domain.MainModule.Tests\bin\Debug\NLayerApp.Domain.MainModule.Tests.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Infrastructure.CrossCutting\bin\Debug\NLayerApp.Infrastructure.CrossCutting.dll" pdbFile="Infrastructure.CrossCutting\bin\Debug\NLayerApp.Infrastructure.CrossCutting.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Infrastructure.CrossCutting.IoC\bin\Debug\NLayerApp.Infrastructure.CrossCutting.IoC.dll" pdbFile="Infrastructure.CrossCutting.IoC\bin\Debug\NLayerApp.Infrastructure.CrossCutting.IoC.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Infrastructure.CrossCutting.NetFramework\bin\Debug\NLayerApp.Infrastructure.CrossCutting.NetFx.dll" pdbFile="Infrastructure.CrossCutting.NetFramework\bin\Debug\NLayerApp.Infrastructure.CrossCutting.NetFx.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Infrastructure.CrossCutting.Tests\bin\Debug\NLayerApp.Infrastructure.CrossCutting.Tests.dll" pdbFile="Infrastructure.CrossCutting.Tests\bin\Debug\NLayerApp.Infrastructure.CrossCutting.Tests.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Infrastructure.Data.Core\bin\Debug\NLayerApp.Infrastructure.Data.Core.dll" pdbFile="Infrastructure.Data.Core\bin\Debug\NLayerApp.Infrastructure.Data.Core.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Infrastructure.Data.Core.Tests\bin\Debug\NLayerApp.Infrastructure.Data.Core.Tests.dll" pdbFile="Infrastructure.Data.Core.Tests\bin\Debug\NLayerApp.Infrastructure.Data.Core.Tests.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Infrastructure.Data.MainModule\bin\Debug\NLayerApp.Infrastructure.Data.MainModule.dll" pdbFile="Infrastructure.Data.MainModule\bin\Debug\NLayerApp.Infrastructure.Data.MainModule.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Infrastructure.Data.MainModule.Mock\bin\Debug\NLayerApp.Infrastructure.Data.MainModule.Mock.dll" pdbFile="Infrastructure.Data.MainModule.Mock\bin\Debug\NLayerApp.Infrastructure.Data.MainModule.Mock.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Infrastructure.Data.MainModule.Tests\bin\Debug\NLayerApp.Infrastructure.Data.MainModule.Tests.dll" pdbFile="Infrastructure.Data.MainModule.Tests\bin\Debug\NLayerApp.Infrastructure.Data.MainModule.Tests.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Presentation.Windows.WPF.Client\bin\Debug\NLayerApp.Presentation.Windows.WPF.Client.exe" pdbFile="Presentation.Windows.WPF.Client\bin\Debug\NLayerApp.Presentation.Windows.WPF.Client.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Presentation.Windows.WPF.ServiceAgents\bin\Debug\NLayerApp.Presentation.Windows.WPF.ServiceAgents.dll" pdbFile="Presentation.Windows.WPF.ServiceAgents\bin\Debug\NLayerApp.Presentation.Windows.WPF.ServiceAgents.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Presentation.RIA.Silverlight.Domain.Core.Entities\Bin\Debug\Silverlight.Domain.Core.Entities.dll" pdbFile="Presentation.RIA.Silverlight.Domain.Core.Entities\Bin\Debug\Silverlight.Domain.Core.Entities.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="Presentation.RIA.Silverlight.Domain.MainModule.Entities\Bin\Debug\Silverlight.Domain.MainModule.Entities.dll" pdbFile="Presentation.RIA.Silverlight.Domain.MainModule.Entities\Bin\Debug\Silverlight.Domain.MainModule.Entities.pdb" instrumentInPlace="true" />
+              </Regular>
+              <AspNet>
+                <AspNetCodeCoverageItem id="50ccb18c-a821-40d5-ba73-d046e7f53607" name="DistributedServices.Deployment" applicationRoot="/" url="http://localhost:0/" />
+                <AspNetCodeCoverageItem id="34ec53bb-e021-46e1-a569-705a977b98fc" name="Presentation.RIA.Silverlight.Client.Web" applicationRoot="/" url="http://localhost:0/" />
+                <AspNetCodeCoverageItem id="4b2c775c-6c2e-4208-b619-4b35abc49faa" name="Presentation.Web.MVC.Client" applicationRoot="/" url="http://localhost:0/" />
+              </AspNet>
+            </CodeCoverage>
+          </Configuration>
+        </DataCollector>
+      </DataCollectors>
+    </AgentRule>
+  </Execution>
+</TestSettings>

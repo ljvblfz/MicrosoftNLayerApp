@@ -1,0 +1,952 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NLayerApp.Infrastructure.Data.MainModule.Moles</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MBankAccountRepository">
+            <summary>Mole type of <see cref="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.BankAccountRepository"/>
+            .</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MBankAccountRepository.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MBankAccountRepository.#ctor(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.BankAccountRepository)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MBankAccountRepository.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MBankAccountRepository.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MBankAccountRepository.Bind(Microsoft.Samples.NLayerApp.Domain.Core.IRepository{Microsoft.Samples.NLayerApp.Domain.MainModule.Entities.BankAccount})">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MBankAccountRepository.Bind(Microsoft.Samples.NLayerApp.Domain.MainModule.BankAccounts.IBankAccountRepository)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MBankAccountRepository.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MBankAccountRepository.ConstructorIMainModuleContextITraceManager">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.BankAccountRepository.#ctor(T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext,T:Microsoft.Samples.NLayerApp.Infrastructure.CrossCutting.Logging.ITraceManager)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MBankAccountRepository.FindPagedBankAccountsWithTransferInformationInt32Int32">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.BankAccountRepository.FindPagedBankAccountsWithTransferInformation(T:System.Int32,T:System.Int32)"/>
+            </summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MBankAccountRepository.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MBankAccountRepository.AllInstances.FindPagedBankAccountsWithTransferInformationInt32Int32">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.BankAccountRepository.FindPagedBankAccountsWithTransferInformation(T:System.Int32,T:System.Int32)"/>
+            </summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCountryRepository">
+            <summary>Mole type of <see cref="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.CountryRepository"/>
+            .</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCountryRepository.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCountryRepository.#ctor(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.CountryRepository)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCountryRepository.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCountryRepository.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCountryRepository.Bind(Microsoft.Samples.NLayerApp.Domain.Core.IRepository{Microsoft.Samples.NLayerApp.Domain.MainModule.Entities.Country})">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCountryRepository.Bind(Microsoft.Samples.NLayerApp.Domain.MainModule.Countries.ICountryRepository)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCountryRepository.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCountryRepository.ConstructorIMainModuleContextITraceManager">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.CountryRepository.#ctor(T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext,T:Microsoft.Samples.NLayerApp.Infrastructure.CrossCutting.Logging.ITraceManager)"/>
+            </summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCountryRepository.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCustomerRepository">
+            <summary>Mole type of <see cref="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.CustomerRepository"/>
+            .</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCustomerRepository.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCustomerRepository.#ctor(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.CustomerRepository)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCustomerRepository.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCustomerRepository.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCustomerRepository.Bind(Microsoft.Samples.NLayerApp.Domain.Core.IRepository{Microsoft.Samples.NLayerApp.Domain.MainModule.Entities.Customer})">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCustomerRepository.Bind(Microsoft.Samples.NLayerApp.Domain.MainModule.Customers.ICustomerRepository)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCustomerRepository.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCustomerRepository.ConstructorIMainModuleContextITraceManager">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.CustomerRepository.#ctor(T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext,T:Microsoft.Samples.NLayerApp.Infrastructure.CrossCutting.Logging.ITraceManager)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCustomerRepository.FindCustomerISpecificationOfCustomer">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.CustomerRepository.FindCustomer(Microsoft.Samples.NLayerApp.Domain.Core.Specification.ISpecification`1{T:Microsoft.Samples.NLayerApp.Domain.MainModule.Entities.Customer})"/>
+            </summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCustomerRepository.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MCustomerRepository.AllInstances.FindCustomerISpecificationOfCustomer">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.CustomerRepository.FindCustomer(Microsoft.Samples.NLayerApp.Domain.Core.Specification.ISpecification`1{T:Microsoft.Samples.NLayerApp.Domain.MainModule.Entities.Customer})"/>
+            </summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext">
+            <summary>Mole type of <see cref="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext"/>
+            .</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.#ctor(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AttachTEntity``1(Microsoft.Moles.Framework.MolesDelegates.Action{``0})">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.Attach``1(``0)"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.Bind(Microsoft.Samples.NLayerApp.Domain.Core.IContext)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.Bind(Microsoft.Samples.NLayerApp.Domain.Core.ISQL)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.Bind(Microsoft.Samples.NLayerApp.Domain.Core.IUnitOfWork)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.Bind(Microsoft.Samples.NLayerApp.Infrastructure.Data.Core.IQueryableContext)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.Bind(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.CreateObjectSet``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Data.Objects.IObjectSet{``0}})">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.CreateObjectSet``1"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.ExecuteQueryStringObjectArray``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.String,System.Object[],System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.ExecuteQuery``1(T:System.String,T:System.Object[])"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.SetChangesTEntity``1(Microsoft.Moles.Framework.MolesDelegates.Action{``0})">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.SetChanges``1(``0)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.BankAccountsGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.BankAccounts"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.BankTransfersGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.BankTransfers"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.Commit">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.Commit"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.CommitAndRefreshChanges">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.CommitAndRefreshChanges"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.Constructor">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.#ctor"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.ConstructorEntityConnection">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.#ctor(T:System.Data.EntityClient.EntityConnection)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.ConstructorString">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.#ctor(T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.CountriesGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.Countries"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.CustomerPicturesGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.CustomerPictures"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.CustomersGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.Customers"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.ExecuteCommandStringObjectArray">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.ExecuteCommand(T:System.String,T:System.Object[])"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.HandleObjectMaterializedObjectObjectMaterializedEventArgs">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.HandleObjectMaterialized(T:System.Object,T:System.Data.Objects.ObjectMaterializedEventArgs)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.Initialize">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.Initialize"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.OrderDetailsGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.OrderDetails"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.OrdersGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.Orders"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.ProductsGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.Products"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.RollbackChanges">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.RollbackChanges"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext._CommitAndRefreshChangesb__0ObjectStateEntry">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.&lt;CommitAndRefreshChanges&gt;b__0(T:System.Data.Objects.ObjectStateEntry)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext._CommitAndRefreshChangesb__1ObjectStateEntry">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.&lt;CommitAndRefreshChanges&gt;b__1(T:System.Data.Objects.ObjectStateEntry)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext._CommitAndRefreshChangesb__2IObjectWithChangeTracker">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.&lt;CommitAndRefreshChanges&gt;b__2(T:Microsoft.Samples.NLayerApp.Domain.Core.Entities.IObjectWithChangeTracker)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext._CommitAndRefreshChangesb__3ObjectStateEntry">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.&lt;CommitAndRefreshChanges&gt;b__3(T:System.Data.Objects.ObjectStateEntry)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext._CommitAndRefreshChangesb__4ObjectStateEntry">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.&lt;CommitAndRefreshChanges&gt;b__4(T:System.Data.Objects.ObjectStateEntry)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext._CommitAndRefreshChangesb__5ObjectStateEntry">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.&lt;CommitAndRefreshChanges&gt;b__5(T:System.Data.Objects.ObjectStateEntry)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext._CommitAndRefreshChangesb__6IObjectWithChangeTracker">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.&lt;CommitAndRefreshChanges&gt;b__6(T:Microsoft.Samples.NLayerApp.Domain.Core.Entities.IObjectWithChangeTracker)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext._Commitb__10IObjectWithChangeTracker">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.&lt;Commit&gt;b__10(T:Microsoft.Samples.NLayerApp.Domain.Core.Entities.IObjectWithChangeTracker)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext._Commitb__eObjectStateEntry">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.&lt;Commit&gt;b__e(T:System.Data.Objects.ObjectStateEntry)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext._Commitb__fObjectStateEntry">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.&lt;Commit&gt;b__f(T:System.Data.Objects.ObjectStateEntry)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext._RollbackChangesb__14ObjectStateEntry">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.&lt;RollbackChanges&gt;b__14(T:System.Data.Objects.ObjectStateEntry)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext._RollbackChangesb__15ObjectStateEntry">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.&lt;RollbackChanges&gt;b__15(T:System.Data.Objects.ObjectStateEntry)"/>
+            </summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.AttachTEntity``1(Microsoft.Moles.Framework.MolesDelegates.Action{Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext,``0})">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.Attach``1(``0)"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.CreateObjectSet``1(Microsoft.Moles.Framework.MolesDelegates.Func{Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext,System.Data.Objects.IObjectSet{``0}})">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.CreateObjectSet``1"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.ExecuteQueryStringObjectArray``1(Microsoft.Moles.Framework.MolesDelegates.Func{Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext,System.String,System.Object[],System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.ExecuteQuery``1(T:System.String,T:System.Object[])"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.SetChangesTEntity``1(Microsoft.Moles.Framework.MolesDelegates.Action{Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext,``0})">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.SetChanges``1(``0)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.BankAccountsGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.BankAccounts"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.BankTransfersGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.BankTransfers"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.Commit">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.Commit"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.CommitAndRefreshChanges">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.CommitAndRefreshChanges"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.CountriesGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.Countries"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.CustomerPicturesGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.CustomerPictures"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.CustomersGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.Customers"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.ExecuteCommandStringObjectArray">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.ExecuteCommand(T:System.String,T:System.Object[])"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.HandleObjectMaterializedObjectObjectMaterializedEventArgs">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.HandleObjectMaterialized(T:System.Object,T:System.Data.Objects.ObjectMaterializedEventArgs)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.Initialize">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.Initialize"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.OrderDetailsGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.OrderDetails"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.OrdersGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.Orders"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.ProductsGet">
+            <summary>Sets the mole of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.Products"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MMainModuleContext.AllInstances.RollbackChanges">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext.RollbackChanges"/>
+            </summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MOrderRepository">
+            <summary>Mole type of <see cref="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.OrderRepository"/>
+            .</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MOrderRepository.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MOrderRepository.#ctor(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.OrderRepository)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MOrderRepository.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MOrderRepository.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MOrderRepository.Bind(Microsoft.Samples.NLayerApp.Domain.Core.IRepository{Microsoft.Samples.NLayerApp.Domain.MainModule.Entities.Order})">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MOrderRepository.Bind(Microsoft.Samples.NLayerApp.Domain.MainModule.Orders.IOrderRepository)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MOrderRepository.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MOrderRepository.ConstructorIMainModuleContextITraceManager">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.OrderRepository.#ctor(T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext,T:Microsoft.Samples.NLayerApp.Infrastructure.CrossCutting.Logging.ITraceManager)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MOrderRepository.FindOrdersByCustomerCodeString">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.OrderRepository.FindOrdersByCustomerCode(T:System.String)"/>
+            </summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MOrderRepository.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MOrderRepository.AllInstances.FindOrdersByCustomerCodeString">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.OrderRepository.FindOrdersByCustomerCode(T:System.String)"/>
+            </summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MProductRepository">
+            <summary>Mole type of <see cref="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.ProductRepository"/>
+            .</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MProductRepository.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MProductRepository.#ctor(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.ProductRepository)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MProductRepository.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MProductRepository.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MProductRepository.Bind(Microsoft.Samples.NLayerApp.Domain.Core.IRepository{Microsoft.Samples.NLayerApp.Domain.MainModule.Entities.Product})">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MProductRepository.Bind(Microsoft.Samples.NLayerApp.Domain.MainModule.Products.IProductRepository)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MProductRepository.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MProductRepository.ConstructorIMainModuleContextITraceManager">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.ProductRepository.#ctor(T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext,T:Microsoft.Samples.NLayerApp.Infrastructure.CrossCutting.Logging.ITraceManager)"/>
+            </summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.MProductRepository.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions">
+            <summary>Mole type of <see cref="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions"/>
+            .</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.ApplyChangesObjectContextStringTEntity``1(Microsoft.Moles.Framework.MolesDelegates.Action{System.Data.Objects.ObjectContext,System.String,``0})">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.ApplyChanges``1(T:System.Data.Objects.ObjectContext,T:System.String,``0)"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.ApplyChangesObjectSetOfTEntityTEntity``1(Microsoft.Moles.Framework.MolesDelegates.Action{System.Data.Objects.ObjectSet{``0},``0})">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.ApplyChanges``1(System.Data.Objects.ObjectSet`1{``0},``0)"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions._ApplyChangesb__0IObjectWithChangeTracker``1(Microsoft.Moles.Framework.MolesDelegates.Func{Microsoft.Samples.NLayerApp.Domain.Core.Entities.IObjectWithChangeTracker,System.Boolean})">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.&lt;ApplyChanges&gt;b__0``1(T:Microsoft.Samples.NLayerApp.Domain.Core.Entities.IObjectWithChangeTracker)"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions._ApplyChangesb__1IObjectWithChangeTracker``1(Microsoft.Moles.Framework.MolesDelegates.Func{Microsoft.Samples.NLayerApp.Domain.Core.Entities.IObjectWithChangeTracker,System.Boolean})">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.&lt;ApplyChanges&gt;b__1``1(T:Microsoft.Samples.NLayerApp.Domain.Core.Entities.IObjectWithChangeTracker)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.ChangeEntityStateBasedOnObjectStateObjectContextIObjectWithChangeTracker">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.ChangeEntityStateBasedOnObjectState(T:System.Data.Objects.ObjectContext,T:Microsoft.Samples.NLayerApp.Domain.Core.Entities.IObjectWithChangeTracker)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.CreateReferenceKeyLookupStringEntityReferenceNavigationProperty">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.CreateReferenceKeyLookup(T:System.String,T:System.Data.Objects.DataClasses.EntityReference,T:System.Data.Metadata.Edm.NavigationProperty)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.CreateRelationshipObjectContextEntityReferenceEntityKeyEntityKeyEntityState">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.CreateRelationship(T:System.Data.Objects.ObjectContext,T:System.Data.Objects.DataClasses.EntityReference,T:System.Data.EntityKey,T:System.Data.EntityKey,T:System.Data.EntityState)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.DetachRelationshipObjectContextEntityReferenceObjectStateEntryEntityKey">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.DetachRelationship(T:System.Data.Objects.ObjectContext,T:System.Data.Objects.DataClasses.EntityReference,T:System.Data.Objects.ObjectStateEntry,T:System.Data.EntityKey)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.EnumerateSaveReferencesRelationshipManager">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.EnumerateSaveReferences(T:System.Data.Objects.DataClasses.RelationshipManager)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.GetCSpaceEntityTypeMetadataWorkspaceType">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.GetCSpaceEntityType(T:System.Data.Metadata.Edm.MetadataWorkspace,T:System.Type)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.GetCurrentEntityKeyEntityReferenceObjectContext">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.GetCurrentEntityKey(T:System.Data.Objects.DataClasses.EntityReference,T:System.Data.Objects.ObjectContext)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.GetEntitySetNameRelatedEnd">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.GetEntitySetName(T:System.Data.Objects.DataClasses.RelatedEnd)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.GetNavigationPropertyEntityTypeString">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.GetNavigationProperty(T:System.Data.Metadata.Edm.EntityType,T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.GetOriginalValueRecordOriginalValueRecordString">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.GetOriginalValueRecord(T:System.Data.Objects.OriginalValueRecord,T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.GetRelatedEndObjectStateEntryString">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.GetRelatedEnd(T:System.Data.Objects.ObjectStateEntry,T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.GetValueEntityReference">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.GetValue(T:System.Data.Objects.DataClasses.EntityReference)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.IsDependentEndOfReferentialConstraintRelatedEnd">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.IsDependentEndOfReferentialConstraint(T:System.Data.Objects.DataClasses.RelatedEnd)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.MoveSavedReferenceKeyEntityReferenceObjectNavigationPropertyIDictionaryOfStringObjectIDictionaryOfStringObject">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.MoveSavedReferenceKey(T:System.Data.Objects.DataClasses.EntityReference,T:System.Object,T:System.Data.Metadata.Edm.NavigationProperty,System.Collections.Generic.IDictionary`2{T:System.String,T:System.Object},System.Collections.Generic.IDictionary`2{T:System.String,T:System.Object})"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.SetValueOriginalValueRecordEdmPropertyObject">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.SetValue(T:System.Data.Objects.OriginalValueRecord,T:System.Data.Metadata.Edm.EdmProperty,T:System.Object)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.StoreReferenceKeyValuesObjectContextIObjectWithChangeTracker">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.StoreReferenceKeyValues(T:System.Data.Objects.ObjectContext,T:Microsoft.Samples.NLayerApp.Domain.Core.Entities.IObjectWithChangeTracker)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.TryGetObjectStateEntryObjectContextEntityKeyEntityKeyAssociationSetAssociationEndMemberAssociationEndMemberObjectStateEntryOut">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.TryGetObjectStateEntry(T:System.Data.Objects.ObjectContext,T:System.Data.EntityKey,T:System.Data.EntityKey,T:System.Data.Metadata.Edm.AssociationSet,T:System.Data.Metadata.Edm.AssociationEndMember,T:System.Data.Metadata.Edm.AssociationEndMember,T:System.Data.Objects.ObjectStateEntry@)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.UpdateOriginalValuesComplexTypeStringStringIDictionaryOfStringObjectOriginalValueRecord">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.UpdateOriginalValues(T:System.Data.Metadata.Edm.ComplexType,T:System.String,T:System.String,System.Collections.Generic.IDictionary`2{T:System.String,T:System.Object},T:System.Data.Objects.OriginalValueRecord)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions.UpdateOriginalValuesObjectContextIObjectWithChangeTracker">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.UpdateOriginalValues(T:System.Data.Objects.ObjectContext,T:Microsoft.Samples.NLayerApp.Domain.Core.Entities.IObjectWithChangeTracker)"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.MSelfTrackingEntitiesContextExtensions._EnumerateSaveReferencesb__7EntityReference">
+            <summary>Sets the mole of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.SelfTrackingEntitiesContextExtensions.&lt;EnumerateSaveReferences&gt;b__7(T:System.Data.Objects.DataClasses.EntityReference)"/>
+            </summary>
+        </member>
+        <member name="T:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7">
+            <summary>Mole type of <see cref="T:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7"/>
+            .</summary>
+        </member>
+        <member name="M:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.#ctor(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.Constructor">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.#ctor"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView0">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView0"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView1">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView1"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView10">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView10"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView11">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView11"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView12">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView12"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView13">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView13"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView14">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView14"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView15">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView15"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView16">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView16"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView2">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView2"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView3">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView3"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView4">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView4"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView5">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView5"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView6">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView6"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView7">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView7"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView8">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView8"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView9">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView9"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetViewAtInt32">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetViewAt(T:System.Int32)"/>
+            </summary>
+        </member>
+        <member name="T:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView0">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView0"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView1">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView1"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView10">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView10"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView11">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView11"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView12">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView12"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView13">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView13"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView14">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView14"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView15">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView15"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView16">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView16"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView2">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView2"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView3">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView3"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView4">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView4"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView5">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView5"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView6">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView6"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView7">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView7"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView8">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView8"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetView9">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetView9"/>
+            </summary>
+        </member>
+        <member name="P:Edm_EntityMappingGeneratedViews.Moles.MViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.AllInstances.GetViewAtInt32">
+            <summary>Sets the mole of <see cref="M:Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsAABE6A6733BD00FCE7F25DD41AE0DBFC72B548A84879DC4695F719F7A8DA3BA7.GetViewAt(T:System.Int32)"/>
+            </summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SBankAccountRepository">
+            <summary>Stub type of <see cref="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.BankAccountRepository"/>
+            .</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SBankAccountRepository.#ctor(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext,Microsoft.Samples.NLayerApp.Infrastructure.CrossCutting.Logging.ITraceManager)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SBankAccountRepository.InitializeStub">
+            <summary>Initializes a new instance of type SBankAccountRepository</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SBankAccountRepository.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SBankAccountRepository.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SCountryRepository">
+            <summary>Stub type of <see cref="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.CountryRepository"/>
+            .</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SCountryRepository.#ctor(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext,Microsoft.Samples.NLayerApp.Infrastructure.CrossCutting.Logging.ITraceManager)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SCountryRepository.InitializeStub">
+            <summary>Initializes a new instance of type SCountryRepository</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SCountryRepository.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SCountryRepository.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SCustomerRepository">
+            <summary>Stub type of <see cref="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.CustomerRepository"/>
+            .</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SCustomerRepository.#ctor(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext,Microsoft.Samples.NLayerApp.Infrastructure.CrossCutting.Logging.ITraceManager)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SCustomerRepository.InitializeStub">
+            <summary>Initializes a new instance of type SCustomerRepository</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SCustomerRepository.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SCustomerRepository.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext">
+            <summary>Stub type of <see cref="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext"/>
+            .</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.#ctor">
+            <summary>Initializes a new instance of type SIMainModuleContext</summary>
+        </member>
+        <member name="F:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.BankAccountsGet">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.BankAccounts"/>
+            </summary>
+        </member>
+        <member name="F:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.BankTransfersGet">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.BankTransfers"/>
+            </summary>
+        </member>
+        <member name="F:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.Commit">
+            <summary>Sets the stub of <see cref="M:Microsoft.Samples.NLayerApp.Domain.Core.IUnitOfWork.Commit"/>
+            </summary>
+        </member>
+        <member name="F:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.CommitAndRefreshChanges">
+            <summary>Sets the stub of <see cref="M:Microsoft.Samples.NLayerApp.Domain.Core.IUnitOfWork.CommitAndRefreshChanges"/>
+            </summary>
+        </member>
+        <member name="F:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.CountriesGet">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.Countries"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.CreateObjectSet``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Data.Objects.IObjectSet{``0}})">
+            <summary>Sets stubs of CreateObjectSet()</summary>
+        </member>
+        <member name="F:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.CustomerPicturesGet">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.CustomerPictures"/>
+            </summary>
+        </member>
+        <member name="F:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.CustomersGet">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.Customers"/>
+            </summary>
+        </member>
+        <member name="F:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.Dispose">
+            <summary>Sets the stub of <see cref="M:System.IDisposable.Dispose"/>
+            </summary>
+        </member>
+        <member name="F:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.ExecuteCommandStringObjectArray">
+            <summary>Sets the stub of <see cref="M:Microsoft.Samples.NLayerApp.Domain.Core.ISQL.ExecuteCommand(T:System.String,T:System.Object[])"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.ExecuteQueryStringObjectArray``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.String,System.Object[],System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets stubs of ExecuteQuery(String sqlQuery, Object[] parameters)</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::Microsoft#Samples#NLayerApp#Domain#Core#IContext#SetChanges``1(``0)">
+            <summary>Sets the stub of <see cref="M:Microsoft.Samples.NLayerApp.Domain.Core.IContext.SetChanges``1(``0)"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::Microsoft#Samples#NLayerApp#Domain#Core#ISQL#ExecuteCommand(System.String,System.Object[])">
+            <summary>Sets the stub of <see cref="M:Microsoft.Samples.NLayerApp.Domain.Core.ISQL.ExecuteCommand(T:System.String,T:System.Object[])"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::Microsoft#Samples#NLayerApp#Domain#Core#ISQL#ExecuteQuery``1(System.String,System.Object[])">
+            <summary>Sets the stub of <see cref="M:Microsoft.Samples.NLayerApp.Domain.Core.ISQL.ExecuteQuery``1(T:System.String,T:System.Object[])"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::Microsoft#Samples#NLayerApp#Domain#Core#IUnitOfWork#Commit">
+            <summary>Sets the stub of <see cref="M:Microsoft.Samples.NLayerApp.Domain.Core.IUnitOfWork.Commit"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::Microsoft#Samples#NLayerApp#Domain#Core#IUnitOfWork#CommitAndRefreshChanges">
+            <summary>Sets the stub of <see cref="M:Microsoft.Samples.NLayerApp.Domain.Core.IUnitOfWork.CommitAndRefreshChanges"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::Microsoft#Samples#NLayerApp#Domain#Core#IUnitOfWork#RollbackChanges">
+            <summary>Sets the stub of <see cref="M:Microsoft.Samples.NLayerApp.Domain.Core.IUnitOfWork.RollbackChanges"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::Microsoft#Samples#NLayerApp#Infrastructure#Data#Core#IQueryableContext#CreateObjectSet``1">
+            <summary>Sets the stub of <see cref="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.Core.IQueryableContext.CreateObjectSet``1"/>
+            </summary>
+        </member>
+        <member name="F:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.OrderDetailsGet">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.OrderDetails"/>
+            </summary>
+        </member>
+        <member name="F:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.OrdersGet">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.Orders"/>
+            </summary>
+        </member>
+        <member name="F:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.ProductsGet">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.Products"/>
+            </summary>
+        </member>
+        <member name="F:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.RollbackChanges">
+            <summary>Sets the stub of <see cref="M:Microsoft.Samples.NLayerApp.Domain.Core.IUnitOfWork.RollbackChanges"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.SetChangesTEntity``1(Microsoft.Moles.Framework.MolesDelegates.Action{``0})">
+            <summary>Sets stubs of SetChanges(!!0 item)</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::System#IDisposable#Dispose">
+            <summary>Sets the stub of <see cref="M:System.IDisposable.Dispose"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::Microsoft#Samples#NLayerApp#Infrastructure#Data#MainModule#Context#IMainModuleContext#BankAccounts">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.BankAccounts"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::Microsoft#Samples#NLayerApp#Infrastructure#Data#MainModule#Context#IMainModuleContext#BankTransfers">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.BankTransfers"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::Microsoft#Samples#NLayerApp#Infrastructure#Data#MainModule#Context#IMainModuleContext#Countries">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.Countries"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::Microsoft#Samples#NLayerApp#Infrastructure#Data#MainModule#Context#IMainModuleContext#CustomerPictures">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.CustomerPictures"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::Microsoft#Samples#NLayerApp#Infrastructure#Data#MainModule#Context#IMainModuleContext#Customers">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.Customers"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::Microsoft#Samples#NLayerApp#Infrastructure#Data#MainModule#Context#IMainModuleContext#OrderDetails">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.OrderDetails"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::Microsoft#Samples#NLayerApp#Infrastructure#Data#MainModule#Context#IMainModuleContext#Orders">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.Orders"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SIMainModuleContext.global::Microsoft#Samples#NLayerApp#Infrastructure#Data#MainModule#Context#IMainModuleContext#Products">
+            <summary>Sets the stub of <see cref="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext.Products"/>
+            </summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SMainModuleContext">
+            <summary>Stub type of <see cref="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.MainModuleContext"/>
+            .</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SMainModuleContext.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SMainModuleContext.#ctor(System.Data.EntityClient.EntityConnection)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SMainModuleContext.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SMainModuleContext.InitializeStub">
+            <summary>Initializes a new instance of type SMainModuleContext</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SMainModuleContext.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.Moles.SMainModuleContext.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SOrderRepository">
+            <summary>Stub type of <see cref="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.OrderRepository"/>
+            .</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SOrderRepository.#ctor(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext,Microsoft.Samples.NLayerApp.Infrastructure.CrossCutting.Logging.ITraceManager)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SOrderRepository.InitializeStub">
+            <summary>Initializes a new instance of type SOrderRepository</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SOrderRepository.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SOrderRepository.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SProductRepository">
+            <summary>Stub type of <see cref="T:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.ProductRepository"/>
+            .</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SProductRepository.#ctor(Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Context.IMainModuleContext,Microsoft.Samples.NLayerApp.Infrastructure.CrossCutting.Logging.ITraceManager)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SProductRepository.InitializeStub">
+            <summary>Initializes a new instance of type SProductRepository</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SProductRepository.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Microsoft.Samples.NLayerApp.Infrastructure.Data.MainModule.Repositories.Moles.SProductRepository.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+    </members>
+</doc>

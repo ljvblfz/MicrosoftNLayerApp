@@ -1,0 +1,119 @@
+﻿<?xml version="1.0"?>
+
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=152368
+  -->
+
+<configuration>
+  <configSections>
+    <section name="dataCacheClient" type="Microsoft.ApplicationServer.Caching.DataCacheClientSection, Microsoft.ApplicationServer.Caching.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" allowLocation="true" allowDefinition="Everywhere" />
+  </configSections>
+  <dataCacheClient>
+    <hosts>
+      <host name="localhost" cachePort="22233" />
+    </hosts>
+  </dataCacheClient>
+  <connectionStrings>
+    <add name="ApplicationServices"
+         connectionString="data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|aspnetdb.mdf;User Instance=true"
+         providerName="System.Data.SqlClient" />
+    <add name="MainModuleUnitOfWork" connectionString="metadata=res://NLayerApp.Infrastructure.Data.MainModule/Model.MainModuleDataModel.csdl|res://NLayerApp.Infrastructure.Data.MainModule/Model.MainModuleDataModel.ssdl|res://NLayerApp.Infrastructure.Data.MainModule/Model.MainModuleDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=.\SQLEXPRESS;Initial Catalog=NLayerApp;Integrated Security=True;MultipleActiveResultSets=True&quot;" providerName="System.Data.EntityClient" />
+  </connectionStrings>
+  <appSettings>
+    <!--RealAppContext - Real Container-->
+    <!--FakeAppContext - Fake Container-->
+    <!--<add key="defaultIoCContainer" value="FakeAppContext" />-->
+    <add key="defaultIoCContainer" value="RealAppContext" />
+  </appSettings>
+  <system.diagnostics>
+    <trace autoflush="true">
+      <listeners>
+        <clear/>
+      </listeners>
+    </trace>
+    <sources>
+      <source name="NLayerApp" switchValue="Error">
+        <listeners>
+          <clear/>
+          <add name="eventLog">
+            <filter type="" />
+          </add>
+        </listeners>
+      </source>
+    </sources>
+    <sharedListeners>
+      <add initializeData="Application" type="System.Diagnostics.EventLogTraceListener"
+        name="eventLog" >
+        <filter type="" />
+      </add>
+    </sharedListeners>
+  </system.diagnostics>
+
+  <system.web>
+    <customErrors mode="Off" />
+    <compilation debug="true" targetFramework="4.0">
+      <assemblies>
+        <add assembly="System.Web.Abstractions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add assembly="System.Web.Routing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add assembly="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add assembly="NLayerApp.Domain.MainModule.Entities" />
+      </assemblies>
+    </compilation>
+
+    <authentication mode="Forms">
+      <forms loginUrl="~/Account/LogOn" timeout="2880" />
+    </authentication>
+
+    <membership>
+      <providers>
+        <clear/>
+        <add name="AspNetSqlMembershipProvider" type="System.Web.Security.SqlMembershipProvider" connectionStringName="ApplicationServices"
+             enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="false" requiresUniqueEmail="false"
+             maxInvalidPasswordAttempts="5" minRequiredPasswordLength="6" minRequiredNonalphanumericCharacters="0" passwordAttemptWindow="10"
+             applicationName="/" />
+      </providers>
+    </membership>
+
+    <profile>
+      <providers>
+        <clear/>
+        <add name="AspNetSqlProfileProvider" type="System.Web.Profile.SqlProfileProvider" connectionStringName="ApplicationServices" applicationName="/" />
+      </providers>
+    </profile>
+
+    <roleManager enabled="false">
+      <providers>
+        <clear/>
+        <add name="AspNetSqlRoleProvider" type="System.Web.Security.SqlRoleProvider" connectionStringName="ApplicationServices" applicationName="/" />
+        <add name="AspNetWindowsTokenRoleProvider" type="System.Web.Security.WindowsTokenRoleProvider" applicationName="/" />
+      </providers>
+    </roleManager>
+
+    <pages>
+      <namespaces>
+        <add namespace="System.Web.Mvc" />
+        <add namespace="System.Web.Mvc.Ajax" />
+        <add namespace="System.Web.Mvc.Html" />
+        <add namespace="System.Web.Routing" />
+        <add namespace="Microsoft.Samples.NLayerApp.Domain.MainModule.Entities"/>
+        <add namespace="Microsoft.Samples.NLayerApp.Presentation.Web.MVC.Client.Extensions.HtmlHelpers"/>
+      </namespaces>
+    </pages>
+  </system.web>
+  
+  <system.webServer>
+    <validation validateIntegratedModeConfiguration="false"/>
+    <modules runAllManagedModulesForAllRequests="true"/>
+  </system.webServer>
+  
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0" newVersion="2.0.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>
+

@@ -1,0 +1,14 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="Microsoft.Samples.NLayerApp.Presentation.Windows.WPF.Client.Controls.WindowControls"
+	x:Name="UserControl" Opacity="0">
+	<UniformGrid x:Name="MainGrid" Columns="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+		<Button x:Name="CloseButton" Margin="2,2,2,2" Style="{DynamicResource CloseWindowButtonTemplate}" Cursor="Hand"/>
+		<Button x:Name="MaximizeButton" Margin="2,2,2,2" Style="{DynamicResource MaximizeButtonTemplate}" Cursor="Hand"/>
+		<Button x:Name="MinimizeButton" Margin="2,2,2,2" Style="{DynamicResource MinimizeButtonTemplate}" Cursor="Hand"/>
+	</UniformGrid>
+</UserControl>

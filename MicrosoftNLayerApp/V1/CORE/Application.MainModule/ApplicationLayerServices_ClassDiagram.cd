@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Microsoft.Samples.NLayerApp.Application.MainModule.BankingManagement.BankingManagementService" Collapsed="true">
+    <Position X="3.5" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AACIAABAACAAAAAAAABAAAAAAAAAAABAIAAAgACAEAA=</HashCode>
+      <FileName>BankingManagement\BankingManagementService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.Samples.NLayerApp.Application.MainModule.CustomersManagement.CustomerManagementService" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AIAAEgAAAAAAAAAAAQAAAAAAACAAAAAgQAAABAAAAAI=</HashCode>
+      <FileName>CustomersManagement\CustomerManagementService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.Samples.NLayerApp.Application.MainModule.SalesManagement.SalesManagementService" Collapsed="true">
+    <Position X="3.5" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgMAAAAAAEAgAAQAAAgAIAAAAAAgBAABAAAAI=</HashCode>
+      <FileName>SalesManagement\SalesManagementService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Microsoft.Samples.NLayerApp.Application.MainModule.BankingManagement.IBankingManagementService" Collapsed="true">
+    <Position X="1" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AACIAABAAAAAAAAAAAAAAAAAAAAAAABAAAAAgACAEAA=</HashCode>
+      <FileName>BankingManagement\IBankingManagementService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Microsoft.Samples.NLayerApp.Application.MainModule.CustomersManagement.ICustomerManagementService" Collapsed="true">
+    <Position X="1" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AIAAEgAAAAAAAAAAAQAAAAAAACAAAAAgAAAAAAAAAAI=</HashCode>
+      <FileName>CustomersManagement\ICustomerManagementService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Microsoft.Samples.NLayerApp.Application.MainModule.SalesManagement.ISalesManagementService" Collapsed="true">
+    <Position X="1" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgEAAAAAAEAgAAQAAAgAIAAAAAAgBAAAAAAAI=</HashCode>
+      <FileName>SalesManagement\ISalesManagementService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

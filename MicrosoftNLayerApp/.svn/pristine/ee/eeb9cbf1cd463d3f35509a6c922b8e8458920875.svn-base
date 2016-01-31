@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<ServiceConfiguration serviceName="AzureServices" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration">
+  <Role name="WCFWebRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <!-- AZURE DEV-STORAGE -->
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <!-- AZURE CLOUD STORAGE-->
+      <!--
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=mydiagnostics;AccountKey=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
+      -->
+    </ConfigurationSettings>
+  </Role>
+  <Role name="GlobalWebRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

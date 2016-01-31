@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/Imports">
+      <xsd:import schemaLocation="http://localhost:88/MainModule.svc?xsd=xsd0" namespace="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService" />
+      <xsd:import schemaLocation="http://localhost:88/MainModule.svc?xsd=xsd4" namespace="Microsoft.Samples.DistributedServices.Core" />
+      <xsd:import schemaLocation="http://localhost:88/MainModule.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:88/MainModule.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.MainModule.Entities" />
+      <xsd:import schemaLocation="http://localhost:88/MainModule.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Core.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMainModuleService_GetPagedBankAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagedBankAccounts" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedBankAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagedBankAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedBankAccounts_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q1="Microsoft.Samples.DistributedServices.Core" name="detail" element="q1:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetBankAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAccounts" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetBankAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetBankAccounts_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q2="Microsoft.Samples.DistributedServices.Core" name="detail" element="q2:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetBankAccountByNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAccountByNumber" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetBankAccountByNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAccountByNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetBankAccountByNumber_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q3="Microsoft.Samples.DistributedServices.Core" name="detail" element="q3:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_ChangeBankAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeBankAccount" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_ChangeBankAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeBankAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_ChangeBankAccount_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q4="Microsoft.Samples.DistributedServices.Core" name="detail" element="q4:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_AddBankAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBankAccount" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_AddBankAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBankAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_AddBankAccount_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q5="Microsoft.Samples.DistributedServices.Core" name="detail" element="q5:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedTransfers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagedTransfers" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedTransfers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagedTransfersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedTransfers_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q6="Microsoft.Samples.DistributedServices.Core" name="detail" element="q6:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_PerformBankTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerformBankTransfer" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_PerformBankTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerformBankTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_PerformBankTransfer_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q7="Microsoft.Samples.DistributedServices.Core" name="detail" element="q7:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetCustomerByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByCode" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetCustomerByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetCustomerByCode_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q8="Microsoft.Samples.DistributedServices.Core" name="detail" element="q8:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_ChangeCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_ChangeCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_ChangeCustomer_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q9="Microsoft.Samples.DistributedServices.Core" name="detail" element="q9:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_AddCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_AddCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_AddCustomer_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q10="Microsoft.Samples.DistributedServices.Core" name="detail" element="q10:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_RemoveCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_RemoveCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_RemoveCustomer_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q11="Microsoft.Samples.DistributedServices.Core" name="detail" element="q11:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagedCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagedCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedCustomer_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q12="Microsoft.Samples.DistributedServices.Core" name="detail" element="q12:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedCountries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagedCountries" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedCountries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagedCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedCountries_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q13="Microsoft.Samples.DistributedServices.Core" name="detail" element="q13:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetCountriesByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountriesByName" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetCountriesByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountriesByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetCountriesByName_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q14="Microsoft.Samples.DistributedServices.Core" name="detail" element="q14:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagedProducts" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagedProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedProducts_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q15="Microsoft.Samples.DistributedServices.Core" name="detail" element="q15:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetProductByPublisherInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByPublisherInformation" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetProductByPublisherInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByPublisherInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetProductByPublisherInformation_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q16="Microsoft.Samples.DistributedServices.Core" name="detail" element="q16:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_ChangeProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeProduct" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_ChangeProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_ChangeProduct_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q17="Microsoft.Samples.DistributedServices.Core" name="detail" element="q17:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_AddProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_AddProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_AddProduct_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q18="Microsoft.Samples.DistributedServices.Core" name="detail" element="q18:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetOrdersByOrderInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByOrderInformation" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetOrdersByOrderInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByOrderInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetOrdersByOrderInformation_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q19="Microsoft.Samples.DistributedServices.Core" name="detail" element="q19:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetOrdersByDates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByDates" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetOrdersByDates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetOrdersByDates_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q20="Microsoft.Samples.DistributedServices.Core" name="detail" element="q20:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagedOrders" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagedOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetPagedOrders_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q21="Microsoft.Samples.DistributedServices.Core" name="detail" element="q21:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetOrdersByShippingData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByShippingData" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetOrdersByShippingData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByShippingDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_GetOrdersByShippingData_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q22="Microsoft.Samples.DistributedServices.Core" name="detail" element="q22:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_ChangeOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeOrder" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_ChangeOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_ChangeOrder_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q23="Microsoft.Samples.DistributedServices.Core" name="detail" element="q23:ServiceError" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_AddOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrder" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_AddOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainModuleService_AddOrder_ServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q24="Microsoft.Samples.DistributedServices.Core" name="detail" element="q24:ServiceError" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="IMainModuleService">
+    <wsdl:operation name="GetPagedBankAccounts">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedBankAccounts" message="tns:IMainModuleService_GetPagedBankAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedBankAccountsResponse" message="tns:IMainModuleService_GetPagedBankAccounts_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedBankAccountsServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_GetPagedBankAccounts_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankAccounts">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetBankAccounts" message="tns:IMainModuleService_GetBankAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetBankAccountsResponse" message="tns:IMainModuleService_GetBankAccounts_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetBankAccountsServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_GetBankAccounts_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankAccountByNumber">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetBankAccountByNumber" message="tns:IMainModuleService_GetBankAccountByNumber_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetBankAccountByNumberResponse" message="tns:IMainModuleService_GetBankAccountByNumber_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetBankAccountByNumberServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_GetBankAccountByNumber_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeBankAccount">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeBankAccount" message="tns:IMainModuleService_ChangeBankAccount_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeBankAccountResponse" message="tns:IMainModuleService_ChangeBankAccount_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeBankAccountServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_ChangeBankAccount_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBankAccount">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddBankAccount" message="tns:IMainModuleService_AddBankAccount_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddBankAccountResponse" message="tns:IMainModuleService_AddBankAccount_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddBankAccountServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_AddBankAccount_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedTransfers">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedTransfers" message="tns:IMainModuleService_GetPagedTransfers_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedTransfersResponse" message="tns:IMainModuleService_GetPagedTransfers_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedTransfersServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_GetPagedTransfers_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerformBankTransfer">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/PerformBankTransfer" message="tns:IMainModuleService_PerformBankTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/PerformBankTransferResponse" message="tns:IMainModuleService_PerformBankTransfer_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/PerformBankTransferServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_PerformBankTransfer_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerByCode">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetCustomerByCode" message="tns:IMainModuleService_GetCustomerByCode_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetCustomerByCodeResponse" message="tns:IMainModuleService_GetCustomerByCode_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetCustomerByCodeServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_GetCustomerByCode_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCustomer">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeCustomer" message="tns:IMainModuleService_ChangeCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeCustomerResponse" message="tns:IMainModuleService_ChangeCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeCustomerServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_ChangeCustomer_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddCustomer" message="tns:IMainModuleService_AddCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddCustomerResponse" message="tns:IMainModuleService_AddCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddCustomerServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_AddCustomer_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCustomer">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/RemoveCustomer" message="tns:IMainModuleService_RemoveCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/RemoveCustomerResponse" message="tns:IMainModuleService_RemoveCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/RemoveCustomerServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_RemoveCustomer_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedCustomer">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedCustomer" message="tns:IMainModuleService_GetPagedCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedCustomerResponse" message="tns:IMainModuleService_GetPagedCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedCustomerServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_GetPagedCustomer_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedCountries">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedCountries" message="tns:IMainModuleService_GetPagedCountries_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedCountriesResponse" message="tns:IMainModuleService_GetPagedCountries_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedCountriesServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_GetPagedCountries_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountriesByName">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetCountriesByName" message="tns:IMainModuleService_GetCountriesByName_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetCountriesByNameResponse" message="tns:IMainModuleService_GetCountriesByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetCountriesByNameServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_GetCountriesByName_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedProducts">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedProducts" message="tns:IMainModuleService_GetPagedProducts_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedProductsResponse" message="tns:IMainModuleService_GetPagedProducts_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedProductsServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_GetPagedProducts_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByPublisherInformation">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetProductByPublisherInformation" message="tns:IMainModuleService_GetProductByPublisherInformation_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetProductByPublisherInformationResponse" message="tns:IMainModuleService_GetProductByPublisherInformation_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetProductByPublisherInformationServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_GetProductByPublisherInformation_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProduct">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeProduct" message="tns:IMainModuleService_ChangeProduct_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeProductResponse" message="tns:IMainModuleService_ChangeProduct_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeProductServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_ChangeProduct_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddProduct" message="tns:IMainModuleService_AddProduct_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddProductResponse" message="tns:IMainModuleService_AddProduct_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddProductServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_AddProduct_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByOrderInformation">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetOrdersByOrderInformation" message="tns:IMainModuleService_GetOrdersByOrderInformation_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetOrdersByOrderInformationResponse" message="tns:IMainModuleService_GetOrdersByOrderInformation_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetOrdersByOrderInformationServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_GetOrdersByOrderInformation_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByDates">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetOrdersByDates" message="tns:IMainModuleService_GetOrdersByDates_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetOrdersByDatesResponse" message="tns:IMainModuleService_GetOrdersByDates_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetOrdersByDatesServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_GetOrdersByDates_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedOrders">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedOrders" message="tns:IMainModuleService_GetPagedOrders_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedOrdersResponse" message="tns:IMainModuleService_GetPagedOrders_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetPagedOrdersServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_GetPagedOrders_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByShippingData">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetOrdersByShippingData" message="tns:IMainModuleService_GetOrdersByShippingData_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetOrdersByShippingDataResponse" message="tns:IMainModuleService_GetOrdersByShippingData_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/GetOrdersByShippingDataServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_GetOrdersByShippingData_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeOrder">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeOrder" message="tns:IMainModuleService_ChangeOrder_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeOrderResponse" message="tns:IMainModuleService_ChangeOrder_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/ChangeOrderServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_ChangeOrder_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <wsdl:input wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddOrder" message="tns:IMainModuleService_AddOrder_InputMessage" />
+      <wsdl:output wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddOrderResponse" message="tns:IMainModuleService_AddOrder_OutputMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Samples.NLayerApp.DistributedServices.MainModuleService/IMainModuleService/AddOrderServiceErrorFault" name="ServiceErrorFault" message="tns:IMainModuleService_AddOrder_ServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

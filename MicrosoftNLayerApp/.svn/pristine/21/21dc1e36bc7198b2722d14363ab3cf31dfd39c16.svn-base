@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <configSections>
+  <section name="dataCacheClient" type="Microsoft.ApplicationServer.Caching.DataCacheClientSection, Microsoft.ApplicationServer.Caching.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" allowLocation="true" allowDefinition="Everywhere" />
+  </configSections>
+  <dataCacheClient>
+    <hosts>
+      <host name="localhost" cachePort="22233" />
+    </hosts>
+  </dataCacheClient>
+  <connectionStrings>      
+    <add name="MainModuleUnitOfWork" connectionString="metadata=res://NLayerApp.Infrastructure.Data.MainModule/Model.MainModuleDataModel.csdl|res://NLayerApp.Infrastructure.Data.MainModule/Model.MainModuleDataModel.ssdl|res://NLayerApp.Infrastructure.Data.MainModule/Model.MainModuleDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=.\SQLEXPRESS;Initial Catalog=NLayerApp;Integrated Security=True;MultipleActiveResultSets=True&quot;" providerName="System.Data.EntityClient" />
+  </connectionStrings>
+  <appSettings>
+    <!--RealAppContext - Real Container-->
+    <!--FakeAppContext - Fake Container-->
+    <!--<add key="defaultIoCContainer" value="FakeAppContext" />-->
+    <add key="defaultIoCContainer" value="RealAppContext" />
+  </appSettings>
+  <system.diagnostics>
+    <trace autoflush="true">
+      <listeners>
+        <clear />
+      </listeners>
+    </trace>
+    <sources>
+      <source name="NLayerApp" switchValue="Error">
+        <listeners>
+          <clear />
+          <add name="eventLog">
+            <filter type="" />
+          </add>
+        </listeners>
+      </source>
+    </sources>
+    <sharedListeners>
+      <add initializeData="Application" type="System.Diagnostics.EventLogTraceListener" name="eventLog">
+        <filter type="" />
+      </add>
+    </sharedListeners>
+  </system.diagnostics>
+  
+  <system.web>
+    <compilation debug="true" targetFramework="4.0" />
+  </system.web>
+  
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="true" />
+  </system.webServer>
+  
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="BasicHttpBindingConfiguration" maxReceivedMessageSize="9965536">
+          <readerQuotas maxArrayLength="9965536" />
+        </binding>
+      </basicHttpBinding>
+      <ws2007HttpBinding>
+        <binding name="WS2007BindingConfiguration" maxReceivedMessageSize="9965536">
+          <readerQuotas maxArrayLength="9965536" />
+        </binding>
+      </ws2007HttpBinding>
+    </bindings>
+    <behaviors>
+      <serviceBehaviors>
+        <behavior name="">
+                    <remove name="sqlWorkflowInstanceStore" />
+                    <remove name="workflowInstanceManagement" />
+          <serviceMetadata httpGetEnabled="true" />
+          <serviceDebug includeExceptionDetailInFaults="true" />
+
+          <!-- This is a new feature in WCF 4.0 ( basically WS-Discovery standard implementation)
+                         For more references see you:
+                         http://blogs.msdn.com/kaevans/archive/2009/05/14/ws-discovery-in-wcf-net-4-0.aspx
+                         http://geeks.ms/blogs/unai/archive/2009/05/26/ws-discovery-i-novedades-en-wcf-4-0.aspx
+                         http://geeks.ms/blogs/unai/archive/2009/05/26/ws-discovery-ii-novedades-en-wcf-4-0.aspx
+                         http://geeks.ms/blogs/unai/archive/2009/12/21/wcf-4-0-ws-discovery-y-dynamicendpoint.aspx
+                    -->
+          <serviceDiscovery />
+                    <etwTracking profileName="EndToEndMonitoring Tracking Profile" />
+                    <workflowUnhandledException action="AbandonAndSuspend" />
+                    <workflowIdle timeToPersist="10675199.02:48:05.4775807" timeToUnload="10675199.02:48:05.4775807" />
+        </behavior>
+      </serviceBehaviors>
+    </behaviors>
+    <services>
+      <service name="Microsoft.Samples.NLayerApp.DistributedServices.MainModule.MainModuleService">
+        <clear />
+        <endpoint address="basic" binding="basicHttpBinding" bindingConfiguration="BasicHttpBindingConfiguration" name="BasicBindingForSilverlightClients" contract="Microsoft.Samples.NLayerApp.DistributedServices.MainModule.IMainModuleService" listenUriMode="Explicit" />
+        <endpoint address="WS2007" binding="ws2007HttpBinding" bindingConfiguration="WS2007BindingConfiguration" name="WS2007ForIntranetClients" contract="Microsoft.Samples.NLayerApp.DistributedServices.MainModule.IMainModuleService" />
+        <!--UPD discovery endpoint-->
+        <endpoint name="DiscoveryEndpoint" listenUriMode="Explicit" kind="udpDiscoveryEndpoint" />
+      </service>
+    </services>
+        <diagnostics etwProviderId="217324ec-21d1-4782-bd9e-75f32b5fabc0">
+            <endToEndTracing propagateActivity="true" messageFlowTracing="true" />
+        </diagnostics>
+  </system.serviceModel>
+    <microsoft.applicationServer>
+        <monitoring>
+            <default enabled="true" connectionStringName="ApplicationServerMonitoringConnectionString" monitoringLevel="EndToEndMonitoring" />
+        </monitoring>
+    </microsoft.applicationServer>
+</configuration>

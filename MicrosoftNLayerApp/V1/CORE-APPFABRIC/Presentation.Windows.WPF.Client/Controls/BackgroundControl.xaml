@@ -1,0 +1,56 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="Microsoft.Samples.NLayerApp.Presentation.Windows.WPF.Client.Controls.BackgroundControl"
+	x:Name="UserControl"
+	d:DesignWidth="640" d:DesignHeight="480">
+    <Grid x:Name="LayoutRoot">
+        <Grid Width="Auto" Height="Auto">
+            <Border HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto" Opacity="0.75" Background="{DynamicResource ViewsBacground}"/>
+            <Border HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto" Background="#8D000000">
+                <Border.OpacityMask>
+                    <RadialGradientBrush RadiusY="0.815">
+                        <RadialGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.121" ScaleY="1.314"/>
+                                <SkewTransform AngleX="0" AngleY="0" CenterX="0.5" CenterY="0.5"/>
+                                <RotateTransform Angle="97.721" CenterX="0.5" CenterY="0.5"/>
+                                <TranslateTransform X="-0.642" Y="-0.757"/>
+                            </TransformGroup>
+                        </RadialGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FF000000" Offset="0"/>
+                        <GradientStop Color="#00FFFFFF" Offset="1"/>
+                    </RadialGradientBrush>
+                </Border.OpacityMask>
+            </Border>
+            <Border HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF1B1B1B" Offset="0"/>
+                        <GradientStop Color="#FF0E0E0E" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.OpacityMask>
+                    <RadialGradientBrush RadiusY="0.521">
+                        <RadialGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.121" ScaleY="1.314"/>
+                                <SkewTransform AngleX="0" AngleY="0" CenterX="0.5" CenterY="0.5"/>
+                                <RotateTransform Angle="97.721" CenterX="0.5" CenterY="0.5"/>
+                                <TranslateTransform X="0.485" Y="0.533"/>
+                            </TransformGroup>
+                        </RadialGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FF000000" Offset="0"/>
+                        <GradientStop Color="#00FFFFFF" Offset="1"/>
+                    </RadialGradientBrush>
+                </Border.OpacityMask>
+            </Border>
+        </Grid>
+        <Border BorderThickness="1,1,1,1" BorderBrush="#66000000">
+            <Border Width="Auto" Height="Auto" BorderBrush="#8EFFFFFF" BorderThickness="1,1,0,0"/>
+        </Border>
+    </Grid>
+</UserControl>

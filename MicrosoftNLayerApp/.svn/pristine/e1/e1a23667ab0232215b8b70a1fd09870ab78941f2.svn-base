@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="AzureServices" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+
+
+  <WebRole name="GlobalWebRole">
+    <Sites>
+      
+      <Site name="Web">
+        <Bindings>
+          <Binding name="Binding1" endpointName="DefaultWebSite" />
+        </Bindings>
+      </Site>
+      
+       
+      <Site name="SilverlightApp" physicalDirectory ="..\SilverlightWebRole">
+        <Bindings>
+          <Binding name="Binding1" endpointName="SilverlightAppEndPoint" />
+        </Bindings>
+      </Site>
+           
+      
+    </Sites>
+    
+    <Endpoints>
+      <InputEndpoint name="DefaultWebSite" protocol="http" port="81" />
+      <InputEndpoint name="SilverlightAppEndPoint" protocol="http" port="80" />
+    </Endpoints>
+    
+    <Imports>
+      <Import moduleName="Diagnostics" />
+    </Imports>
+    
+  </WebRole>  
+  
+  
+  <WebRole name="WCFWebRole">
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="HttpIn" endpointName="HttpIn" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="HttpIn" protocol="http" port="88" />
+    </Endpoints>
+    <!-- SDK 1.3 -->
+    <Imports>
+      <Import moduleName="Diagnostics" />
+    </Imports>
+    <!-- SDK 1.3 -->
+    <LocalResources>
+      <LocalStorage name="WCFWebRole.svclog" sizeInMB="1000" cleanOnRoleRecycle="false" />
+    </LocalResources>
+  </WebRole>
+
+</ServiceDefinition>

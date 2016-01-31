@@ -1,0 +1,246 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	xmlns:local="clr-namespace:Microsoft.Samples.NLayerApp.Presentation.Windows.WPF.Client.Controls"
+	xmlns:ViewModels="clr-namespace:Microsoft.Samples.NLayerApp.Presentation.Windows.WPF.Client.ViewModels"
+	x:Class="Microsoft.Samples.NLayerApp.Presentation.Windows.WPF.Client.TransferListView"
+	x:Name="UserControl"
+	d:DesignWidth="640" d:DesignHeight="480">
+	<UserControl.Resources>
+		<Style x:Key="ExpanderDownHeaderStyle3" TargetType="{x:Type ToggleButton}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ToggleButton}">
+						<Border Padding="{TemplateBinding Padding}">
+							<Grid SnapsToDevicePixels="False" Background="Transparent">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="36.167"/>
+									<ColumnDefinition/>
+								</Grid.ColumnDefinitions>
+								<Grid Margin="8.584,0,0,0" HorizontalAlignment="Right">
+									<Ellipse x:Name="circle" Stroke="#CCFFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" Width="19" Height="19"/>
+									<Path x:Name="arrow" Stroke="#CCFFFFFF" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="false" Data="M 1,1.5 L 4.5,5 L 8,1.5"/>
+								</Grid>
+								<ContentPresenter HorizontalAlignment="Left" Margin="4,0,0,0" VerticalAlignment="Center" SnapsToDevicePixels="True" Grid.Column="1" RecognizesAccessKey="True"/>
+							</Grid>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsChecked" Value="true">
+								<Setter Property="Data" TargetName="arrow" Value="M 1,4.5  L 4.5,1  L 8,4.5"/>
+							</Trigger>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter Property="Stroke" TargetName="circle" Value="#FF3C7FB1"/>
+								<Setter Property="Stroke" TargetName="arrow" Value="#222"/>
+							</Trigger>
+							<Trigger Property="IsPressed" Value="true">
+								<Setter Property="Stroke" TargetName="circle" Value="#FF526C7B"/>
+								<Setter Property="StrokeThickness" TargetName="circle" Value="1.5"/>
+								<Setter Property="Stroke" TargetName="arrow" Value="#FF003366"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="ExpanderStyle1" TargetType="{x:Type Expander}">
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+			<Setter Property="VerticalContentAlignment" Value="Stretch"/>
+			<Setter Property="BorderBrush" Value="Transparent"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Expander}">
+						<Border SnapsToDevicePixels="true" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+							<DockPanel>
+								<ToggleButton x:Name="HeaderSite" FocusVisualStyle="{StaticResource ExpanderHeaderFocusVisual}" Margin="1" MinHeight="0" MinWidth="0" Style="{StaticResource ExpanderDownHeaderStyle3}" Content="{TemplateBinding Header}" ContentTemplate="{TemplateBinding HeaderTemplate}" ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontStretch="{TemplateBinding FontStretch}" FontStyle="{TemplateBinding FontStyle}" FontWeight="{TemplateBinding FontWeight}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" DockPanel.Dock="Top"/>
+								<ContentPresenter x:Name="ExpandSite" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Focusable="false" Visibility="Collapsed" DockPanel.Dock="Bottom"/>
+							</DockPanel>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsExpanded" Value="true">
+								<Setter Property="Visibility" TargetName="ExpandSite" Value="Visible"/>
+							</Trigger>
+							<Trigger Property="ExpandDirection" Value="Right">
+								<Setter Property="DockPanel.Dock" TargetName="ExpandSite" Value="Right"/>
+								<Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Left"/>
+								<Setter Property="Style" TargetName="HeaderSite" Value="{StaticResource ExpanderRightHeaderStyle}"/>
+							</Trigger>
+							<Trigger Property="ExpandDirection" Value="Up">
+								<Setter Property="DockPanel.Dock" TargetName="ExpandSite" Value="Top"/>
+								<Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Bottom"/>
+								<Setter Property="Style" TargetName="HeaderSite" Value="{StaticResource ExpanderUpHeaderStyle}"/>
+							</Trigger>
+							<Trigger Property="ExpandDirection" Value="Left">
+								<Setter Property="DockPanel.Dock" TargetName="ExpandSite" Value="Left"/>
+								<Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Right"/>
+								<Setter Property="Style" TargetName="HeaderSite" Value="{StaticResource ExpanderLeftHeaderStyle}"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Storyboard x:Key="FadeIn">
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LayoutRoot">
+				<SplineDoubleKeyFrame KeySpline="0.5,0,1,1" KeyTime="0" Value="0"/>
+				<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="1" KeySpline="0,0,0.5,1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="LayoutRoot">
+				<SplineDoubleKeyFrame KeySpline="0.5,0,1,1" KeyTime="0" Value="0.3"/>
+				<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="1.1" KeySpline="0,0,0.5,1"/>
+				<SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="1" KeySpline="0,0,0.5,1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="LayoutRoot">
+				<SplineDoubleKeyFrame KeySpline="0.5,0,1,1" KeyTime="0" Value="0.3"/>
+				<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="1.1" KeySpline="0,0,0.5,1"/>
+				<SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="1" KeySpline="0,0,0.5,1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="FadeOut">
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LayoutRoot">
+				<SplineDoubleKeyFrame KeySpline="0.5,0,1,1" KeyTime="00:00:00.1000000" Value="1"/>
+				<SplineDoubleKeyFrame KeySpline="0.5,0,0.5,1" KeyTime="00:00:00.5000000" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="LayoutRoot">
+				<SplineDoubleKeyFrame KeySpline="0.5,0,1,1" KeyTime="00:00:00.1000000" Value="1.1"/>
+				<SplineDoubleKeyFrame KeySpline="0.5,0,0.5,1" KeyTime="00:00:00.5000000" Value="0.3"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="LayoutRoot">
+				<SplineDoubleKeyFrame KeySpline="0.5,0,1,1" KeyTime="00:00:00.1000000" Value="1.1"/>
+				<SplineDoubleKeyFrame KeySpline="0.5,0,0.5,1" KeyTime="00:00:00.5000000" Value="0.3"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+	<UserControl.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{StaticResource FadeIn}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="FrameworkElement.Unloaded">
+			<BeginStoryboard x:Name="FadeOut_BeginStoryboard" Storyboard="{StaticResource FadeOut}"/>
+		</EventTrigger>
+	</UserControl.Triggers>
+
+	<UserControl.DataContext>
+		<ViewModels:VMTransferList/>
+	</UserControl.DataContext>
+
+	<Grid x:Name="LayoutRoot" Margin="0" RenderTransformOrigin="0.5,0.5">
+		<Grid.RenderTransform>
+			<TransformGroup>
+				<ScaleTransform/>
+				<SkewTransform/>
+				<RotateTransform/>
+				<TranslateTransform/>
+			</TransformGroup>
+		</Grid.RenderTransform>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="19.84"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="60"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<local:BackgroundControl Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+		<Border BorderBrush="#FF90D11F" BorderThickness="0,1,0,0" Margin="2,2,1,0" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+			<Border.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleY="-1"/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Border.RenderTransform>
+			<Border.Background>
+				<RadialGradientBrush GradientOrigin="0.915,1.183" Center="0.924,1.155" RadiusY="1.501" RadiusX="0.741">
+					<GradientStop Color="#FF525252" Offset="0"/>
+					<GradientStop Color="#BF3B3B3B" Offset="1"/>
+				</RadialGradientBrush>
+			</Border.Background>
+		</Border>
+		<Border BorderBrush="#FF90D11F" BorderThickness="0,0,0,1" Grid.ColumnSpan="2" Height="2.568" Margin="2,0,1,0" VerticalAlignment="Bottom"/>
+		
+		<local:SeparatorVertical HorizontalAlignment="Right" Margin="0,2" Width="2" BorderBrush="#6DFFFFFF" Foreground="#BC000000"/>
+		<local:SeparatorHorizontal Margin="2,0,1,0" VerticalAlignment="Bottom" BorderBrush="#6DFFFFFF" Foreground="#BC000000" Grid.ColumnSpan="2"/>
+		<StackPanel Margin="0,0,15,0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+			<Button x:Name="BTN_AddTransfer" Style="{DynamicResource addTransfer}" VerticalAlignment="Top" d:LayoutOverrides="Width" Margin="0,0,8,0" Command="{Binding AddCommand, Mode=OneWay}" Cursor="Arrow" ToolTip="Add Transfer">
+				<Grid Margin="0">
+                    <Image Margin="0" Source="/NLayerApp.Presentation.Windows.WPF.Client;Component/Images/TranfserAdd.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Width="23.916" Height="16.334"/>
+				</Grid>
+			</Button>
+			<Button x:Name="BTN_DeleteTransfer" Style="{DynamicResource addTransfer}" VerticalAlignment="Top" Margin="0,0,8,0" Command="{Binding AddCommand, Mode=OneWay}" Cursor="Arrow" ToolTip="Delete Transfer">
+				<Grid Margin="0">
+                    <Image Margin="0" Source="/NLayerApp.Presentation.Windows.WPF.Client;Component/Images/TransferDelete.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Width="23.429" Height="16"/>
+				</Grid>
+			</Button>
+			<Button x:Name="BTN_EditTransfer" Style="{DynamicResource addTransfer}" VerticalAlignment="Top" Margin="0,0,8,0" Command="{Binding AddCommand, Mode=OneWay}" Cursor="Arrow" ToolTip="Edit Transfer">
+				<Grid Margin="0">
+                    <Image Margin="0" Source="/NLayerApp.Presentation.Windows.WPF.Client;Component/Images/TransferEdit.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Width="23.429" Height="16"/>
+				</Grid>
+			</Button>
+		</StackPanel>
+		<local:WindowControls HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center"/>
+		<TextBlock HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Center" FontFamily="{DynamicResource SystemFont}" FontSize="32" Foreground="#B6FFFFFF" TextWrapping="Wrap" Text="Transfers"/>
+		<local:SeparatorHorizontal VerticalAlignment="Bottom" BorderBrush="#6DFFFFFF" Foreground="#BC000000" Margin="2,42,1,0" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <ListView Margin="15,10,15,30" Grid.RowSpan="2" Grid.Row="2" Background="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ListViewStyle1}" ItemTemplate="{DynamicResource TransfersDataTemplate}" ItemContainerStyle="{DynamicResource CustomerListBoxItemStyle}"  ItemsSource="{Binding Transfers}"/>
+		<Expander VerticalAlignment="Top" Header="Transfer Search" Grid.Row="1" Grid.ColumnSpan="2" Style="{DynamicResource ExpanderStyle1}" FontFamily="{DynamicResource SystemFont}" Foreground="#B2FFFFFF" FontSize="14.667" Margin="0,10,0,0" IsExpanded="False">
+			<Grid Margin="0">
+				<Rectangle Margin="1,0" VerticalAlignment="Bottom" Height="100">
+					<Rectangle.Fill>
+						<LinearGradientBrush EndPoint="0.5,1.36" StartPoint="0.5,0.81">
+							<GradientStop Color="#00000000" Offset="0"/>
+							<GradientStop Color="Black" Offset="1"/>
+						</LinearGradientBrush>
+					</Rectangle.Fill>
+				</Rectangle>
+				<Grid Margin="35,0,35,10" d:LayoutOverrides="Height">
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Grid Margin="0,10" VerticalAlignment="Top" Grid.ColumnSpan="2">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+						<TextBlock HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Center" FontFamily="{DynamicResource SystemFont}" FontSize="18.667" Text="Company Name" TextWrapping="Wrap" Foreground="#99FFFFFF"/>
+						<TextBox x:Name="TB_CompanyName" Margin="0" Style="{DynamicResource TextBoxStyle1}" BorderBrush="{x:Null}" FontFamily="{DynamicResource SystemFont}" FontSize="16" Foreground="#CC000000" Grid.Column="1" Text="{Binding FilterCompanyName}" TextWrapping="Wrap" d:LayoutOverrides="Height"/>
+					</Grid>
+					<Grid VerticalAlignment="Top" Grid.Row="1">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+						<TextBlock HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Center" FontFamily="{DynamicResource SystemFont}" FontSize="18.667" Text="Start Date" TextWrapping="Wrap" Foreground="#99FFFFFF"/>
+						<DatePicker x:Name="dpInitialDate" Margin="0" BorderBrush="{x:Null}" FontFamily="{DynamicResource SystemFont}" FontSize="16" Foreground="#CC000000" Grid.Column="1" d:LayoutOverrides="Height" SelectedDate="{Binding FilterInitialDate}"/>
+					</Grid>
+					<Grid VerticalAlignment="Top" Grid.Row="1" Margin="0,-0.001,0,0" Grid.Column="1" Grid.RowSpan="2">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+						<TextBlock HorizontalAlignment="Left" Margin="20,0,10,0" VerticalAlignment="Center" FontFamily="{DynamicResource SystemFont}" FontSize="18.667" Text="End Date" TextWrapping="Wrap" Foreground="#99FFFFFF"/>
+						<DatePicker x:Name="dpEndDate" Margin="0" BorderBrush="{x:Null}" FontFamily="{DynamicResource SystemFont}" FontSize="16" Foreground="#CC000000" Grid.Column="1" d:LayoutOverrides="Height" SelectedDate="{Binding FilterEndDate}"/>
+					</Grid>
+					<Button x:Name="BTN_Search" Margin="0,15,0,0" Style="{DynamicResource SearchButton}" VerticalAlignment="Top" Width="75" Content="Search" Grid.ColumnSpan="2" Grid.Row="2" FontFamily="{DynamicResource SystemFont}" FontSize="16" Foreground="#3BFFFFFF" Command="{Binding SearchCommand, Mode=OneWay}" Cursor="Hand"/>
+				</Grid>
+			</Grid>
+		</Expander>
+        <Button Content="Previous" Width="75" VerticalAlignment="Bottom" Grid.Row="2" Style="{DynamicResource ButtonStyle}" Foreground="White" Margin="0,0,100,5" HorizontalAlignment="Right" Command="{Binding PreviousPageCommand}"/>
+        <Button Content="Next" Width="75" VerticalAlignment="Bottom" Grid.Row="2" Style="{DynamicResource ButtonStyle}" Foreground="White" Margin="0,0,15,5" HorizontalAlignment="Right" Command="{Binding NextPageCommand}"/>	
+	</Grid>
+</UserControl>

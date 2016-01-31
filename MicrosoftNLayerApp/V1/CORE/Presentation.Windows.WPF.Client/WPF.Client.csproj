@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A92AEB5B-AEBB-4B32-AF5E-DE098ED63E84}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Samples.NLayerApp.Presentation.Windows.WPF.Client</RootNamespace>
+    <AssemblyName>NLayerApp.Presentation.Windows.WPF.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ApplicationIcon>Application.ico</ApplicationIcon>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20421.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\third party\lib\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\third party\lib\WPFToolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\AccordionPanel.cs" />
+    <Compile Include="Controls\BackgroundControl.xaml.cs">
+      <DependentUpon>BackgroundControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MainMenuButton.cs" />
+    <Compile Include="Controls\MenuIconButton.cs" />
+    <Compile Include="Controls\SeparatorHorizontal.xaml.cs">
+      <DependentUpon>SeparatorHorizontal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SeparatorVertical.xaml.cs">
+      <DependentUpon>SeparatorVertical.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextBlockPro.cs" />
+    <Compile Include="Controls\WindowControls.xaml.cs">
+      <DependentUpon>WindowControls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BinaryImageConverter.cs" />
+    <Compile Include="Converters\BoolToOppositeBoolConverter.cs" />
+    <Compile Include="Converters\ErrorContentDescriptionConverter.cs" />
+    <Compile Include="NavigationController.cs" />
+    <Compile Include="ValidationRules\PositiveDecimalValidationRule.cs" />
+    <Compile Include="ValidationRules\PositiveLongValidationRule.cs" />
+    <Compile Include="ValidationRules\PositiveIntValidationRule.cs" />
+    <Compile Include="ValidationRules\RequiredValidationRule.cs" />
+    <Compile Include="ViewModelBase\CommandManagerHelper.cs" />
+    <Compile Include="ViewModelBase\DelegateCommand.cs" />
+    <Compile Include="ViewModelBase\ObservableObject.cs" />
+    <Compile Include="ViewModels\VMOrderList.cs" />
+    <Compile Include="ViewModels\VMPerformOrder.cs" />
+    <Compile Include="ViewModels\VMPerformTransfer.cs" />
+    <Compile Include="ViewModels\VMMainWindow.cs" />
+    <Compile Include="ViewModels\VMTransferList.cs" />
+    <Compile Include="ViewModels\VMCustomer.cs" />
+    <Compile Include="ViewModels\VMAddCustomer.cs" />
+    <Compile Include="ViewModels\VMEditCustomer.cs" />
+    <Compile Include="ViewModels\VMCustomerList.cs" />
+    <Compile Include="Views\AddCustomerView.xaml.cs">
+      <DependentUpon>AddCustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerListView.xaml.cs">
+      <DependentUpon>CustomerListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerView.xaml.cs">
+      <DependentUpon>CustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditCustomerView.xaml.cs">
+      <DependentUpon>EditCustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrderView.xaml.cs">
+      <DependentUpon>OrderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PerformOrderView.xaml.cs">
+      <DependentUpon>PerformOrderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PerformTransferView.xaml.cs">
+      <DependentUpon>PerformTransferView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransferListView.xaml.cs">
+      <DependentUpon>TransferListView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <Resource Include="Fonts\arial.ttf" />
+    <Resource Include="Fonts\arialbd.ttf" />
+    <Resource Include="Fonts\arialbi.ttf" />
+    <Resource Include="Fonts\ariali.ttf" />
+    <Resource Include="Fonts\ARIALN.TTF" />
+    <Resource Include="Fonts\ARIALNB.TTF" />
+    <Resource Include="Fonts\ARIALNBI.TTF" />
+    <Resource Include="Fonts\ARIALNI.TTF" />
+    <Resource Include="Fonts\ariblk.ttf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\BackgroundControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SeparatorHorizontal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SeparatorVertical.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\WindowControls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Templates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AddCustomerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomerListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EditCustomerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\OrderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PerformOrderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PerformTransferView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TransferListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Application.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu_ArrowExpander.png" />
+    <Resource Include="Images\FichaButton_Import.png" />
+    <Resource Include="Images\refreshbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CloseButton.png" />
+    <Resource Include="Images\CloseButton_Red.png" />
+    <Resource Include="Images\closewindow_button.png" />
+    <Resource Include="Images\colorprueba.png" />
+    <Resource Include="Images\cruz.png" />
+    <Resource Include="Images\FichaButton_Billing.png" />
+    <Resource Include="Images\FichaButton_Close.png" />
+    <Resource Include="Images\FichaButton_New.png" />
+    <Resource Include="Images\FichaButton_Save.png" />
+    <Resource Include="Images\flecha.png" />
+    <Resource Include="Images\fotousuario.png" />
+    <Resource Include="Images\HideButton_Arrow.png" />
+    <Resource Include="Images\iconetes_expander1.png" />
+    <Resource Include="Images\iconetes_expander2.png" />
+    <Resource Include="Images\leftbar_appointment.png" />
+    <Resource Include="Images\leftbar_quirofano.png" />
+    <Resource Include="Images\leftbar_reception.png" />
+    <Resource Include="Images\leftbar_semaphore.png" />
+    <Resource Include="Images\maximize_button.png" />
+    <Resource Include="Images\MicrosoftLogo.png" />
+    <Resource Include="Images\minimize_button.png" />
+    <Resource Include="Images\SafeBox_Closed.png" />
+    <Resource Include="Images\SafeBox_Opened.png" />
+    <Resource Include="Images\Search - Find.png" />
+    <Resource Include="Images\sendmailbutton.png" />
+    <Resource Include="Images\transfer_add-001.png" />
+    <Resource Include="Images\transfer_edit.png" />
+    <Resource Include="Images\transfer_remove-001.png" />
+    <Resource Include="Images\user_add-001.jpg" />
+    <Resource Include="Images\user_edit.jpg" />
+    <Resource Include="Images\user_remove-001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Core.Entities\Domain.Core.Entities.csproj">
+      <Project>{5A3A2291-4220-4BDC-94C0-F48AB18ED0BD}</Project>
+      <Name>Domain.Core.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModule.Entities\Domain.MainModule.Entities.csproj">
+      <Project>{6F82F34C-72F8-4C1F-9B41-2EE88C54AB01}</Project>
+      <Name>Domain.MainModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Presentation.Windows.WPF.ServiceAgents\WPF.ServiceAgents.csproj">
+      <Project>{568B1BB3-A0E0-4071-AEE8-F420424D7FC8}</Project>
+      <Name>WPF.ServiceAgents</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bankingicon.png" />
+    <Resource Include="Images\CustomerAdd.png" />
+    <Resource Include="Images\CustomerDelete.png" />
+    <Resource Include="Images\CustomerEdit.png" />
+    <Resource Include="Images\CustomerIcon.png" />
+    <Resource Include="Images\CustomerList.png" />
+    <Resource Include="Images\LockAccount.png" />
+    <Resource Include="Images\OrderAdd.png" />
+    <Resource Include="Images\OrderDelete.png" />
+    <Resource Include="Images\OrderEdit.png" />
+    <Resource Include="Images\OrderList.png" />
+    <Resource Include="Images\OrderPerform0.png" />
+    <Resource Include="Images\OrdersIcon.png" />
+    <Resource Include="Images\TranfserAdd.png" />
+    <Resource Include="Images\TransferDelete.png" />
+    <Resource Include="Images\TransferEdit.png" />
+    <Resource Include="Images\Transfericon.png" />
+    <Resource Include="Images\TransferList.png" />
+    <Resource Include="Images\unlockAccount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CustomerView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Unknown.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

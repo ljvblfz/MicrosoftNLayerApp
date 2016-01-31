@@ -1,0 +1,164 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit"
+	x:Class="UXAquitechtureClient.PerformTransfer"
+	x:Name="UserControl"
+	d:DesignWidth="640" d:DesignHeight="480">
+	<UserControl.Resources>
+		<Storyboard x:Key="FadeIn">
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Opacity)">
+				<SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1" KeySpline="0.5,0,0.5,1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+				<SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1.1" KeySpline="0.5,0,0.5,1"/>
+				<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="1" KeySpline="0.5,0,0.5,1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+				<SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1.1" KeySpline="0.5,0,0.5,1"/>
+				<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="1" KeySpline="0.5,0,0.5,1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="FadeOut">
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Opacity)">
+				<SplineDoubleKeyFrame KeySpline="0.5,0,1,1" KeyTime="00:00:00.1000000" Value="1"/>
+				<SplineDoubleKeyFrame KeySpline="0.5,0,0.5,1" KeyTime="00:00:00.4000000" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+				<SplineDoubleKeyFrame KeySpline="0.5,0,0.5,1" KeyTime="00:00:00.1000000" Value="1.1"/>
+				<SplineDoubleKeyFrame KeySpline="0.5,0,0.5,1" KeyTime="00:00:00.4000000" Value="0.6"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+				<SplineDoubleKeyFrame KeySpline="0.5,0,0.5,1" KeyTime="00:00:00.1000000" Value="1.1"/>
+				<SplineDoubleKeyFrame KeySpline="0.5,0,0.5,1" KeyTime="00:00:00.4000000" Value="0.6"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+	<UserControl.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{StaticResource FadeIn}"/>
+		</EventTrigger>
+	</UserControl.Triggers>
+
+	<Border x:Name="border" BorderThickness="1,1,1,1" BorderBrush="#CC000000" RenderTransformOrigin="0.5,0.5" Opacity="0">
+		<Border.RenderTransform>
+			<TransformGroup>
+				<ScaleTransform ScaleX="0.6" ScaleY="0.6"/>
+				<SkewTransform/>
+				<RotateTransform/>
+				<TranslateTransform/>
+			</TransformGroup>
+		</Border.RenderTransform>
+		<Border BorderBrush="#19FFFFFF" BorderThickness="1,1,0,0">
+			<Grid x:Name="MainGrid">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="40"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="248"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.Background>
+					<RadialGradientBrush GradientOrigin="0.915,1.183" Center="0.924,1.155" RadiusY="1.501" RadiusX="0.741">
+						<GradientStop Color="#FF000000" Offset="0"/>
+						<GradientStop Color="#BF000000" Offset="1"/>
+					</RadialGradientBrush>
+				</Grid.Background>
+				<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Text="Customer Name" TextWrapping="Wrap" Foreground="White" FontFamily="{DynamicResource SystemFont}" Margin="15,0,0,0" FontSize="26.667"/>
+				<Grid Margin="0" Grid.Row="1" Grid.ColumnSpan="2">
+					<Grid Margin="0,0,0,10">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="0.871*"/>
+							<RowDefinition Height="0.129*"/>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="0.495*"/>
+							<ColumnDefinition Width="0.505*"/>
+						</Grid.ColumnDefinitions>
+						<Grid Margin="0,0,10,0" Grid.RowSpan="2">
+							<Grid.RowDefinitions>
+								<RowDefinition/>
+								<RowDefinition/>
+								<RowDefinition/>
+							</Grid.RowDefinitions>
+							<GroupBox Margin="20,0,0,10" Style="{DynamicResource PerformTransferGroupBoxStyle1}" Foreground="#4CFFFFFF" Header="Bank Accounts">
+								<Grid>
+									<StackPanel VerticalAlignment="Center">
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="114.743"/>
+												<ColumnDefinition/>
+											</Grid.ColumnDefinitions>
+											<TextBlock FontFamily="{DynamicResource SystemFont}" FontSize="13.333" Foreground="#33FFFFFF" Text="Account origin" TextWrapping="Wrap" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center"/>
+											<TextBox Margin="0" Style="{DynamicResource TextBoxStyle1}" Grid.Column="1" TextWrapping="Wrap" d:LayoutOverrides="Width, Height"/>
+										</Grid>
+										<Grid Margin="0,10,0,0">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="114.743"/>
+												<ColumnDefinition/>
+											</Grid.ColumnDefinitions>
+											<TextBlock FontFamily="{DynamicResource SystemFont}" FontSize="13.333" Foreground="#33FFFFFF" Text="Account Destination" TextWrapping="Wrap" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center"/>
+											<TextBox Margin="0" Style="{DynamicResource TextBoxStyle1}" Grid.Column="1" TextWrapping="Wrap" d:LayoutOverrides="Width, Height"/>
+										</Grid>
+									</StackPanel>
+								</Grid>
+							</GroupBox>
+							<GroupBox Margin="20,0,0,10" Style="{DynamicResource PerformTransferGroupBoxStyle1}" Foreground="#4CFFFFFF" Header="Bank Transfer" Grid.Row="1">
+								<Grid>
+									<StackPanel VerticalAlignment="Center" Orientation="Vertical" d:LayoutOverrides="Height">
+										<Grid Margin="0" VerticalAlignment="Center">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="114.743"/>
+												<ColumnDefinition/>
+											</Grid.ColumnDefinitions>
+											<TextBlock FontFamily="{DynamicResource SystemFont}" FontSize="13.333" Foreground="#33FFFFFF" Text="Account Destination" TextWrapping="Wrap" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center"/>
+											<TextBox Margin="0" Style="{DynamicResource TextBoxStyle1}" Grid.Column="1" TextWrapping="Wrap" d:LayoutOverrides="Width, Height"/>
+										</Grid>
+										<Button HorizontalAlignment="Center" Margin="0,10,0,0" Style="{DynamicResource MakeTransferButtonStyle1}" Content="Transfer money" FontFamily="{DynamicResource SystemFont}" FontSize="14.667" Foreground="White" IsEnabled="False"/>
+									</StackPanel>
+								</Grid>
+							</GroupBox>
+							<GroupBox Margin="20,0,0,10" Style="{DynamicResource PerformTransferGroupBoxStyle1}" Foreground="#4CFFFFFF" Header="Account Locks" Grid.Row="2">
+								<Grid>
+									<StackPanel VerticalAlignment="Center" Orientation="Vertical">
+										<Grid Margin="0" VerticalAlignment="Center">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="114.743"/>
+												<ColumnDefinition/>
+											</Grid.ColumnDefinitions>
+											<TextBlock FontFamily="{DynamicResource SystemFont}" FontSize="13.333" Foreground="#33FFFFFF" Text="Account to lock" TextWrapping="Wrap" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center"/>
+											<TextBox Margin="0" Style="{DynamicResource TextBoxStyle1}" Grid.Column="1" TextWrapping="Wrap" d:LayoutOverrides="Width, Height"/>
+										</Grid>
+										<StackPanel HorizontalAlignment="Right" Margin="0,10,0,0" Orientation="Horizontal">
+											<Button HorizontalAlignment="Center" Style="{DynamicResource LockAccountButton}" Content="Lock account" FontFamily="{DynamicResource SystemFont}" FontSize="14.667" Foreground="White" IsEnabled="False"/>
+											<Button HorizontalAlignment="Center" Style="{DynamicResource UnlockAccountButton}" Content="Unlcock account" FontFamily="{DynamicResource SystemFont}" FontSize="14.667" Foreground="White" IsEnabled="False" Margin="15,0,0,0"/>
+										</StackPanel>
+									</StackPanel>
+								</Grid>
+							</GroupBox>
+						</Grid>
+						<StackPanel HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="1">
+							<Button Style="{DynamicResource RefreshAccountButton}" VerticalAlignment="Center" Content="Refresh" FontFamily="{DynamicResource SystemFont}" FontSize="13.333" Foreground="White" Cursor="Hand" Margin="1,0,0,0" Width="60"/>
+							<Button Cursor="Hand" Style="{DynamicResource SaveButtonStyle}" VerticalAlignment="Center" Content="Save" FontFamily="{DynamicResource SystemFont}" FontSize="13.333" Foreground="White" Margin="0" Width="60"/>
+							<Button Style="{DynamicResource CancelButtonStyle}" VerticalAlignment="Center" Content="Cancel" FontFamily="{DynamicResource SystemFont}" FontSize="13.333" Foreground="White" Cursor="Hand" Margin="1,0,0,0" Width="60"/>
+						</StackPanel>
+						<Grid Grid.Column="1">
+							<Custom:DataGrid Margin="0,0,0,23">
+								<Custom:DataGrid.Columns>
+									<Custom:DataGridTextColumn Header="Account Number" FontFamily="{DynamicResource SystemFont}" Foreground="#B2FFFFFF"/>
+									<Custom:DataGridTextColumn Header="Balance" FontFamily="{DynamicResource SystemFont}" Foreground="#B2FFFFFF"/>
+									<Custom:DataGridTextColumn Header="Locked" FontFamily="{DynamicResource SystemFont}" Foreground="#B2FFFFFF"/>
+								</Custom:DataGrid.Columns>
+							</Custom:DataGrid>
+						</Grid>
+					</Grid>
+				</Grid>
+				<Button HorizontalAlignment="Right" Margin="0,0,10,0" Content="Close profile" Grid.Column="1" VerticalAlignment="Center" Style="{DynamicResource CloseCustomer}" Foreground="White" FontFamily="{DynamicResource SystemFont}" Height="20"/>
+			</Grid>
+		</Border>
+	</Border>
+</UserControl>

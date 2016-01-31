@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<repositories>
+  <repository path="..\Infrastructure.Data.MainBoundedContext.Tests\packages.config" />
+  <repository path="..\DistributedServices.MainBoundedContext\packages.config" />
+  <repository path="..\Infrastructure.Crosscutting.NetFramework\packages.config" />
+  <repository path="..\Infrastructure.Crosscutting.Tests\packages.config" />
+  <repository path="..\Application.MainBoundedContext.Tests\packages.config" />
+  <repository path="..\Infrastructure.Data.Seedwork\packages.config" />
+  <repository path="..\Infrastructure.Data.MainBoundedContext\packages.config" />
+  <repository path="..\Application.MainBoundedContext.DTO\packages.config" />
+</repositories>

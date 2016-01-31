@@ -1,0 +1,11 @@
+﻿English
+....
+
+Spanish (Castellano)
+
+Este ensamblado contiene elementos comunes al dominio a ser usado por cualquier módulo de aplicación. El objetivo principal en este punto ha sido por un lado especificar
+los distintos contratos para Contextos de trabajo, Repositorios y UnitOfWork, la motivación de este trabajo se justifica por el hecho de favorecer el testeo con 
+aislamiento y tratar de eliminar posibles dependencia de la capa de dominio con la infraestructura con la cual se realizarán ciertas implementaciones. Además de 
+estos contratos también se dispone de una implementación del patrón Specification ( Martin Fowler-Eric Evans), aunque con unas variaciones para adaptar mejor este
+al uso de árboles de expresiones y conseguir que estas especificaciones no tengan porque hacerse en memoria, tal y como se harían con una implementación tradicional, sino
+ que formen parte directa de las consultas que se realicen dentro de los repositorios.

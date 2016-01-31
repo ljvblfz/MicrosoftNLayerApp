@@ -1,0 +1,191 @@
+﻿<#
+/***************************************************************************
+
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+
+***************************************************************************/
+#>
+
+<#	
+	//
+	// TITLE: T4 template to generate views for an EDMX file in a C# project
+	//
+	// DESCRIPTION:
+	// This is a T4 template to generate views in C# for an EDMX file in C# projects.
+	// The generated views are automatically compiled into the project's output assembly.
+	//
+	// This template follows a simple file naming convention to determine the EDMX file to process:
+	// - It assumes that [edmx-file-name].Views.tt will process and generate views for [edmx-file-name].EDMX
+	// - The views are generated in the code behind file [edmx-file-name].Views.cs
+	//
+	// USAGE:
+	// Do the following to generate views for an EDMX file (e.g. Model1.edmx) in a C# project
+	// 1. In Solution Explorer, right-click the project node and choose "Add...Existing...Item" from the context menu
+	// 2. Browse to and choose this .tt file to include it in the project 
+	// 3. Ensure this .tt file is in the same directory as the EDMX file to process 
+	// 4. In Solution Explorer, rename this .tt file to the form [edmx-file-name].Views.tt (e.g. Model1.Views.tt)
+	// 5. In Solution Explorer, right-click Model1.Views.tt and choose "Run Custom Tool" to generate the views
+	// 6. The views are generated in the code behind file Model1.Views.cs
+	//
+	// TIPS:
+	// If you have multiple EDMX files in your project then make as many copies of this .tt file and rename appropriately
+	// to pair each with each EDMX file.
+	//
+	// To generate views for all EDMX files in the solution, click the "Transform All Templates" button in the Solution Explorer toolbar
+	// (its the rightmost button in the toolbar) 
+	//
+#>
+
+<#
+	//
+	// T4 template code follows
+	//
+#>
+
+<#@ template language="C#" hostspecific="true"#>
+<#@ output extension=".cs" #>
+
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Data.Entity" #>
+<#@ assembly name="System.Data.Entity.Design" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+
+<#@ import namespace="System" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Data.Entity.Design" #>
+<#@ import namespace="System.Data.Metadata.Edm" #>
+<#@ import namespace="System.Data.Mapping" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Xml.Linq" #>
+
+<# 
+	// Find EDMX file to process: Model1.Views.tt generates views for Model1.EDMX
+	string edmxFileName = Path.GetFileNameWithoutExtension(this.Host.TemplateFile).ToLowerInvariant().Replace(".views", "") + ".edmx";
+	string edmxFilePath = Path.Combine(Path.GetDirectoryName(this.Host.TemplateFile), edmxFileName);
+	if (File.Exists(edmxFilePath))
+	{
+		// Call helper class to generate pre-compiled views and write to output
+		this.WriteLine(GenerateViews(edmxFilePath));
+	}
+	else
+	{
+		this.Error(String.Format("No views were generated. Cannot find file {0}. Ensure the project has an EDMX file and the file name of the .tt file is of the form [edmx-file-name].Views.tt", edmxFilePath));
+    }
+	
+	// All done!
+#>
+
+<#+
+	private String GenerateViews(string edmxFilePath)
+	{
+		String generatedViews = String.Empty;
+		try
+		{
+			using (StreamWriter writer = new StreamWriter(new MemoryStream()))
+			{
+				XmlReader csdlReader = null;
+				XmlReader mslReader = null;
+				XmlReader ssdlReader = null;
+
+				// Crack open the EDMX file and get readers over the CSDL, MSL and SSDL portions
+				GetConceptualMappingAndStorageReaders(edmxFilePath, out csdlReader, out mslReader, out ssdlReader);
+
+				// Initialize item collections
+				EdmItemCollection edmItems = new EdmItemCollection(new XmlReader[] { csdlReader });
+				StoreItemCollection storeItems = new StoreItemCollection(new XmlReader[] { ssdlReader });
+				StorageMappingItemCollection mappingItems = new StorageMappingItemCollection(edmItems, storeItems, new XmlReader[] { mslReader });
+
+				// Initialize the view generator to generate views in C#
+				EntityViewGenerator viewGenerator = new EntityViewGenerator();
+				viewGenerator.LanguageOption = LanguageOption.GenerateCSharpCode;
+				IList<EdmSchemaError> errors = viewGenerator.GenerateViews(mappingItems, writer);
+
+				foreach (EdmSchemaError e in errors)
+				{
+					// log error
+					this.Error(e.Message);
+				}
+
+				MemoryStream memStream = writer.BaseStream as MemoryStream;
+				generatedViews = Encoding.UTF8.GetString(memStream.ToArray());
+			}
+		}
+		catch (Exception ex)
+		{
+			// log error
+			this.Error(ex.ToString());
+		}
+		int indexOfFirstClass = generatedViews.IndexOf("public",0,StringComparison.InvariantCultureIgnoreCase);
+		string beginDoc = generatedViews.Substring(0,indexOfFirstClass);
+		string endDoc = generatedViews.Substring(indexOfFirstClass,generatedViews.Length - indexOfFirstClass);
+		
+		return string.Format("{0}{1}{2}",beginDoc,"[System.Diagnostics.DebuggerNonUserCode()][System.CodeDom.Compiler.GeneratedCode(\"EF\",\"v 4.0\")]",endDoc);
+	}
+
+    private void GetConceptualMappingAndStorageReaders(string edmxFile, out XmlReader csdlReader, out XmlReader mslReader, out XmlReader ssdlReader)
+    {
+        csdlReader = null;
+        mslReader = null;
+        ssdlReader = null;
+
+        XNamespace edmxns = "http://schemas.microsoft.com/ado/2008/10/edmx";
+        XNamespace csdlns = "http://schemas.microsoft.com/ado/2008/09/edm";
+        XNamespace mslns = "http://schemas.microsoft.com/ado/2008/09/mapping/cs";
+        XNamespace ssdlns = "http://schemas.microsoft.com/ado/2009/02/edm/ssdl";
+
+        XDocument edmxDoc = XDocument.Load(edmxFile);
+        if (edmxDoc != null)
+        {
+            XElement edmxNode = edmxDoc.Element(edmxns + "Edmx");
+            if (edmxNode != null)
+            {
+                XElement runtimeNode = edmxNode.Element(edmxns + "Runtime");
+                if (runtimeNode != null)
+                {
+                    // Create XmlReader over CSDL in EDMX
+                    XElement conceptualModelsNode = runtimeNode.Element(edmxns + "ConceptualModels");
+                    if (conceptualModelsNode != null)
+                    {
+                        XElement csdlContent = conceptualModelsNode.Element(csdlns + "Schema");
+                        if (csdlContent != null)
+                        {
+                            csdlReader = csdlContent.CreateReader();
+                        }
+                    }
+
+                    // Create XmlReader over MSL in EDMX
+                    XElement mappingsNode = runtimeNode.Element(edmxns + "Mappings");
+                    if (mappingsNode != null)
+                    {
+                        XElement mslContent = mappingsNode.Element(mslns + "Mapping");
+                        if (mslContent != null)
+                        {
+                            mslReader = mslContent.CreateReader();
+                        }
+                    }
+
+                    // Create XmlReader over SSDL in EDMX
+                    XElement storageModelsNode = runtimeNode.Element(edmxns + "StorageModels");
+                    if (storageModelsNode != null)
+                    {
+                        XElement ssdlContent = storageModelsNode.Element(ssdlns + "Schema");
+                        if (ssdlContent != null)
+                        {
+                            ssdlReader = ssdlContent.CreateReader();
+                        }
+                    }
+                }
+            }
+        }
+    }
+#>

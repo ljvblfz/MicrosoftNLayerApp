@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="2f5b4901-bf68-43b7-9b69-acd83634f921" name="DTOs UMLClassDiagram" linkedPackageId="b5b69ed8-52e1-4477-ab3b-9f9efd402228" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c96b2d64-d46f-4772-8ded-998f7824944d" name="CustomerInformationDTO" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ccf3d57b-bcfe-435a-99bb-86e175f2d234" />
+        <ownedAttributesInternal>
+          <property Id="e5b22271-d9c0-424b-8ac0-cfb6b372d429" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ee8110e8-f2ee-4ba2-929c-995486902b6e" />
+          </property>
+          <property Id="4976db89-039d-4ba3-8808-1f11c363cbe6" name="Country" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5c8da10d-592e-40e1-bb1f-acd4dc235ce6" />
+          </property>
+          <property Id="266bfe84-852a-437f-9e56-3982cf4a5f29" name="City" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="39e5c618-2575-473e-884e-6d466f644961" />
+          </property>
+          <property Id="f55e0d67-abb3-44f4-952c-19adce4874f6" name="CustomerID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c9b9d48f-c43e-467d-939e-540753271173" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9943d262-13e0-429b-8e06-35142100b436" name="CustomerInfo" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="306605d0-e7ab-4ccc-a925-f30f52878f97" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="dc326b94-f5be-47d1-a245-8819588de428" name="OrdersInfo" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="afa55488-325e-49c5-98cc-37fdfb912b88" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c69b17a4-d0eb-4512-bed1-5c95338108a2" name="BankAccount" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="72c61360-d61e-4ec4-8a5a-c8a935b74134" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="b5b69ed8-52e1-4477-ab3b-9f9efd402228" name="App Modeling Project">
+    <elementDefinition Id="556bb672-79e8-4125-ba3d-31d2e0361502" />
+    <profileInstances>
+      <packageHasProfileInstances Id="3fdfb3f4-548f-482c-acb9-80dab8d65807">
+        <profileInstance Id="c1e4e612-8903-485f-b664-b4e357954aeb" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="d1526e97-e7ec-46b5-9b6c-944c137c3a22">
+        <profileInstance Id="8b09387e-f803-4293-b630-d5553c7eeff5" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

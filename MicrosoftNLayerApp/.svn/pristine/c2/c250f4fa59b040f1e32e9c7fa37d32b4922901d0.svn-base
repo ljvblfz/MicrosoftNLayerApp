@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  
+  <connectionStrings>
+    
+    <!-- (SQL AZURE) -->
+    <!-- 
+    <add name="MainModuleUnitOfWork" connectionString="metadata=res://NLayerApp.Infrastructure.Data.MainModule/Model.MainModuleDataModel.csdl|res://NLayerApp.Infrastructure.Data.MainModule/Model.MainModuleDataModel.ssdl|res://NLayerApp.Infrastructure.Data.MainModule/Model.MainModuleDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Server=tcp:myazureserver.database.windows.net;Database=NLayerApp;User ID=mysqlazureuser@myserver;Password=mypassword;Trusted_Connection=False;Encrypt=True;MultipleActiveResultSets=True&quot;" providerName="System.Data.EntityClient" />
+    -->    
+    
+    <!-- (SQL Server Express) -->
+    
+    <add name="MainModuleUnitOfWork" connectionString="metadata=res://NLayerApp.Infrastructure.Data.MainModule/Model.MainModuleDataModel.csdl|res://NLayerApp.Infrastructure.Data.MainModule/Model.MainModuleDataModel.ssdl|res://NLayerApp.Infrastructure.Data.MainModule/Model.MainModuleDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=.\SQLEXPRESS;Initial Catalog=NLayerApp;Integrated Security=True;MultipleActiveResultSets=True&quot;" providerName="System.Data.EntityClient" />
+    
+  </connectionStrings>
+  
+  <appSettings>
+    <!--RealAppContext - Real Container-->
+    <!--FakeAppContext - Fake Container-->
+    <!--<add key="defaultIoCContainer" value="FakeAppContext" />-->
+    <add key="defaultIoCContainer" value="RealAppContext" />
+  </appSettings>
+
+  <!--  To collect WCF Diagnostic TRACES, uncomment the section below (SDK 1.3 lines).  
+        To persist the traces to storage, update the DiagnosticsConnectionString setting with your storage credentials.
+        To avoid performance degradation, remember to disable tracing on production deployments.
+  -->
+  
+  <system.diagnostics>
+
+    <sharedListeners>
+      <!-- SDK 1.3 -->
+      <add name="AzureLocalStorage" type="WCFWebRole.AzureLocalStorageTraceListener, WCFWebRole" />
+      
+      <add name="AzureDiagnostics" type="Microsoft.WindowsAzure.Diagnostics.DiagnosticMonitorTraceListener, Microsoft.WindowsAzure.Diagnostics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+        <filter type="" />
+      </add>
+    </sharedListeners>
+
+    <trace>
+      <listeners>
+        <add name="AzureDiagnostics" />
+      </listeners>
+    </trace>
+
+    <sources>
+      <source name="NLayerApp" switchValue="Error">
+        <listeners>
+          <add name="AzureDiagnostics" />
+        </listeners>
+      </source>
+
+      <!-- SDK 1.3 -->
+      
+      <source name="System.ServiceModel" switchValue="Verbose, ActivityTracing">
+        <listeners>
+          <add name="AzureLocalStorage" />
+        </listeners>
+      </source>
+      <source name="System.ServiceModel.MessageLogging" switchValue="Verbose">
+        <listeners>
+          <add name="AzureLocalStorage" />
+        </listeners>
+      </source>
+      
+    </sources>
+
+  </system.diagnostics>
+
+  <system.web>
+    <compilation debug="true" targetFramework="4.0" />
+        <machineKey decryption="AES" decryptionKey="0CA3EFAF0F7A5E7A62681C0BF656EE0ECE31ACEE3E1023BA3FAD20EA5F199DE8" validation="SHA1" validationKey="9DEA87549EDD3B406CC504E27E8727EF746FE9AD9DE62168764FF0DCE537184F0535D5D9AD66DEDC97DC1ABFF7FA540B4DFD82E5BB196B95D15FF81F75AD5328" />
+  </system.web>
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="true" />
+  </system.webServer>
+  <system.serviceModel>
+    
+    <bindings>
+      <basicHttpBinding>
+        <binding name="BasicHttpBindingConfiguration" maxReceivedMessageSize="9965536">
+          <readerQuotas maxArrayLength="9965536" />
+          <security mode="None" />
+        </binding>
+      </basicHttpBinding>
+      <ws2007HttpBinding>
+        <binding name="WS2007BindingConfiguration" maxReceivedMessageSize="9965536">
+          <readerQuotas maxArrayLength="9965536" />
+          <security mode="None">
+          </security>
+        </binding>
+      </ws2007HttpBinding>
+    </bindings>
+    <behaviors>
+      <serviceBehaviors>
+        <behavior name="">
+          <serviceMetadata httpGetEnabled="true" />
+          <serviceDebug includeExceptionDetailInFaults="true" />          
+        </behavior>
+      </serviceBehaviors>
+    </behaviors>
+
+    <serviceHostingEnvironment multipleSiteBindingsEnabled="true" />
+    
+    <services>
+      <service name="Microsoft.Samples.NLayerApp.DistributedServices.MainModule.MainModuleService">
+        <clear />
+        
+        <endpoint address="basic" binding="basicHttpBinding" bindingConfiguration="BasicHttpBindingConfiguration" name="BasicBindingForSilverlightClients" contract="Microsoft.Samples.NLayerApp.DistributedServices.MainModule.IMainModuleService" listenUriMode="Explicit" />
+        
+        <endpoint address="WS2007" binding="ws2007HttpBinding" bindingConfiguration="WS2007BindingConfiguration" name="WS2007ForIntranetClients" contract="Microsoft.Samples.NLayerApp.DistributedServices.MainModule.IMainModuleService" />
+      </service>
+      
+      <service name="WCFWebRole.TestService">
+        <clear />
+        <endpoint name="WS2007TEST" address="WS2007TEST" binding="ws2007HttpBinding" bindingConfiguration="WS2007BindingConfiguration" contract="WCFWebRole.ITestService" />
+      </service>
+      
+    </services>
+  </system.serviceModel>
+  
+</configuration>
